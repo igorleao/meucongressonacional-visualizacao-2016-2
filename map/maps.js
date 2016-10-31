@@ -39,6 +39,16 @@ function drawMap() {
             .enter()
             .append('path')
             .attr('d', path)
-            .attr('fill', '#444');
+            .attr('fill', '#444')
+            .attr('data-regionCode', d => d.properties.ADMINCODE)
+            .each(setupMapRegion);
     });
+}
+
+function setupMapRegion(region) {
+    var el = d3.select(this);
+
+    el.on('click', _ => { console.log(el.attr('data-regionCode')) });
+    el.on('mouseover', _ => { el.classed('on-mouse-over', true) });
+    el.on('mouseout', _ => { el.classed('on-mouse-over', false) });
 }
