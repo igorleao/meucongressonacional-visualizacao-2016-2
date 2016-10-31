@@ -1,0 +1,4729 @@
+{
+	"PP": [
+		{
+			"Candidato": "Michele Collins",
+			"Número": 11611,
+			"Votos": 15357
+		},
+		{
+			"Candidato": "Chico Kiko",
+			"Número": 11111,
+			"Votos": 7079
+		},
+		{
+			"Candidato": "Romero Alburquerque",
+			"Número": 11000,
+			"Votos": 5613
+		},
+		{
+			"Candidato": "Wilton Brito",
+			"Número": 11456,
+			"Votos": 5591
+		},
+		{
+			"Candidato": "Joselito Ferreira",
+			"Número": 11112,
+			"Votos": 4250
+		},
+		{
+			"Candidato": "Melqui Roma",
+			"Número": 11041,
+			"Votos": 3232
+		},
+		{
+			"Candidato": "Bira Tavares",
+			"Número": 11333,
+			"Votos": 2290
+		},
+		{
+			"Candidato": "Dr. Elcio Cavalcanti",
+			"Número": 11615,
+			"Votos": 1049
+		},
+		{
+			"Candidato": "Geraldo da Foto",
+			"Número": 11444,
+			"Votos": 985
+		},
+		{
+			"Candidato": "Rui Leite",
+			"Número": 11190,
+			"Votos": 842
+		},
+		{
+			"Candidato": "Mi",
+			"Número": 11110,
+			"Votos": 757
+		},
+		{
+			"Candidato": "Carlos Dutra Sopinha",
+			"Número": 11211,
+			"Votos": 567
+		},
+		{
+			"Candidato": "Batista",
+			"Número": 11011,
+			"Votos": 545
+		},
+		{
+			"Candidato": "Ezequiel Gomes",
+			"Número": 11888,
+			"Votos": 439
+		},
+		{
+			"Candidato": "Robson Protetico",
+			"Número": 11161,
+			"Votos": 405
+		},
+		{
+			"Candidato": "Hugo Arcoverde",
+			"Número": 11123,
+			"Votos": 375
+		},
+		{
+			"Candidato": "George Soares",
+			"Número": 11234,
+			"Votos": 261
+		},
+		{
+			"Candidato": "Andréa May",
+			"Número": 11777,
+			"Votos": 225
+		},
+		{
+			"Candidato": "Almir Barbosa",
+			"Número": 11222,
+			"Votos": 191
+		},
+		{
+			"Candidato": "Asafe Neves",
+			"Número": 11555,
+			"Votos": 159
+		},
+		{
+			"Candidato": "Jura da Bica O Amolado",
+			"Número": 11144,
+			"Votos": 123
+		},
+		{
+			"Candidato": "Cicero Meu Lider",
+			"Número": 11600,
+			"Votos": 107
+		},
+		{
+			"Candidato": "Eduardo Cavalcanti",
+			"Número": 11005,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Adeilton",
+			"Número": 11109,
+			"Votos": 94
+		},
+		{
+			"Candidato": "Missionaria Betania",
+			"Número": 11137,
+			"Votos": 89
+		},
+		{
+			"Candidato": "Profº Adelson Franca",
+			"Número": 11999,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Rosane",
+			"Número": 11724,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Berinho Santana",
+			"Número": 11775,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Iara Paiva",
+			"Número": 11220,
+			"Votos": 62
+		},
+		{
+			"Candidato": "Cassia Coelho",
+			"Número": 11666,
+			"Votos": 47
+		},
+		{
+			"Candidato": "Elza Rodrigues",
+			"Número": 11420,
+			"Votos": 7
+		},
+		{
+			"Candidato": "Ana Almeida",
+			"Número": 11500,
+			"Votos": 4
+		},
+		{
+			"Candidato": "Sara Barbosa",
+			"Número": 11320,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Patricia Braga",
+			"Número": 11432,
+			"Votos": 0
+		}
+	],
+	"PSB": [
+		{
+			"Candidato": "Irmã Aimée",
+			"Número": 40150,
+			"Votos": 14338
+		},
+		{
+			"Candidato": "Aderaldo Pinto",
+			"Número": 40888,
+			"Votos": 12767
+		},
+		{
+			"Candidato": "Felipe Francismar",
+			"Número": 40654,
+			"Votos": 12183
+		},
+		{
+			"Candidato": "Natalia de Menudo",
+			"Número": 40123,
+			"Votos": 10277
+		},
+		{
+			"Candidato": "Eduardo Marques",
+			"Número": 40699,
+			"Votos": 10177
+		},
+		{
+			"Candidato": "Augusto Carreras",
+			"Número": 40640,
+			"Votos": 9162
+		},
+		{
+			"Candidato": "Maguari",
+			"Número": 40667,
+			"Votos": 8366
+		},
+		{
+			"Candidato": "Carlos Gueiros",
+			"Número": 40623,
+			"Votos": 8291
+		},
+		{
+			"Candidato": "Luiz Eustaquio",
+			"Número": 40500,
+			"Votos": 7544
+		},
+		{
+			"Candidato": "Romildo Gomes",
+			"Número": 40666,
+			"Votos": 7003
+		},
+		{
+			"Candidato": "Vicente André Gomes",
+			"Número": 40644,
+			"Votos": 6205
+		},
+		{
+			"Candidato": "Rodrigo Vidal",
+			"Número": 40999,
+			"Votos": 3290
+		},
+		{
+			"Candidato": "Niel da Farmácia",
+			"Número": 40655,
+			"Votos": 2935
+		},
+		{
+			"Candidato": "João Oseias",
+			"Número": 40250,
+			"Votos": 287
+		},
+		{
+			"Candidato": "Professora Rosa",
+			"Número": 40040,
+			"Votos": 244
+		},
+		{
+			"Candidato": "Eduardo Lacerda",
+			"Número": 40610,
+			"Votos": 179
+		},
+		{
+			"Candidato": "Gilberto Marques",
+			"Número": 40777,
+			"Votos": 165
+		},
+		{
+			"Candidato": "Marilene Costa",
+			"Número": 40188,
+			"Votos": 75
+		},
+		{
+			"Candidato": "Miriam Cunha",
+			"Número": 40104,
+			"Votos": 64
+		},
+		{
+			"Candidato": "Terezinha de Jesus",
+			"Número": 40014,
+			"Votos": 61
+		},
+		{
+			"Candidato": "Paula Fernandes",
+			"Número": 40007,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Ducarmo",
+			"Número": 40041,
+			"Votos": 46
+		},
+		{
+			"Candidato": "Lucia Lucena",
+			"Número": 40045,
+			"Votos": 36
+		},
+		{
+			"Candidato": "Wando Wanderley Neto",
+			"Número": 40321,
+			"Votos": 10
+		}
+	],
+	"PSC": [
+		{
+			"Candidato": "Fred Ferreira",
+			"Número": 20620,
+			"Votos": 14277
+		},
+		{
+			"Candidato": "Wanderson",
+			"Número": 20120,
+			"Votos": 8701
+		},
+		{
+			"Candidato": "Renato Antunes",
+			"Número": 20600,
+			"Votos": 4261
+		},
+		{
+			"Candidato": "Ricardo Serralheiro",
+			"Número": 20650,
+			"Votos": 1920
+		},
+		{
+			"Candidato": "Irmão Valdemar Melo Taxista",
+			"Número": 20777,
+			"Votos": 1669
+		},
+		{
+			"Candidato": "Cleto Correia",
+			"Número": 20100,
+			"Votos": 1590
+		},
+		{
+			"Candidato": "Ari Carvalho",
+			"Número": 20444,
+			"Votos": 1562
+		},
+		{
+			"Candidato": "Mario Brasiliano",
+			"Número": 20615,
+			"Votos": 1146
+		},
+		{
+			"Candidato": "Nido Poeirão",
+			"Número": 20665,
+			"Votos": 1133
+		},
+		{
+			"Candidato": "Becinha",
+			"Número": 20321,
+			"Votos": 1127
+		},
+		{
+			"Candidato": "Pereira da União",
+			"Número": 20112,
+			"Votos": 936
+		},
+		{
+			"Candidato": "Pink",
+			"Número": 20888,
+			"Votos": 901
+		},
+		{
+			"Candidato": "Luiz Mario da Raio Laser",
+			"Número": 20631,
+			"Votos": 822
+		},
+		{
+			"Candidato": "Jurandir Paz Juba",
+			"Número": 20190,
+			"Votos": 807
+		},
+		{
+			"Candidato": "Alessandro Didi",
+			"Número": 20000,
+			"Votos": 682
+		},
+		{
+			"Candidato": "Sargento Santiago",
+			"Número": 20900,
+			"Votos": 667
+		},
+		{
+			"Candidato": "Sandra Pernambuco",
+			"Número": 20232,
+			"Votos": 650
+		},
+		{
+			"Candidato": "Davi Valente",
+			"Número": 20699,
+			"Votos": 637
+		},
+		{
+			"Candidato": "Bel da Lojinha",
+			"Número": 20500,
+			"Votos": 622
+		},
+		{
+			"Candidato": "Diego Frota",
+			"Número": 20666,
+			"Votos": 579
+		},
+		{
+			"Candidato": "Luciano Oliveira dos Mercados",
+			"Número": 20700,
+			"Votos": 549
+		},
+		{
+			"Candidato": "Regi Avançar",
+			"Número": 20533,
+			"Votos": 504
+		},
+		{
+			"Candidato": "Poniel do Carangueijo",
+			"Número": 20520,
+			"Votos": 484
+		},
+		{
+			"Candidato": "Ana Morais",
+			"Número": 20222,
+			"Votos": 450
+		},
+		{
+			"Candidato": "Amauri Souto",
+			"Número": 20200,
+			"Votos": 448
+		},
+		{
+			"Candidato": "Everaldo Evangelista Nenê",
+			"Número": 20614,
+			"Votos": 448
+		},
+		{
+			"Candidato": "Major Fentes",
+			"Número": 20111,
+			"Votos": 441
+		},
+		{
+			"Candidato": "Reginaldo Praticamente",
+			"Número": 20630,
+			"Votos": 408
+		},
+		{
+			"Candidato": "Jesus",
+			"Número": 20333,
+			"Votos": 358
+		},
+		{
+			"Candidato": "Missionaria Nay Ferreira",
+			"Número": 20677,
+			"Votos": 326
+		},
+		{
+			"Candidato": "Suzy do Sítio do Rosário",
+			"Número": 20140,
+			"Votos": 314
+		},
+		{
+			"Candidato": "Ray Ferreira",
+			"Número": 20611,
+			"Votos": 300
+		},
+		{
+			"Candidato": "Alberico do Fiteiro",
+			"Número": 20320,
+			"Votos": 298
+		},
+		{
+			"Candidato": "Aquiles",
+			"Número": 20720,
+			"Votos": 292
+		},
+		{
+			"Candidato": "Ivonete Oliveira Nanete",
+			"Número": 20123,
+			"Votos": 248
+		},
+		{
+			"Candidato": "Gerusa da Saúde",
+			"Número": 20300,
+			"Votos": 212
+		},
+		{
+			"Candidato": "Tinho do Povo",
+			"Número": 20101,
+			"Votos": 211
+		},
+		{
+			"Candidato": "Elza do Cepas",
+			"Número": 20622,
+			"Votos": 168
+		},
+		{
+			"Candidato": "Rômulo Ferreira",
+			"Número": 20166,
+			"Votos": 140
+		},
+		{
+			"Candidato": "Boneco",
+			"Número": 20133,
+			"Votos": 128
+		},
+		{
+			"Candidato": "Ricardo Locadora",
+			"Número": 20121,
+			"Votos": 122
+		},
+		{
+			"Candidato": "Tomires Souza",
+			"Número": 20555,
+			"Votos": 118
+		},
+		{
+			"Candidato": "Jaqueline Mô",
+			"Número": 20612,
+			"Votos": 110
+		},
+		{
+			"Candidato": "Abraão Faisca",
+			"Número": 20030,
+			"Votos": 103
+		},
+		{
+			"Candidato": "Ceça da Lan House",
+			"Número": 20800,
+			"Votos": 44
+		},
+		{
+			"Candidato": "Nado Mansinho",
+			"Número": 20911,
+			"Votos": 40
+		},
+		{
+			"Candidato": "Wilma Linary",
+			"Número": 20155,
+			"Votos": 31
+		},
+		{
+			"Candidato": "Lindinalva Domingos",
+			"Número": 20789,
+			"Votos": 0
+		}
+	],
+	"PT": [
+		{
+			"Candidato": "Marília Arraes",
+			"Número": 13100,
+			"Votos": 11872
+		},
+		{
+			"Candidato": "Prof. Jairo Britto",
+			"Número": 13001,
+			"Votos": 7229
+		},
+		{
+			"Candidato": "João da Costa",
+			"Número": 13144,
+			"Votos": 5545
+		},
+		{
+			"Candidato": "Oscar",
+			"Número": 13650,
+			"Votos": 5533
+		},
+		{
+			"Candidato": "Jurandir Liberal",
+			"Número": 13613,
+			"Votos": 5531
+		},
+		{
+			"Candidato": "Henrique Lima",
+			"Número": 13111,
+			"Votos": 1253
+		},
+		{
+			"Candidato": "Marcos Ferreira",
+			"Número": 13013,
+			"Votos": 824
+		},
+		{
+			"Candidato": "Pedro Cavalcante",
+			"Número": 13789,
+			"Votos": 478
+		},
+		{
+			"Candidato": "Zenilda Lima",
+			"Número": 13113,
+			"Votos": 173
+		},
+		{
+			"Candidato": "Lula Braz",
+			"Número": 13159,
+			"Votos": 156
+		},
+		{
+			"Candidato": "Mary Menezes",
+			"Número": 13003,
+			"Votos": 95
+		},
+		{
+			"Candidato": "Adriano Melcop",
+			"Número": 13313,
+			"Votos": 91
+		},
+		{
+			"Candidato": "Richard Pasquale",
+			"Número": 13012,
+			"Votos": 28
+		},
+		{
+			"Candidato": "Luciana Arantes",
+			"Número": 13577,
+			"Votos": 13
+		},
+		{
+			"Candidato": "Ivania Tavares",
+			"Número": 13767,
+			"Votos": 7
+		},
+		{
+			"Candidato": "Gildazio Moura",
+			"Número": 13126,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Edson Axé",
+			"Número": 13213,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Sergio Urt",
+			"Número": 13500,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Fernando Acs (garrincha)",
+			"Número": 13192,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Aline Fagundes",
+			"Número": 13130,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Neyl Santos",
+			"Número": 13133,
+			"Votos": 0
+		}
+	],
+	"PEN": [
+		{
+			"Candidato": "Davi Muniz",
+			"Número": 51122,
+			"Votos": 11693
+		},
+		{
+			"Candidato": "Benjamim da Saúde",
+			"Número": 51424,
+			"Votos": 3772
+		},
+		{
+			"Candidato": "Júnior de Cleto",
+			"Número": 51999,
+			"Votos": 3620
+		},
+		{
+			"Candidato": "Lula Legal",
+			"Número": 51004,
+			"Votos": 2667
+		},
+		{
+			"Candidato": "Kazé",
+			"Número": 51233,
+			"Votos": 2598
+		},
+		{
+			"Candidato": "Josias Amaral",
+			"Número": 51251,
+			"Votos": 2550
+		},
+		{
+			"Candidato": "André Maciel",
+			"Número": 51500,
+			"Votos": 2441
+		},
+		{
+			"Candidato": "Elias Francisco",
+			"Número": 51222,
+			"Votos": 2341
+		},
+		{
+			"Candidato": "Rico Show",
+			"Número": 51444,
+			"Votos": 1649
+		},
+		{
+			"Candidato": "Renata André Gomes",
+			"Número": 51022,
+			"Votos": 1507
+		},
+		{
+			"Candidato": "Dário Pessoa",
+			"Número": 51003,
+			"Votos": 1223
+		},
+		{
+			"Candidato": "Jelton",
+			"Número": 51100,
+			"Votos": 1214
+		},
+		{
+			"Candidato": "Professor Edson Junior",
+			"Número": 51061,
+			"Votos": 1181
+		},
+		{
+			"Candidato": "Brivaldo Jatobá",
+			"Número": 51051,
+			"Votos": 1125
+		},
+		{
+			"Candidato": "Pedro Leão",
+			"Número": 51234,
+			"Votos": 1086
+		},
+		{
+			"Candidato": "Altair Ferreira",
+			"Número": 51451,
+			"Votos": 1019
+		},
+		{
+			"Candidato": "Sargento Assis",
+			"Número": 51115,
+			"Votos": 990
+		},
+		{
+			"Candidato": "Professor Murilo Mendonça",
+			"Número": 51232,
+			"Votos": 928
+		},
+		{
+			"Candidato": "Avelino Freire",
+			"Número": 51121,
+			"Votos": 669
+		},
+		{
+			"Candidato": "Fabiano Leite",
+			"Número": 51192,
+			"Votos": 599
+		},
+		{
+			"Candidato": "Mário Gomes",
+			"Número": 51040,
+			"Votos": 510
+		},
+		{
+			"Candidato": "Fellype Lira",
+			"Número": 51651,
+			"Votos": 447
+		},
+		{
+			"Candidato": "Pedro Luiz",
+			"Número": 51330,
+			"Votos": 415
+		},
+		{
+			"Candidato": "Isaque Santana",
+			"Número": 51456,
+			"Votos": 410
+		},
+		{
+			"Candidato": "Stênio Fonsêca",
+			"Número": 51000,
+			"Votos": 406
+		},
+		{
+			"Candidato": "Terezinha Rocha",
+			"Número": 51555,
+			"Votos": 373
+		},
+		{
+			"Candidato": "Raimundo Ferreira",
+			"Número": 51123,
+			"Votos": 367
+		},
+		{
+			"Candidato": "Irmã Dinha",
+			"Número": 51960,
+			"Votos": 359
+		},
+		{
+			"Candidato": "Deyvson Nunes",
+			"Número": 51777,
+			"Votos": 250
+		},
+		{
+			"Candidato": "Waléria da Saúde",
+			"Número": 51633,
+			"Votos": 221
+		},
+		{
+			"Candidato": "Hosana Jane",
+			"Número": 51001,
+			"Votos": 216
+		},
+		{
+			"Candidato": "Leonardo Quintas",
+			"Número": 51111,
+			"Votos": 200
+		},
+		{
+			"Candidato": "Pastor Gerson Pereira",
+			"Número": 51021,
+			"Votos": 198
+		},
+		{
+			"Candidato": "Luciano César",
+			"Número": 51789,
+			"Votos": 194
+		},
+		{
+			"Candidato": "Lila da Varzea",
+			"Número": 51421,
+			"Votos": 177
+		},
+		{
+			"Candidato": "Nilson Luthier",
+			"Número": 51103,
+			"Votos": 160
+		},
+		{
+			"Candidato": "Professor Paulo Máximo",
+			"Número": 51678,
+			"Votos": 151
+		},
+		{
+			"Candidato": "Irmã Ana",
+			"Número": 51125,
+			"Votos": 151
+		},
+		{
+			"Candidato": "Luciano Alto Astral",
+			"Número": 51137,
+			"Votos": 131
+		},
+		{
+			"Candidato": "Cristina Ramos",
+			"Número": 51800,
+			"Votos": 102
+		},
+		{
+			"Candidato": "Dr. Guido",
+			"Número": 51888,
+			"Votos": 92
+		},
+		{
+			"Candidato": "China",
+			"Número": 51323,
+			"Votos": 81
+		},
+		{
+			"Candidato": "Bete",
+			"Número": 51318,
+			"Votos": 67
+		},
+		{
+			"Candidato": "Fred do Metrô",
+			"Número": 51011,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Viviane Ferreira",
+			"Número": 51654,
+			"Votos": 21
+		},
+		{
+			"Candidato": "Professora Marytz",
+			"Número": 51131,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Enfermeiro Alexandre Borges",
+			"Número": 51321,
+			"Votos": 13
+		},
+		{
+			"Candidato": "Marcela Maria",
+			"Número": 51206,
+			"Votos": 8
+		},
+		{
+			"Candidato": "Noêmia",
+			"Número": 51120,
+			"Votos": 2
+		},
+		{
+			"Candidato": "Denize Maria",
+			"Número": 51731,
+			"Votos": 0
+		}
+	],
+	"PMDB": [
+		{
+			"Candidato": "Aline Mariano",
+			"Número": 15615,
+			"Votos": 10139
+		},
+		{
+			"Candidato": "Jayme Asfora",
+			"Número": 15123,
+			"Votos": 8657
+		}
+	],
+	"PTB": [
+		{
+			"Candidato": "Antonio Luiz Neto",
+			"Número": 14666,
+			"Votos": 9796
+		},
+		{
+			"Candidato": "Luana Ramos",
+			"Número": 14112,
+			"Votos": 926
+		},
+		{
+			"Candidato": "Humberto do Marreta",
+			"Número": 14500,
+			"Votos": 648
+		},
+		{
+			"Candidato": "Erivaldo Arruda",
+			"Número": 14123,
+			"Votos": 641
+		},
+		{
+			"Candidato": "Levi Mesquita",
+			"Número": 14777,
+			"Votos": 370
+		},
+		{
+			"Candidato": "Olga Câmara",
+			"Número": 14514,
+			"Votos": 304
+		},
+		{
+			"Candidato": "Severino Billy",
+			"Número": 14444,
+			"Votos": 157
+		},
+		{
+			"Candidato": "Nalva Castro",
+			"Número": 14567,
+			"Votos": 148
+		},
+		{
+			"Candidato": "Neyff Safo",
+			"Número": 14756,
+			"Votos": 119
+		},
+		{
+			"Candidato": "Adeildo Queiros",
+			"Número": 14190,
+			"Votos": 53
+		},
+		{
+			"Candidato": "Vanda",
+			"Número": 14135,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Samuel Luz Barbosa",
+			"Número": 14020,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Benedito Serafim",
+			"Número": 14333,
+			"Votos": 0
+		}
+	],
+	"PRB": [
+		{
+			"Candidato": "Professora Ana Lúcia",
+			"Número": 10123,
+			"Votos": 9538
+		},
+		{
+			"Candidato": "Rinaldo Júnior",
+			"Número": 10000,
+			"Votos": 8604
+		},
+		{
+			"Candidato": "Bruno Reis",
+			"Número": 10111,
+			"Votos": 1667
+		},
+		{
+			"Candidato": "Elson Ótica",
+			"Número": 10010,
+			"Votos": 1507
+		},
+		{
+			"Candidato": "Júnior Viana",
+			"Número": 10610,
+			"Votos": 553
+		},
+		{
+			"Candidato": "Léo",
+			"Número": 10100,
+			"Votos": 402
+		},
+		{
+			"Candidato": "Zé do Carmo",
+			"Número": 10110,
+			"Votos": 335
+		},
+		{
+			"Candidato": "Leandra Silva",
+			"Número": 10400,
+			"Votos": 261
+		},
+		{
+			"Candidato": "Erivaldo Martins",
+			"Número": 10888,
+			"Votos": 220
+		},
+		{
+			"Candidato": "Valdenio Dong",
+			"Número": 10333,
+			"Votos": 180
+		},
+		{
+			"Candidato": "Doda do Povo",
+			"Número": 10456,
+			"Votos": 179
+		},
+		{
+			"Candidato": "Professor Sorriso",
+			"Número": 10300,
+			"Votos": 171
+		},
+		{
+			"Candidato": "Luciano Cob",
+			"Número": 10444,
+			"Votos": 149
+		},
+		{
+			"Candidato": "Fagner Valença",
+			"Número": 10500,
+			"Votos": 146
+		},
+		{
+			"Candidato": "Júlio Salgado",
+			"Número": 10900,
+			"Votos": 125
+		},
+		{
+			"Candidato": "Professor Sergio Silva",
+			"Número": 10915,
+			"Votos": 117
+		},
+		{
+			"Candidato": "Ilka Griz",
+			"Número": 10222,
+			"Votos": 85
+		},
+		{
+			"Candidato": "Zé Lezinho",
+			"Número": 10200,
+			"Votos": 82
+		},
+		{
+			"Candidato": "Jorge da Saúde",
+			"Número": 10555,
+			"Votos": 72
+		},
+		{
+			"Candidato": "Paulo Dias",
+			"Número": 10777,
+			"Votos": 20
+		},
+		{
+			"Candidato": "Sara Braga",
+			"Número": 10150,
+			"Votos": 14
+		},
+		{
+			"Candidato": "Fabiola Maia",
+			"Número": 10543,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Josy Arruda",
+			"Número": 10912,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Silvia Cristina",
+			"Número": 10712,
+			"Votos": 0
+		}
+	],
+	"PROS": [
+		{
+			"Candidato": "Romerinho Jatobá",
+			"Número": 90123,
+			"Votos": 9088
+		},
+		{
+			"Candidato": "Professor Jair",
+			"Número": 90010,
+			"Votos": 1013
+		},
+		{
+			"Candidato": "Gleyson Luiz",
+			"Número": 90500,
+			"Votos": 455
+		},
+		{
+			"Candidato": "Americo da Autoescola",
+			"Número": 90011,
+			"Votos": 192
+		},
+		{
+			"Candidato": "Antonio Marcos do Pros",
+			"Número": 90900,
+			"Votos": 172
+		},
+		{
+			"Candidato": "Henrique Bueirão",
+			"Número": 90456,
+			"Votos": 151
+		},
+		{
+			"Candidato": "Janaina Biru-biru",
+			"Número": 90090,
+			"Votos": 126
+		},
+		{
+			"Candidato": "Negona Tia da Tropa Ls",
+			"Número": 90014,
+			"Votos": 109
+		},
+		{
+			"Candidato": "Zenne Barros",
+			"Número": 90234,
+			"Votos": 49
+		},
+		{
+			"Candidato": "Gilson Lima",
+			"Número": 90190,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Soares Fêu",
+			"Número": 90111,
+			"Votos": 0
+		}
+	],
+	"PDT": [
+		{
+			"Candidato": "Jadeval de Lima",
+			"Número": 12123,
+			"Votos": 8831
+		},
+		{
+			"Candidato": "Eduardo Chera",
+			"Número": 12222,
+			"Votos": 8255
+		},
+		{
+			"Candidato": "Henrique Leite",
+			"Número": 12612,
+			"Votos": 5281
+		},
+		{
+			"Candidato": "Isabella de Roldão",
+			"Número": 12345,
+			"Votos": 5125
+		},
+		{
+			"Candidato": "Marcos Menezes",
+			"Número": 12650,
+			"Votos": 4541
+		},
+		{
+			"Candidato": "Eduardo Amancio",
+			"Número": 12012,
+			"Votos": 1909
+		},
+		{
+			"Candidato": "Piedade Buarque",
+			"Número": 12112,
+			"Votos": 403
+		},
+		{
+			"Candidato": "Professor Fernando Luiz",
+			"Número": 12223,
+			"Votos": 299
+		},
+		{
+			"Candidato": "Azmazete Sena - Beeca",
+			"Número": 12000,
+			"Votos": 175
+		},
+		{
+			"Candidato": "Fabio Vinhaes",
+			"Número": 12221,
+			"Votos": 160
+		},
+		{
+			"Candidato": "Lourdinha Nobrega",
+			"Número": 12111,
+			"Votos": 91
+		},
+		{
+			"Candidato": "Cristiano Souza",
+			"Número": 12132,
+			"Votos": 65
+		}
+	],
+	"PSDB": [
+		{
+			"Candidato": "Andre Regis",
+			"Número": 45600,
+			"Votos": 8702
+		},
+		{
+			"Candidato": "Junior Bocão",
+			"Número": 45045,
+			"Votos": 5063
+		},
+		{
+			"Candidato": "Albérisson Carlos",
+			"Número": 45190,
+			"Votos": 4295
+		},
+		{
+			"Candidato": "Terezinha Nunes",
+			"Número": 45123,
+			"Votos": 2918
+		},
+		{
+			"Candidato": "Thiago Dias",
+			"Número": 45645,
+			"Votos": 2587
+		},
+		{
+			"Candidato": "Joaquim Pedro",
+			"Número": 45678,
+			"Votos": 2554
+		},
+		{
+			"Candidato": "Giroldo",
+			"Número": 45543,
+			"Votos": 2200
+		},
+		{
+			"Candidato": "Leo Cabeça",
+			"Número": 45345,
+			"Votos": 862
+		},
+		{
+			"Candidato": "Rildo Accioly",
+			"Número": 45100,
+			"Votos": 777
+		},
+		{
+			"Candidato": "Eduardo Gomes",
+			"Número": 45555,
+			"Votos": 624
+		},
+		{
+			"Candidato": "Dr. Haroldo Duarte",
+			"Número": 45013,
+			"Votos": 587
+		},
+		{
+			"Candidato": "Marinaldo Vendedor",
+			"Número": 45000,
+			"Votos": 470
+		},
+		{
+			"Candidato": "Marcelo Marujo",
+			"Número": 45400,
+			"Votos": 445
+		},
+		{
+			"Candidato": "Lúcio Beltrão",
+			"Número": 45222,
+			"Votos": 409
+		},
+		{
+			"Candidato": "Beline Lopes",
+			"Número": 45636,
+			"Votos": 401
+		},
+		{
+			"Candidato": "Pastor Josuel Silva",
+			"Número": 45777,
+			"Votos": 331
+		},
+		{
+			"Candidato": "Zilda Corretora",
+			"Número": 45007,
+			"Votos": 331
+		},
+		{
+			"Candidato": "Hugo Lins",
+			"Número": 45655,
+			"Votos": 279
+		},
+		{
+			"Candidato": "Dilson Reis Filho",
+			"Número": 45888,
+			"Votos": 224
+		},
+		{
+			"Candidato": "Rita Lima",
+			"Número": 45200,
+			"Votos": 204
+		},
+		{
+			"Candidato": "Daniel Cabeleireiro",
+			"Número": 45102,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Nino da Barraca",
+			"Número": 45570,
+			"Votos": 189
+		},
+		{
+			"Candidato": "Fabiano",
+			"Número": 45745,
+			"Votos": 174
+		},
+		{
+			"Candidato": "Motoca",
+			"Número": 45291,
+			"Votos": 167
+		},
+		{
+			"Candidato": "Katharyne França",
+			"Número": 45451,
+			"Votos": 135
+		},
+		{
+			"Candidato": "Gg do Gás",
+			"Número": 45444,
+			"Votos": 123
+		},
+		{
+			"Candidato": "Marcão Firma Chicago Motors",
+			"Número": 45018,
+			"Votos": 120
+		},
+		{
+			"Candidato": "Adeilton Silva",
+			"Número": 45845,
+			"Votos": 119
+		},
+		{
+			"Candidato": "Professora Telma Aguiar",
+			"Número": 45111,
+			"Votos": 114
+		},
+		{
+			"Candidato": "Irmão Vevel",
+			"Número": 45145,
+			"Votos": 101
+		},
+		{
+			"Candidato": "Eliane Sena",
+			"Número": 45999,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Carlos Eduardo",
+			"Número": 45333,
+			"Votos": 96
+		},
+		{
+			"Candidato": "Jeová",
+			"Número": 45666,
+			"Votos": 93
+		},
+		{
+			"Candidato": "Romero Pereira",
+			"Número": 45300,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Elissandra Cabral",
+			"Número": 45844,
+			"Votos": 68
+		},
+		{
+			"Candidato": "Irmã Luzinete",
+			"Número": 45245,
+			"Votos": 67
+		},
+		{
+			"Candidato": "Zé Carlos",
+			"Número": 45945,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Lucineide Brasil A Rainha do B",
+			"Número": 45445,
+			"Votos": 47
+		},
+		{
+			"Candidato": "Débora Queiroz",
+			"Número": 45450,
+			"Votos": 47
+		},
+		{
+			"Candidato": "Fia Antonia Olivia",
+			"Número": 45234,
+			"Votos": 37
+		},
+		{
+			"Candidato": "Graças Tiburcio",
+			"Número": 45025,
+			"Votos": 36
+		},
+		{
+			"Candidato": "Seu Coutinho",
+			"Número": 45700,
+			"Votos": 30
+		},
+		{
+			"Candidato": "Zenilda",
+			"Número": 45500,
+			"Votos": 23
+		},
+		{
+			"Candidato": "Kátia Cilene",
+			"Número": 45453,
+			"Votos": 18
+		},
+		{
+			"Candidato": "Ananias Salvador",
+			"Número": 45565,
+			"Votos": 17
+		},
+		{
+			"Candidato": "Fernanda Santos",
+			"Número": 45890,
+			"Votos": 3
+		}
+	],
+	"PRTB": [
+		{
+			"Candidato": "Marco Aurelio Meu Amigo",
+			"Número": 28999,
+			"Votos": 7664
+		},
+		{
+			"Candidato": "Alcides Teixeira Neto",
+			"Número": 28128,
+			"Votos": 6025
+		},
+		{
+			"Candidato": "Helio Guabiraba",
+			"Número": 28028,
+			"Votos": 4836
+		},
+		{
+			"Candidato": "Samuel Salazar",
+			"Número": 28222,
+			"Votos": 4252
+		},
+		{
+			"Candidato": "Bruno Pinho Alves",
+			"Número": 28123,
+			"Votos": 4217
+		},
+		{
+			"Candidato": "Marcos Justino",
+			"Número": 28111,
+			"Votos": 3821
+		},
+		{
+			"Candidato": "Henrique Seixas",
+			"Número": 28888,
+			"Votos": 3687
+		},
+		{
+			"Candidato": "Edson Barros",
+			"Número": 28628,
+			"Votos": 2966
+		},
+		{
+			"Candidato": "Danilo Alves",
+			"Número": 28110,
+			"Votos": 2448
+		},
+		{
+			"Candidato": "Priscila Ferraz",
+			"Número": 28800,
+			"Votos": 2347
+		},
+		{
+			"Candidato": "Gabriel",
+			"Número": 28000,
+			"Votos": 1709
+		},
+		{
+			"Candidato": "Alfredo Mariano",
+			"Número": 28692,
+			"Votos": 1600
+		},
+		{
+			"Candidato": "João Goteira",
+			"Número": 28640,
+			"Votos": 1369
+		},
+		{
+			"Candidato": "Israel Vaz",
+			"Número": 28899,
+			"Votos": 1192
+		},
+		{
+			"Candidato": "Neide Santana",
+			"Número": 28627,
+			"Votos": 1157
+		},
+		{
+			"Candidato": "Rufino",
+			"Número": 28011,
+			"Votos": 1146
+		},
+		{
+			"Candidato": "Suetonio de Brasilia Teimosa",
+			"Número": 28400,
+			"Votos": 1040
+		},
+		{
+			"Candidato": "Hamilton Brito",
+			"Número": 28543,
+			"Votos": 963
+		},
+		{
+			"Candidato": "Mauricio Lock Tudo",
+			"Número": 28789,
+			"Votos": 795
+		},
+		{
+			"Candidato": "Paulinho do Bongi",
+			"Número": 28122,
+			"Votos": 630
+		},
+		{
+			"Candidato": "Dedé Barnabé",
+			"Número": 28116,
+			"Votos": 578
+		},
+		{
+			"Candidato": "Dalva da Escolinha",
+			"Número": 28088,
+			"Votos": 523
+		},
+		{
+			"Candidato": "Tarcis Guimarães",
+			"Número": 28520,
+			"Votos": 379
+		},
+		{
+			"Candidato": "João Oliveira",
+			"Número": 28288,
+			"Votos": 370
+		},
+		{
+			"Candidato": "Silvio Lucena",
+			"Número": 28200,
+			"Votos": 368
+		},
+		{
+			"Candidato": "Nevinha Silva",
+			"Número": 28777,
+			"Votos": 356
+		},
+		{
+			"Candidato": "Assis Vigilante",
+			"Número": 28678,
+			"Votos": 349
+		},
+		{
+			"Candidato": "Irmã Cristina",
+			"Número": 28868,
+			"Votos": 341
+		},
+		{
+			"Candidato": "Reginaldo Barboza - Regi",
+			"Número": 28133,
+			"Votos": 281
+		},
+		{
+			"Candidato": "Marcos Vieira",
+			"Número": 28444,
+			"Votos": 248
+		},
+		{
+			"Candidato": "Alencar",
+			"Número": 28008,
+			"Votos": 247
+		},
+		{
+			"Candidato": "Jonas Miguel",
+			"Número": 28900,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Antonio dos Milagres",
+			"Número": 28192,
+			"Votos": 150
+		},
+		{
+			"Candidato": "Valdelina",
+			"Número": 28500,
+			"Votos": 145
+		},
+		{
+			"Candidato": "Luciano Silva",
+			"Número": 28162,
+			"Votos": 110
+		},
+		{
+			"Candidato": "Lourdes Cavalcanti do Posto",
+			"Número": 28743,
+			"Votos": 66
+		},
+		{
+			"Candidato": "Marcela Pérola Negra",
+			"Número": 28033,
+			"Votos": 65
+		},
+		{
+			"Candidato": "Maria Rita",
+			"Número": 28402,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Irmã Didi",
+			"Número": 28555,
+			"Votos": 50
+		},
+		{
+			"Candidato": "Guarda Roupa",
+			"Número": 28075,
+			"Votos": 46
+		},
+		{
+			"Candidato": "Humberto Sobrinho",
+			"Número": 28100,
+			"Votos": 39
+		},
+		{
+			"Candidato": "Bilinha",
+			"Número": 28056,
+			"Votos": 35
+		},
+		{
+			"Candidato": "Edson Santos",
+			"Número": 28211,
+			"Votos": 35
+		},
+		{
+			"Candidato": "Cris Bautista",
+			"Número": 28010,
+			"Votos": 32
+		},
+		{
+			"Candidato": "Teca Cristina",
+			"Número": 28018,
+			"Votos": 23
+		},
+		{
+			"Candidato": "Ray",
+			"Número": 28333,
+			"Votos": 13
+		},
+		{
+			"Candidato": "Néa",
+			"Número": 28412,
+			"Votos": 0
+		},
+		{
+			"Candidato": "Euridice",
+			"Número": 28902,
+			"Votos": 0
+		}
+	],
+	"PSDC": [
+		{
+			"Candidato": "Marcos Di Bria",
+			"Número": 27000,
+			"Votos": 7355
+		},
+		{
+			"Candidato": "Toinho do União",
+			"Número": 27456,
+			"Votos": 5690
+		},
+		{
+			"Candidato": "Josemi Simões",
+			"Número": 27190,
+			"Votos": 4470
+		},
+		{
+			"Candidato": "Flávia Santos",
+			"Número": 27027,
+			"Votos": 2932
+		},
+		{
+			"Candidato": "Geraldo Queiros",
+			"Número": 27123,
+			"Votos": 1527
+		},
+		{
+			"Candidato": "Sula Esporte",
+			"Número": 27321,
+			"Votos": 730
+		},
+		{
+			"Candidato": "Mecinho",
+			"Número": 27789,
+			"Votos": 542
+		},
+		{
+			"Candidato": "Nildo Regente",
+			"Número": 27222,
+			"Votos": 538
+		},
+		{
+			"Candidato": "Nelson Monteiro",
+			"Número": 27333,
+			"Votos": 477
+		},
+		{
+			"Candidato": "Neto da Saúde",
+			"Número": 27275,
+			"Votos": 471
+		},
+		{
+			"Candidato": "Daniel Blay",
+			"Número": 27627,
+			"Votos": 469
+		},
+		{
+			"Candidato": "Zé da Rima",
+			"Número": 27900,
+			"Votos": 463
+		},
+		{
+			"Candidato": "Ricardo Bezerra",
+			"Número": 27270,
+			"Votos": 360
+		},
+		{
+			"Candidato": "Sonia Lins",
+			"Número": 27772,
+			"Votos": 336
+		},
+		{
+			"Candidato": "Andre Cabeleireiro",
+			"Número": 27111,
+			"Votos": 325
+		},
+		{
+			"Candidato": "Sargento João Evangelista",
+			"Número": 27766,
+			"Votos": 235
+		},
+		{
+			"Candidato": "Walmir Locutor",
+			"Número": 27877,
+			"Votos": 233
+		},
+		{
+			"Candidato": "Michelle de Afogados",
+			"Número": 27224,
+			"Votos": 223
+		},
+		{
+			"Candidato": "Margarete Medeiros",
+			"Número": 27334,
+			"Votos": 200
+		},
+		{
+			"Candidato": "Ismael Rodrigues",
+			"Número": 27189,
+			"Votos": 153
+		},
+		{
+			"Candidato": "Eduardo Belmiro",
+			"Número": 27686,
+			"Votos": 145
+		},
+		{
+			"Candidato": "João do Morro",
+			"Número": 27649,
+			"Votos": 128
+		},
+		{
+			"Candidato": "Fabio Moura",
+			"Número": 27035,
+			"Votos": 124
+		},
+		{
+			"Candidato": "Jorge Trajano",
+			"Número": 27555,
+			"Votos": 120
+		},
+		{
+			"Candidato": "Bruna Roxinho",
+			"Número": 27294,
+			"Votos": 98
+		},
+		{
+			"Candidato": "Braz Filho",
+			"Número": 27777,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Marta Motoqueira",
+			"Número": 27750,
+			"Votos": 78
+		},
+		{
+			"Candidato": "Professora Mônica",
+			"Número": 27207,
+			"Votos": 69
+		},
+		{
+			"Candidato": "Malba Bemvindo",
+			"Número": 27677,
+			"Votos": 67
+		},
+		{
+			"Candidato": "Nilza",
+			"Número": 27320,
+			"Votos": 50
+		},
+		{
+			"Candidato": "Joseles Ribeiro",
+			"Número": 27727,
+			"Votos": 44
+		},
+		{
+			"Candidato": "Carlos Siqueira",
+			"Número": 27115,
+			"Votos": 37
+		},
+		{
+			"Candidato": "Tony Claiton",
+			"Número": 27382,
+			"Votos": 32
+		},
+		{
+			"Candidato": "Tavinho",
+			"Número": 27007,
+			"Votos": 18
+		},
+		{
+			"Candidato": "Professora Elaine",
+			"Número": 27306,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Renata Cybelle",
+			"Número": 27232,
+			"Votos": 9
+		},
+		{
+			"Candidato": "Wellington Mídia",
+			"Número": 27100,
+			"Votos": 4
+		},
+		{
+			"Candidato": "Matuto do Coque",
+			"Número": 27127,
+			"Votos": 2
+		},
+		{
+			"Candidato": "Tania da Guabiraba",
+			"Número": 27423,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Galega de Santo Amaro",
+			"Número": 27444,
+			"Votos": 1
+		}
+	],
+	"PC do B": [
+		{
+			"Candidato": "Almir Fernando",
+			"Número": 65147,
+			"Votos": 6852
+		},
+		{
+			"Candidato": "Cida Pedrosa",
+			"Número": 65613,
+			"Votos": 3682
+		},
+		{
+			"Candidato": "George Braga",
+			"Número": 65000,
+			"Votos": 2937
+		},
+		{
+			"Candidato": "Dr. Antônio Stênio",
+			"Número": 65400,
+			"Votos": 2902
+		},
+		{
+			"Candidato": "Silano Barros",
+			"Número": 65065,
+			"Votos": 1676
+		},
+		{
+			"Candidato": "Waldemis Ferreira",
+			"Número": 65555,
+			"Votos": 1610
+		},
+		{
+			"Candidato": "Prof. Zé Luís",
+			"Número": 65100,
+			"Votos": 1447
+		},
+		{
+			"Candidato": "Melka",
+			"Número": 65111,
+			"Votos": 740
+		},
+		{
+			"Candidato": "Prof. Elismário",
+			"Número": 65700,
+			"Votos": 595
+		},
+		{
+			"Candidato": "Marcela Marques",
+			"Número": 65333,
+			"Votos": 541
+		},
+		{
+			"Candidato": "Profº Marcos",
+			"Número": 65165,
+			"Votos": 453
+		},
+		{
+			"Candidato": "Pastor Ailton",
+			"Número": 65070,
+			"Votos": 394
+		},
+		{
+			"Candidato": "Irmão Reginaldo",
+			"Número": 65465,
+			"Votos": 339
+		},
+		{
+			"Candidato": "Erivan Correia",
+			"Número": 65242,
+			"Votos": 307
+		},
+		{
+			"Candidato": "Aldemir Brasil",
+			"Número": 65027,
+			"Votos": 282
+		},
+		{
+			"Candidato": "Eliseu Magno",
+			"Número": 65123,
+			"Votos": 275
+		},
+		{
+			"Candidato": "Professora Verônica Duarte",
+			"Número": 65173,
+			"Votos": 268
+		},
+		{
+			"Candidato": "Xandy Show Lgbt",
+			"Número": 65324,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Castro",
+			"Número": 65444,
+			"Votos": 176
+		},
+		{
+			"Candidato": "Profº Cícero Vieira",
+			"Número": 65550,
+			"Votos": 167
+		},
+		{
+			"Candidato": "Sanclair",
+			"Número": 65727,
+			"Votos": 147
+		},
+		{
+			"Candidato": "Taciana Valença",
+			"Número": 65222,
+			"Votos": 134
+		},
+		{
+			"Candidato": "Sandra Braga",
+			"Número": 65949,
+			"Votos": 92
+		},
+		{
+			"Candidato": "Wellington",
+			"Número": 65633,
+			"Votos": 87
+		},
+		{
+			"Candidato": "Ronaldo José de Lima",
+			"Número": 65315,
+			"Votos": 54
+		},
+		{
+			"Candidato": "Priu Duarte",
+			"Número": 65777,
+			"Votos": 35
+		},
+		{
+			"Candidato": "Silva Junior",
+			"Número": 65660,
+			"Votos": 29
+		},
+		{
+			"Candidato": "Sandra Lee",
+			"Número": 65087,
+			"Votos": 22
+		},
+		{
+			"Candidato": "Carmem Nascimento",
+			"Número": 65270,
+			"Votos": 12
+		}
+	],
+	"PTC": [
+		{
+			"Candidato": "Eriberto Rafael",
+			"Número": 36111,
+			"Votos": 6158
+		},
+		{
+			"Candidato": "Manoel Pinheiro",
+			"Número": 36777,
+			"Votos": 2744
+		},
+		{
+			"Candidato": "Nelsinho",
+			"Número": 36055,
+			"Votos": 2689
+		},
+		{
+			"Candidato": "Henrique Conde",
+			"Número": 36166,
+			"Votos": 1892
+		},
+		{
+			"Candidato": "Edson Alves",
+			"Número": 36123,
+			"Votos": 1695
+		},
+		{
+			"Candidato": "Marco Será",
+			"Número": 36456,
+			"Votos": 1486
+		},
+		{
+			"Candidato": "Sandro Lima",
+			"Número": 36633,
+			"Votos": 1329
+		},
+		{
+			"Candidato": "Edilson do Metro",
+			"Número": 36890,
+			"Votos": 1311
+		},
+		{
+			"Candidato": "Angelo Lima",
+			"Número": 36363,
+			"Votos": 984
+		},
+		{
+			"Candidato": "Murilo Vieira",
+			"Número": 36193,
+			"Votos": 908
+		},
+		{
+			"Candidato": "Washington Pm",
+			"Número": 36190,
+			"Votos": 873
+		},
+		{
+			"Candidato": "Leo da Auto Escola",
+			"Número": 36736,
+			"Votos": 723
+		},
+		{
+			"Candidato": "Irmão Moisés Eurico",
+			"Número": 36036,
+			"Votos": 715
+		},
+		{
+			"Candidato": "Agostinho Ferraz",
+			"Número": 36040,
+			"Votos": 700
+		},
+		{
+			"Candidato": "Lincoln Cabral",
+			"Número": 36999,
+			"Votos": 587
+		},
+		{
+			"Candidato": "Ednaldo Barros",
+			"Número": 36013,
+			"Votos": 534
+		},
+		{
+			"Candidato": "Douglas Porto",
+			"Número": 36536,
+			"Votos": 520
+		},
+		{
+			"Candidato": "Alcimar Dias",
+			"Número": 36126,
+			"Votos": 511
+		},
+		{
+			"Candidato": "Bibiu",
+			"Número": 36555,
+			"Votos": 478
+		},
+		{
+			"Candidato": "Demar",
+			"Número": 36011,
+			"Votos": 460
+		},
+		{
+			"Candidato": "Samuel Campos",
+			"Número": 36000,
+			"Votos": 414
+		},
+		{
+			"Candidato": "Ricardo da Xerox",
+			"Número": 36007,
+			"Votos": 389
+		},
+		{
+			"Candidato": "Miranda Queza",
+			"Número": 36554,
+			"Votos": 385
+		},
+		{
+			"Candidato": "Genilson Monteiro",
+			"Número": 36789,
+			"Votos": 362
+		},
+		{
+			"Candidato": "Avaneide Scanoni Neidinha",
+			"Número": 36012,
+			"Votos": 296
+		},
+		{
+			"Candidato": "Irá",
+			"Número": 36066,
+			"Votos": 293
+		},
+		{
+			"Candidato": "Binha",
+			"Número": 36500,
+			"Votos": 282
+		},
+		{
+			"Candidato": "Marcos Andrade",
+			"Número": 36576,
+			"Votos": 260
+		},
+		{
+			"Candidato": "Gildo Tv",
+			"Número": 36678,
+			"Votos": 257
+		},
+		{
+			"Candidato": "Izaias Guimaraes",
+			"Número": 36222,
+			"Votos": 249
+		},
+		{
+			"Candidato": "Otaviano Paulino",
+			"Número": 36119,
+			"Votos": 190
+		},
+		{
+			"Candidato": "Nestor Ananias",
+			"Número": 36912,
+			"Votos": 188
+		},
+		{
+			"Candidato": "Gecilene Valeria",
+			"Número": 36100,
+			"Votos": 170
+		},
+		{
+			"Candidato": "Salome Nunes",
+			"Número": 36888,
+			"Votos": 132
+		},
+		{
+			"Candidato": "Gilmar da Silva",
+			"Número": 36206,
+			"Votos": 124
+		},
+		{
+			"Candidato": "Andre Café",
+			"Número": 36077,
+			"Votos": 120
+		},
+		{
+			"Candidato": "Suboficial Ramos",
+			"Número": 36061,
+			"Votos": 109
+		},
+		{
+			"Candidato": "Gracinha Pinheiro",
+			"Número": 36411,
+			"Votos": 102
+		},
+		{
+			"Candidato": "Monica Lima",
+			"Número": 36030,
+			"Votos": 92
+		},
+		{
+			"Candidato": "Cristina Queiroz",
+			"Número": 36788,
+			"Votos": 88
+		},
+		{
+			"Candidato": "Rosa Marques",
+			"Número": 36333,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Carlos Braz Indio",
+			"Número": 36765,
+			"Votos": 75
+		},
+		{
+			"Candidato": "Denny Michel",
+			"Número": 36143,
+			"Votos": 58
+		},
+		{
+			"Candidato": "Vanessa Campos",
+			"Número": 36112,
+			"Votos": 58
+		},
+		{
+			"Candidato": "Eliane Lima",
+			"Número": 36911,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Raphaela Duarte",
+			"Número": 36444,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Anderson Campos",
+			"Número": 36377,
+			"Votos": 50
+		},
+		{
+			"Candidato": "Dalva Moura",
+			"Número": 36106,
+			"Votos": 46
+		},
+		{
+			"Candidato": "Mario Rissin",
+			"Número": 36468,
+			"Votos": 46
+		},
+		{
+			"Candidato": "Seu Roberto O Homem Certo",
+			"Número": 36008,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Suzana Abreu",
+			"Número": 36666,
+			"Votos": 33
+		},
+		{
+			"Candidato": "Flavia Alves",
+			"Número": 36234,
+			"Votos": 30
+		},
+		{
+			"Candidato": "Lidice Britto",
+			"Número": 36300,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Marly Catalógos",
+			"Número": 36360,
+			"Votos": 10
+		},
+		{
+			"Candidato": "Roberta Padilha",
+			"Número": 36182,
+			"Votos": 5
+		},
+		{
+			"Candidato": "Luciana Moura",
+			"Número": 36700,
+			"Votos": 2
+		},
+		{
+			"Candidato": "Dona Fufu",
+			"Número": 36900,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Neco Recife",
+			"Número": 36800,
+			"Votos": 1
+		}
+	],
+	"PSD": [
+		{
+			"Candidato": "Gilberto Alves",
+			"Número": 55040,
+			"Votos": 5390
+		},
+		{
+			"Candidato": "Fabio Gomes",
+			"Número": 55123,
+			"Votos": 4268
+		},
+		{
+			"Candidato": "Eri",
+			"Número": 55166,
+			"Votos": 3599
+		},
+		{
+			"Candidato": "Augustinho Carrara",
+			"Número": 55550,
+			"Votos": 2726
+		},
+		{
+			"Candidato": "Eduardo Figueiredo",
+			"Número": 55444,
+			"Votos": 2298
+		},
+		{
+			"Candidato": "Ronaldo Lopes",
+			"Número": 55222,
+			"Votos": 2142
+		},
+		{
+			"Candidato": "Nelio Fonseca",
+			"Número": 55001,
+			"Votos": 1336
+		},
+		{
+			"Candidato": "Irmão Valmir",
+			"Número": 55333,
+			"Votos": 1250
+		},
+		{
+			"Candidato": "Fillip da Farmácia",
+			"Número": 55655,
+			"Votos": 1154
+		},
+		{
+			"Candidato": "Leandro Boca",
+			"Número": 55122,
+			"Votos": 911
+		},
+		{
+			"Candidato": "Sergio Aroucha",
+			"Número": 55155,
+			"Votos": 885
+		},
+		{
+			"Candidato": "Irmão Ronaldo da Rádio",
+			"Número": 55114,
+			"Votos": 832
+		},
+		{
+			"Candidato": "Angela Dantas",
+			"Número": 55551,
+			"Votos": 803
+		},
+		{
+			"Candidato": "Prof. Paulo Maciel",
+			"Número": 55180,
+			"Votos": 691
+		},
+		{
+			"Candidato": "Paulo de Tassio",
+			"Número": 55100,
+			"Votos": 472
+		},
+		{
+			"Candidato": "Rafa Lima",
+			"Número": 55110,
+			"Votos": 400
+		},
+		{
+			"Candidato": "Doutor Penha",
+			"Número": 55000,
+			"Votos": 331
+		},
+		{
+			"Candidato": "Italo Bruno",
+			"Número": 55255,
+			"Votos": 331
+		},
+		{
+			"Candidato": "Pastor Fabianno Felix",
+			"Número": 55755,
+			"Votos": 263
+		},
+		{
+			"Candidato": "Van do Forró",
+			"Número": 55055,
+			"Votos": 225
+		},
+		{
+			"Candidato": "Nilda",
+			"Número": 55014,
+			"Votos": 219
+		},
+		{
+			"Candidato": "Gemeos da Capotaria",
+			"Número": 55130,
+			"Votos": 207
+		},
+		{
+			"Candidato": "Adilson Bito",
+			"Número": 55112,
+			"Votos": 189
+		},
+		{
+			"Candidato": "João Henrique",
+			"Número": 55455,
+			"Votos": 183
+		},
+		{
+			"Candidato": "Paulinho da Vila dos Bancários",
+			"Número": 55002,
+			"Votos": 159
+		},
+		{
+			"Candidato": "Paquito",
+			"Número": 55032,
+			"Votos": 159
+		},
+		{
+			"Candidato": "Pastor Jefferson Gomes",
+			"Número": 55234,
+			"Votos": 154
+		},
+		{
+			"Candidato": "Ana Viana",
+			"Número": 55999,
+			"Votos": 103
+		},
+		{
+			"Candidato": "Irmã Rosane",
+			"Número": 55205,
+			"Votos": 95
+		},
+		{
+			"Candidato": "Lucas Estevão",
+			"Número": 55855,
+			"Votos": 93
+		},
+		{
+			"Candidato": "Pereirão",
+			"Número": 55163,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Lia da Macaxeira",
+			"Número": 55202,
+			"Votos": 75
+		},
+		{
+			"Candidato": "Fernando Encarnação",
+			"Número": 55345,
+			"Votos": 59
+		},
+		{
+			"Candidato": "Fabia",
+			"Número": 55911,
+			"Votos": 57
+		},
+		{
+			"Candidato": "Dione Moura",
+			"Número": 55788,
+			"Votos": 52
+		},
+		{
+			"Candidato": "Matuto do Armazem",
+			"Número": 55676,
+			"Votos": 39
+		},
+		{
+			"Candidato": "Vanda Silva",
+			"Número": 55355,
+			"Votos": 29
+		},
+		{
+			"Candidato": "Marcia Leite",
+			"Número": 55069,
+			"Votos": 28
+		},
+		{
+			"Candidato": "Adriane D'yewa",
+			"Número": 55236,
+			"Votos": 18
+		},
+		{
+			"Candidato": "João Bené",
+			"Número": 55022,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Jamerson Dantas",
+			"Número": 55321,
+			"Votos": 0
+		}
+	],
+	"PRP": [
+		{
+			"Candidato": "Aerto Luna",
+			"Número": 44123,
+			"Votos": 5216
+		},
+		{
+			"Candidato": "Professor Erivelte",
+			"Número": 44122,
+			"Votos": 2437
+		},
+		{
+			"Candidato": "Bob do Táxi",
+			"Número": 44100,
+			"Votos": 1494
+		},
+		{
+			"Candidato": "Jarlan",
+			"Número": 44222,
+			"Votos": 1090
+		},
+		{
+			"Candidato": "Iremar Júnior",
+			"Número": 44555,
+			"Votos": 882
+		},
+		{
+			"Candidato": "Minininho",
+			"Número": 44344,
+			"Votos": 790
+		},
+		{
+			"Candidato": "Igor Alves",
+			"Número": 44144,
+			"Votos": 664
+		},
+		{
+			"Candidato": "Arinaldo Fulco Aba",
+			"Número": 44111,
+			"Votos": 568
+		},
+		{
+			"Candidato": "Dilson Costa",
+			"Número": 44744,
+			"Votos": 552
+		},
+		{
+			"Candidato": "Nadilene Ribeiro",
+			"Número": 44200,
+			"Votos": 529
+		},
+		{
+			"Candidato": "Valdomiro Moraes",
+			"Número": 44244,
+			"Votos": 484
+		},
+		{
+			"Candidato": "Edivaldo Valentin",
+			"Número": 44044,
+			"Votos": 481
+		},
+		{
+			"Candidato": "Irmão Rolly",
+			"Número": 44155,
+			"Votos": 446
+		},
+		{
+			"Candidato": "Gabriel Lima",
+			"Número": 44983,
+			"Votos": 406
+		},
+		{
+			"Candidato": "Zé Roberto",
+			"Número": 44566,
+			"Votos": 392
+		},
+		{
+			"Candidato": "Flora Pimentel",
+			"Número": 44800,
+			"Votos": 388
+		},
+		{
+			"Candidato": "Professor Luizinho",
+			"Número": 44099,
+			"Votos": 383
+		},
+		{
+			"Candidato": "Paulo Belence",
+			"Número": 44220,
+			"Votos": 372
+		},
+		{
+			"Candidato": "Binho Souza",
+			"Número": 44777,
+			"Votos": 369
+		},
+		{
+			"Candidato": "Rubem Moraes",
+			"Número": 44456,
+			"Votos": 353
+		},
+		{
+			"Candidato": "Shirlene Queiroz",
+			"Número": 44999,
+			"Votos": 333
+		},
+		{
+			"Candidato": "Geovane Barbosa",
+			"Número": 44234,
+			"Votos": 321
+		},
+		{
+			"Candidato": "Sergio do Camarão",
+			"Número": 44129,
+			"Votos": 302
+		},
+		{
+			"Candidato": "Waldyr Santos",
+			"Número": 44022,
+			"Votos": 296
+		},
+		{
+			"Candidato": "Pedro Silva",
+			"Número": 44024,
+			"Votos": 286
+		},
+		{
+			"Candidato": "Carlos Fernando",
+			"Número": 44500,
+			"Votos": 246
+		},
+		{
+			"Candidato": "Washington Leandro",
+			"Número": 44369,
+			"Votos": 228
+		},
+		{
+			"Candidato": "Dirceu",
+			"Número": 44544,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Mano Coragem",
+			"Número": 44644,
+			"Votos": 178
+		},
+		{
+			"Candidato": "Djalma Nunes",
+			"Número": 44321,
+			"Votos": 141
+		},
+		{
+			"Candidato": "Mateus Seixas",
+			"Número": 44007,
+			"Votos": 129
+		},
+		{
+			"Candidato": "Professora Arlete Moreira",
+			"Número": 44888,
+			"Votos": 128
+		},
+		{
+			"Candidato": "Dayse Helena",
+			"Número": 44188,
+			"Votos": 114
+		},
+		{
+			"Candidato": "Edson Nego Bom",
+			"Número": 44567,
+			"Votos": 108
+		},
+		{
+			"Candidato": "Ana Sampaio",
+			"Número": 44377,
+			"Votos": 105
+		},
+		{
+			"Candidato": "Marcos de Oliveira",
+			"Número": 44633,
+			"Votos": 104
+		},
+		{
+			"Candidato": "Marinete Machado",
+			"Número": 44400,
+			"Votos": 100
+		},
+		{
+			"Candidato": "Luiz Florentino Ambientalista",
+			"Número": 44600,
+			"Votos": 94
+		},
+		{
+			"Candidato": "Luciana Barros Caniço",
+			"Número": 44190,
+			"Votos": 91
+		},
+		{
+			"Candidato": "Wellington Mota",
+			"Número": 44666,
+			"Votos": 84
+		},
+		{
+			"Candidato": "Roberto Santos",
+			"Número": 44333,
+			"Votos": 84
+		},
+		{
+			"Candidato": "Kris França",
+			"Número": 44000,
+			"Votos": 84
+		},
+		{
+			"Candidato": "Nivaldo Lopes",
+			"Número": 44557,
+			"Votos": 77
+		},
+		{
+			"Candidato": "Tânia Borges",
+			"Número": 44300,
+			"Votos": 76
+		},
+		{
+			"Candidato": "Maria José",
+			"Número": 44119,
+			"Votos": 75
+		},
+		{
+			"Candidato": "Jair Porfirio",
+			"Número": 44133,
+			"Votos": 60
+		},
+		{
+			"Candidato": "Ramiro do Povo",
+			"Número": 44444,
+			"Votos": 59
+		},
+		{
+			"Candidato": "Eja Miguel",
+			"Número": 44767,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Toinho Amendoim",
+			"Número": 44440,
+			"Votos": 44
+		},
+		{
+			"Candidato": "Zé do Oculos",
+			"Número": 44345,
+			"Votos": 38
+		},
+		{
+			"Candidato": "Ana Paula",
+			"Número": 44722,
+			"Votos": 37
+		},
+		{
+			"Candidato": "Roberta Moura",
+			"Número": 44040,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Eliene Felipe",
+			"Número": 44844,
+			"Votos": 11
+		},
+		{
+			"Candidato": "Erika Correia",
+			"Número": 44678,
+			"Votos": 3
+		}
+	],
+	"PSOL": [
+		{
+			"Candidato": "Ivan Moraes",
+			"Número": 50100,
+			"Votos": 5203
+		},
+		{
+			"Candidato": "Albanise",
+			"Número": 50000,
+			"Votos": 4606
+		},
+		{
+			"Candidato": "Bione",
+			"Número": 50222,
+			"Votos": 2570
+		},
+		{
+			"Candidato": "Severino",
+			"Número": 50123,
+			"Votos": 2287
+		},
+		{
+			"Candidato": "Pedro Josephi",
+			"Número": 50500,
+			"Votos": 1566
+		},
+		{
+			"Candidato": "Leo Cisneiros",
+			"Número": 50007,
+			"Votos": 1390
+		},
+		{
+			"Candidato": "Thiago Carvalho",
+			"Número": 50650,
+			"Votos": 1197
+		},
+		{
+			"Candidato": "Zé Gomes",
+			"Número": 50555,
+			"Votos": 512
+		},
+		{
+			"Candidato": "Antonia Elizabete",
+			"Número": 50321,
+			"Votos": 449
+		},
+		{
+			"Candidato": "Jailson",
+			"Número": 50012,
+			"Votos": 372
+		},
+		{
+			"Candidato": "Roberto Numeriano",
+			"Número": 50021,
+			"Votos": 279
+		},
+		{
+			"Candidato": "Varjal",
+			"Número": 50789,
+			"Votos": 270
+		},
+		{
+			"Candidato": "Albérico Sigismundo",
+			"Número": 50641,
+			"Votos": 254
+		},
+		{
+			"Candidato": "Abigail da Saúde",
+			"Número": 50111,
+			"Votos": 215
+		},
+		{
+			"Candidato": "Marcinho",
+			"Número": 50020,
+			"Votos": 196
+		},
+		{
+			"Candidato": "Sérgio dos Metalúrgicos",
+			"Número": 50600,
+			"Votos": 92
+		},
+		{
+			"Candidato": "Leticia Oliveira",
+			"Número": 50629,
+			"Votos": 74
+		},
+		{
+			"Candidato": "Micelia Simplicio",
+			"Número": 50522,
+			"Votos": 70
+		},
+		{
+			"Candidato": "Ana Ligia",
+			"Número": 50005,
+			"Votos": 44
+		},
+		{
+			"Candidato": "Marney",
+			"Número": 50900,
+			"Votos": 42
+		},
+		{
+			"Candidato": "Prof Felipe Menezes",
+			"Número": 50003,
+			"Votos": 42
+		},
+		{
+			"Candidato": "Priscila",
+			"Número": 50075,
+			"Votos": 18
+		},
+		{
+			"Candidato": "Cristiane Silva",
+			"Número": 50110,
+			"Votos": 11
+		},
+		{
+			"Candidato": "Inaldo Monteiro",
+			"Número": 50150,
+			"Votos": 0
+		}
+	],
+	"PSL": [
+		{
+			"Candidato": "Dr Rogério Lucca",
+			"Número": 17417,
+			"Votos": 5093
+		},
+		{
+			"Candidato": "Karla Falcão",
+			"Número": 17700,
+			"Votos": 2046
+		},
+		{
+			"Candidato": "Henrique Marreco Leite",
+			"Número": 17609,
+			"Votos": 1328
+		},
+		{
+			"Candidato": "Marquinho Taxista",
+			"Número": 17699,
+			"Votos": 375
+		},
+		{
+			"Candidato": "Murilo Dias",
+			"Número": 17458,
+			"Votos": 354
+		},
+		{
+			"Candidato": "Marco Bala",
+			"Número": 17777,
+			"Votos": 161
+		},
+		{
+			"Candidato": "Professor Silvio Diniz",
+			"Número": 17455,
+			"Votos": 156
+		},
+		{
+			"Candidato": "Irmão Adriano",
+			"Número": 17567,
+			"Votos": 116
+		},
+		{
+			"Candidato": "Erika Siqueira",
+			"Número": 17123,
+			"Votos": 74
+		},
+		{
+			"Candidato": "Capinha",
+			"Número": 17222,
+			"Votos": 57
+		},
+		{
+			"Candidato": "Cabuloso",
+			"Número": 17800,
+			"Votos": 38
+		},
+		{
+			"Candidato": "Marcilio Lessa",
+			"Número": 17111,
+			"Votos": 28
+		},
+		{
+			"Candidato": "Brazuca",
+			"Número": 17007,
+			"Votos": 15
+		}
+	],
+	"PPS": [
+		{
+			"Candidato": "Ricardo Cruz",
+			"Número": 23456,
+			"Votos": 4547
+		},
+		{
+			"Candidato": "Dra. Vera Lopes",
+			"Número": 23655,
+			"Votos": 4146
+		},
+		{
+			"Candidato": "Maria do Céu",
+			"Número": 23024,
+			"Votos": 3704
+		},
+		{
+			"Candidato": "Felipe Ferreira Lima",
+			"Número": 23111,
+			"Votos": 1351
+		},
+		{
+			"Candidato": "Neto Guerreiro",
+			"Número": 23123,
+			"Votos": 909
+		},
+		{
+			"Candidato": "Fred Brennand",
+			"Número": 23012,
+			"Votos": 595
+		},
+		{
+			"Candidato": "Érico Santos",
+			"Número": 23025,
+			"Votos": 502
+		},
+		{
+			"Candidato": "Alcinéa Padilha",
+			"Número": 23600,
+			"Votos": 398
+		},
+		{
+			"Candidato": "Pipita",
+			"Número": 23338,
+			"Votos": 391
+		},
+		{
+			"Candidato": "Jefferson Cesar",
+			"Número": 23323,
+			"Votos": 354
+		},
+		{
+			"Candidato": "Kátia Gomes",
+			"Número": 23533,
+			"Votos": 310
+		},
+		{
+			"Candidato": "Pitter Bull Cabelereiro",
+			"Número": 23100,
+			"Votos": 288
+		},
+		{
+			"Candidato": "Pedro Cabeleireiro",
+			"Número": 23201,
+			"Votos": 283
+		},
+		{
+			"Candidato": "João Rafael",
+			"Número": 23900,
+			"Votos": 240
+		},
+		{
+			"Candidato": "Val do Posto",
+			"Número": 23669,
+			"Votos": 227
+		},
+		{
+			"Candidato": "Sandro Ferraz",
+			"Número": 23523,
+			"Votos": 225
+		},
+		{
+			"Candidato": "Robson Leite",
+			"Número": 23155,
+			"Votos": 178
+		},
+		{
+			"Candidato": "Sargento Costa",
+			"Número": 23190,
+			"Votos": 157
+		},
+		{
+			"Candidato": "Natanael Freitas",
+			"Número": 23447,
+			"Votos": 155
+		},
+		{
+			"Candidato": "Higo Lira",
+			"Número": 23333,
+			"Votos": 147
+		},
+		{
+			"Candidato": "Paulo Cavalcanti",
+			"Número": 23222,
+			"Votos": 142
+		},
+		{
+			"Candidato": "Ivo Barros",
+			"Número": 23555,
+			"Votos": 141
+		},
+		{
+			"Candidato": "Bosco Cantor",
+			"Número": 23242,
+			"Votos": 134
+		},
+		{
+			"Candidato": "Cibele Reis",
+			"Número": 23357,
+			"Votos": 129
+		},
+		{
+			"Candidato": "Paco Fonseca",
+			"Número": 23023,
+			"Votos": 127
+		},
+		{
+			"Candidato": "Rocha Monteiro",
+			"Número": 23232,
+			"Votos": 124
+		},
+		{
+			"Candidato": "Cláudio Chicão",
+			"Número": 23162,
+			"Votos": 115
+		},
+		{
+			"Candidato": "Djyjo",
+			"Número": 23723,
+			"Votos": 113
+		},
+		{
+			"Candidato": "Cleberson Ferreira",
+			"Número": 23161,
+			"Votos": 111
+		},
+		{
+			"Candidato": "Candido",
+			"Número": 23744,
+			"Votos": 110
+		},
+		{
+			"Candidato": "Irmão Rivaldo Filho",
+			"Número": 23027,
+			"Votos": 108
+		},
+		{
+			"Candidato": "Guga Oinho",
+			"Número": 23231,
+			"Votos": 107
+		},
+		{
+			"Candidato": "Rosa Maria",
+			"Número": 23205,
+			"Votos": 104
+		},
+		{
+			"Candidato": "Demetrius Rezende",
+			"Número": 23007,
+			"Votos": 104
+		},
+		{
+			"Candidato": "Tia Nina",
+			"Número": 23500,
+			"Votos": 81
+		},
+		{
+			"Candidato": "Capelão Osvaldo",
+			"Número": 23125,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Branca",
+			"Número": 23233,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Irandi",
+			"Número": 23002,
+			"Votos": 74
+		},
+		{
+			"Candidato": "Luciana (nana)",
+			"Número": 23663,
+			"Votos": 65
+		},
+		{
+			"Candidato": "Agenor da Água",
+			"Número": 23001,
+			"Votos": 61
+		},
+		{
+			"Candidato": "Adriana Alves",
+			"Número": 23979,
+			"Votos": 58
+		},
+		{
+			"Candidato": "Robinho de Casa Amarela",
+			"Número": 23276,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Luzinete",
+			"Número": 23030,
+			"Votos": 47
+		},
+		{
+			"Candidato": "Joab Henrique",
+			"Número": 23999,
+			"Votos": 41
+		},
+		{
+			"Candidato": "Tia Lucy",
+			"Número": 23330,
+			"Votos": 39
+		},
+		{
+			"Candidato": "Eline Natalia",
+			"Número": 23635,
+			"Votos": 39
+		},
+		{
+			"Candidato": "Professor Joaquim Marques",
+			"Número": 23646,
+			"Votos": 34
+		},
+		{
+			"Candidato": "Pastor Crhistian Lisboa",
+			"Número": 23141,
+			"Votos": 29
+		},
+		{
+			"Candidato": "Thiago Mágico",
+			"Número": 23223,
+			"Votos": 27
+		},
+		{
+			"Candidato": "Rose da Bomba",
+			"Número": 23251,
+			"Votos": 25
+		},
+		{
+			"Candidato": "Erika",
+			"Número": 23503,
+			"Votos": 22
+		},
+		{
+			"Candidato": "Beatriz Simplicio",
+			"Número": 23467,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Washington de Souza",
+			"Número": 23666,
+			"Votos": 15
+		},
+		{
+			"Candidato": "Sidnei",
+			"Número": 23757,
+			"Votos": 12
+		},
+		{
+			"Candidato": "Adriana Freire",
+			"Número": 23332,
+			"Votos": 9
+		},
+		{
+			"Candidato": "Walter Freitas",
+			"Número": 23000,
+			"Votos": 0
+		},
+		{
+			"Candidato": "André Frutuoso",
+			"Número": 23623,
+			"Votos": 0
+		}
+	],
+	"SD": [
+		{
+			"Candidato": "Rodrigo Coutinho",
+			"Número": 77777,
+			"Votos": 4300
+		},
+		{
+			"Candidato": "Vânio Silva",
+			"Número": 77977,
+			"Votos": 3850
+		},
+		{
+			"Candidato": "Professor Paulo Roberto",
+			"Número": 77077,
+			"Votos": 2680
+		},
+		{
+			"Candidato": "Josenildo Sinesio",
+			"Número": 77123,
+			"Votos": 1621
+		},
+		{
+			"Candidato": "Atravessando A Nado",
+			"Número": 77632,
+			"Votos": 1580
+		},
+		{
+			"Candidato": "Beatriz Vidal",
+			"Número": 77000,
+			"Votos": 1355
+		},
+		{
+			"Candidato": "Geferson Silva",
+			"Número": 77112,
+			"Votos": 855
+		},
+		{
+			"Candidato": "George Laranjeira Gibson",
+			"Número": 77111,
+			"Votos": 709
+		},
+		{
+			"Candidato": "Ronald Oliveira",
+			"Número": 77555,
+			"Votos": 697
+		},
+		{
+			"Candidato": "Júnior Barros",
+			"Número": 77700,
+			"Votos": 545
+		},
+		{
+			"Candidato": "Suely Guimarães",
+			"Número": 77770,
+			"Votos": 472
+		},
+		{
+			"Candidato": "Henrique",
+			"Número": 77177,
+			"Votos": 459
+		},
+		{
+			"Candidato": "Elpidio Araújo",
+			"Número": 77877,
+			"Votos": 409
+		},
+		{
+			"Candidato": "Marinho Junior",
+			"Número": 77210,
+			"Votos": 391
+		},
+		{
+			"Candidato": "Adrian Passos",
+			"Número": 77600,
+			"Votos": 372
+		},
+		{
+			"Candidato": "Lira Junior",
+			"Número": 77377,
+			"Votos": 359
+		},
+		{
+			"Candidato": "Coronel Guarines",
+			"Número": 77888,
+			"Votos": 338
+		},
+		{
+			"Candidato": "Pastor Fernando",
+			"Número": 77028,
+			"Votos": 330
+		},
+		{
+			"Candidato": "Kinco",
+			"Número": 77333,
+			"Votos": 308
+		},
+		{
+			"Candidato": "Jamil Gomes",
+			"Número": 77477,
+			"Votos": 304
+		},
+		{
+			"Candidato": "Genilson Pontes",
+			"Número": 77353,
+			"Votos": 235
+		},
+		{
+			"Candidato": "Irmã Tia Nita",
+			"Número": 77422,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Antonio Monteiro",
+			"Número": 77677,
+			"Votos": 195
+		},
+		{
+			"Candidato": "Oliveira",
+			"Número": 77233,
+			"Votos": 159
+		},
+		{
+			"Candidato": "Suely Dantas",
+			"Número": 77222,
+			"Votos": 156
+		},
+		{
+			"Candidato": "Marcos do Peixe",
+			"Número": 77007,
+			"Votos": 152
+		},
+		{
+			"Candidato": "Jonatas Santos",
+			"Número": 77779,
+			"Votos": 148
+		},
+		{
+			"Candidato": "Claudia Simone",
+			"Número": 77121,
+			"Votos": 145
+		},
+		{
+			"Candidato": "Marcos André É Só Vitória",
+			"Número": 77707,
+			"Votos": 142
+		},
+		{
+			"Candidato": "Rinaldo Db",
+			"Número": 77277,
+			"Votos": 140
+		},
+		{
+			"Candidato": "Pr. Jorge Gloriona",
+			"Número": 77200,
+			"Votos": 133
+		},
+		{
+			"Candidato": "Carreta",
+			"Número": 77444,
+			"Votos": 132
+		},
+		{
+			"Candidato": "Jana Matias",
+			"Número": 77654,
+			"Votos": 124
+		},
+		{
+			"Candidato": "Jota Justino",
+			"Número": 77070,
+			"Votos": 121
+		},
+		{
+			"Candidato": "Marcos Pedro",
+			"Número": 77713,
+			"Votos": 120
+		},
+		{
+			"Candidato": "Irmã Lúcia",
+			"Número": 77731,
+			"Votos": 113
+		},
+		{
+			"Candidato": "Pindoba",
+			"Número": 77789,
+			"Votos": 110
+		},
+		{
+			"Candidato": "Marcos Bombeiro",
+			"Número": 77100,
+			"Votos": 102
+		},
+		{
+			"Candidato": "Bibi Silva",
+			"Número": 77889,
+			"Votos": 88
+		},
+		{
+			"Candidato": "Dr. Abner",
+			"Número": 77577,
+			"Votos": 85
+		},
+		{
+			"Candidato": "Fernando Drygala",
+			"Número": 77500,
+			"Votos": 84
+		},
+		{
+			"Candidato": "Pr. Félix Neto",
+			"Número": 77890,
+			"Votos": 83
+		},
+		{
+			"Candidato": "Carol de Graciete",
+			"Número": 77040,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Shirley França É de Coração",
+			"Número": 77101,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Josy Santos",
+			"Número": 77778,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Rejane Souza",
+			"Número": 77666,
+			"Votos": 47
+		},
+		{
+			"Candidato": "Robertão",
+			"Número": 77336,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Cassia Figueiredo",
+			"Número": 77800,
+			"Votos": 41
+		},
+		{
+			"Candidato": "Fernanda Rolim",
+			"Número": 77227,
+			"Votos": 38
+		},
+		{
+			"Candidato": "Davi da Refrigeração",
+			"Número": 77715,
+			"Votos": 36
+		},
+		{
+			"Candidato": "Natalício de Souza",
+			"Número": 77113,
+			"Votos": 36
+		},
+		{
+			"Candidato": "Pastor Charlles Braz",
+			"Número": 77122,
+			"Votos": 36
+		},
+		{
+			"Candidato": "Nina",
+			"Número": 77003,
+			"Votos": 28
+		},
+		{
+			"Candidato": "Izabelly Santos",
+			"Número": 77456,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Eliane do Espetinho",
+			"Número": 77999,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Pablo Castro",
+			"Número": 77900,
+			"Votos": 8
+		},
+		{
+			"Candidato": "Pinheiro Bahia",
+			"Número": 77678,
+			"Votos": 5
+		},
+		{
+			"Candidato": "Betinha Silva",
+			"Número": 77001,
+			"Votos": 5
+		}
+	],
+	"REDE": [
+		{
+			"Candidato": "Eurico Freire",
+			"Número": 18618,
+			"Votos": 6829
+		},
+		{
+			"Candidato": "Fernando Holanda",
+			"Número": 18123,
+			"Votos": 3480
+		},
+		{
+			"Candidato": "Leandro Souza",
+			"Número": 18018,
+			"Votos": 862
+		},
+		{
+			"Candidato": "Delegado Paulo Jeann",
+			"Número": 18190,
+			"Votos": 433
+		},
+		{
+			"Candidato": "Alexandre Diniz",
+			"Número": 18100,
+			"Votos": 187
+		},
+		{
+			"Candidato": "Elias Santos",
+			"Número": 18888,
+			"Votos": 155
+		},
+		{
+			"Candidato": "Junior Segurança",
+			"Número": 18000,
+			"Votos": 136
+		},
+		{
+			"Candidato": "Luciano Felix",
+			"Número": 18144,
+			"Votos": 105
+		}
+	],
+	"PV": [
+		{
+			"Candidato": "Rene Patriota",
+			"Número": 43433,
+			"Votos": 4561
+		},
+		{
+			"Candidato": "Zé Neto",
+			"Número": 43999,
+			"Votos": 3766
+		},
+		{
+			"Candidato": "Zezo Equipadora",
+			"Número": 43222,
+			"Votos": 1717
+		},
+		{
+			"Candidato": "Guga Carvalho",
+			"Número": 43800,
+			"Votos": 979
+		},
+		{
+			"Candidato": "Fábio Assis",
+			"Número": 43123,
+			"Votos": 816
+		},
+		{
+			"Candidato": "Silvania Carrilho",
+			"Número": 43888,
+			"Votos": 651
+		},
+		{
+			"Candidato": "Nuno Trigueiro",
+			"Número": 43430,
+			"Votos": 546
+		},
+		{
+			"Candidato": "Hamilton Buarque",
+			"Número": 43016,
+			"Votos": 489
+		},
+		{
+			"Candidato": "Anna Paula Carvalho",
+			"Número": 43333,
+			"Votos": 409
+		},
+		{
+			"Candidato": "André Inventor",
+			"Número": 43043,
+			"Votos": 374
+		},
+		{
+			"Candidato": "Marli Maravilha",
+			"Número": 43100,
+			"Votos": 319
+		},
+		{
+			"Candidato": "Luiz Ignácio",
+			"Número": 43643,
+			"Votos": 216
+		},
+		{
+			"Candidato": "Graça Vasconcelos",
+			"Número": 43151,
+			"Votos": 210
+		},
+		{
+			"Candidato": "Rileyde Almeida",
+			"Número": 43033,
+			"Votos": 204
+		},
+		{
+			"Candidato": "Claudio Cacau",
+			"Número": 43622,
+			"Votos": 202
+		},
+		{
+			"Candidato": "Marcos",
+			"Número": 43154,
+			"Votos": 175
+		},
+		{
+			"Candidato": "Rômulo Falcão",
+			"Número": 43122,
+			"Votos": 169
+		},
+		{
+			"Candidato": "Velho Barretto",
+			"Número": 43313,
+			"Votos": 156
+		},
+		{
+			"Candidato": "Sérgio Paulo",
+			"Número": 43210,
+			"Votos": 148
+		},
+		{
+			"Candidato": "Adriano Cordeiro",
+			"Número": 43343,
+			"Votos": 132
+		},
+		{
+			"Candidato": "Beto Mototáxi",
+			"Número": 43466,
+			"Votos": 123
+		},
+		{
+			"Candidato": "Machado",
+			"Número": 43295,
+			"Votos": 122
+		},
+		{
+			"Candidato": "Lucélia",
+			"Número": 43111,
+			"Votos": 115
+		},
+		{
+			"Candidato": "Rogerio Bessa",
+			"Número": 43000,
+			"Votos": 106
+		},
+		{
+			"Candidato": "Professor Santana",
+			"Número": 43613,
+			"Votos": 103
+		},
+		{
+			"Candidato": "Gustavo Figueiredo",
+			"Número": 43110,
+			"Votos": 101
+		},
+		{
+			"Candidato": "Lana Valentim",
+			"Número": 43143,
+			"Votos": 95
+		},
+		{
+			"Candidato": "Jucelia Teté",
+			"Número": 43400,
+			"Votos": 94
+		},
+		{
+			"Candidato": "Arcilon Amorim",
+			"Número": 43789,
+			"Votos": 89
+		},
+		{
+			"Candidato": "Antonio Filho",
+			"Número": 43678,
+			"Votos": 85
+		},
+		{
+			"Candidato": "Duda",
+			"Número": 43951,
+			"Votos": 84
+		},
+		{
+			"Candidato": "Mané da Copa",
+			"Número": 43456,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Diogo Mc Intyre",
+			"Número": 43420,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Sandro Soares",
+			"Número": 43811,
+			"Votos": 74
+		},
+		{
+			"Candidato": "Lenildo Giliard",
+			"Número": 43121,
+			"Votos": 73
+		},
+		{
+			"Candidato": "Charles Heitor",
+			"Número": 43221,
+			"Votos": 70
+		},
+		{
+			"Candidato": "He-man",
+			"Número": 43533,
+			"Votos": 62
+		},
+		{
+			"Candidato": "Rafa Almeida",
+			"Número": 43701,
+			"Votos": 54
+		},
+		{
+			"Candidato": "Maria Helena Mendes",
+			"Número": 43243,
+			"Votos": 53
+		},
+		{
+			"Candidato": "Cristiano Silva Andrade",
+			"Número": 43987,
+			"Votos": 48
+		},
+		{
+			"Candidato": "Santina",
+			"Número": 43444,
+			"Votos": 45
+		},
+		{
+			"Candidato": "Jurandy",
+			"Número": 43233,
+			"Votos": 45
+		},
+		{
+			"Candidato": "Sassá",
+			"Número": 43666,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Leandro Monteiro",
+			"Número": 43495,
+			"Votos": 32
+		},
+		{
+			"Candidato": "Antonio Salada",
+			"Número": 43700,
+			"Votos": 25
+		},
+		{
+			"Candidato": "Deyverson Freire",
+			"Número": 43583,
+			"Votos": 22
+		},
+		{
+			"Candidato": "Armando Monteiro",
+			"Número": 43006,
+			"Votos": 20
+		},
+		{
+			"Candidato": "Romero Menor",
+			"Número": 43188,
+			"Votos": 18
+		},
+		{
+			"Candidato": "Ricardo Melo",
+			"Número": 43133,
+			"Votos": 15
+		},
+		{
+			"Candidato": "Maria Helena Cidadã Repórter",
+			"Número": 43777,
+			"Votos": 0
+		}
+	],
+	"PPL": [
+		{
+			"Candidato": "Alexandre Lacerda",
+			"Número": 54444,
+			"Votos": 4431
+		},
+		{
+			"Candidato": "Thalles Cherles",
+			"Número": 54789,
+			"Votos": 2305
+		},
+		{
+			"Candidato": "Paulo Pacifico",
+			"Número": 54000,
+			"Votos": 1375
+		},
+		{
+			"Candidato": "Gracinha Almeida",
+			"Número": 54111,
+			"Votos": 1368
+		},
+		{
+			"Candidato": "Tassio Rennalli",
+			"Número": 54666,
+			"Votos": 1165
+		},
+		{
+			"Candidato": "Edna Costa",
+			"Número": 54054,
+			"Votos": 987
+		},
+		{
+			"Candidato": "Hugo Mendes (bigode)",
+			"Número": 54222,
+			"Votos": 722
+		},
+		{
+			"Candidato": "Fernando Santos",
+			"Número": 54688,
+			"Votos": 711
+		},
+		{
+			"Candidato": "Márcio Puxador",
+			"Número": 54095,
+			"Votos": 551
+		},
+		{
+			"Candidato": "Ademir Araujo Mestre Formiga",
+			"Número": 54579,
+			"Votos": 541
+		},
+		{
+			"Candidato": "Moura",
+			"Número": 54066,
+			"Votos": 507
+		},
+		{
+			"Candidato": "Marcos Palito",
+			"Número": 54613,
+			"Votos": 473
+		},
+		{
+			"Candidato": "Jodileide Marques",
+			"Número": 54254,
+			"Votos": 374
+		},
+		{
+			"Candidato": "Isaac Nova Raça",
+			"Número": 54044,
+			"Votos": 342
+		},
+		{
+			"Candidato": "Taxista Edilson Pedrinho",
+			"Número": 54321,
+			"Votos": 322
+		},
+		{
+			"Candidato": "Valter Afogados",
+			"Número": 54100,
+			"Votos": 303
+		},
+		{
+			"Candidato": "Leandro Tenorio",
+			"Número": 54441,
+			"Votos": 302
+		},
+		{
+			"Candidato": "Lilika",
+			"Número": 54001,
+			"Votos": 285
+		},
+		{
+			"Candidato": "Henrique Florentino",
+			"Número": 54333,
+			"Votos": 216
+		},
+		{
+			"Candidato": "Rodesio Fonseca",
+			"Número": 54654,
+			"Votos": 186
+		},
+		{
+			"Candidato": "Rogerio Bênção",
+			"Número": 54777,
+			"Votos": 183
+		},
+		{
+			"Candidato": "Wellington Futsal",
+			"Número": 54219,
+			"Votos": 181
+		},
+		{
+			"Candidato": "Reginaldo Andrade",
+			"Número": 54610,
+			"Votos": 169
+		},
+		{
+			"Candidato": "Claudio Pm",
+			"Número": 54070,
+			"Votos": 131
+		},
+		{
+			"Candidato": "Alexandre Costa Areia",
+			"Número": 54151,
+			"Votos": 100
+		},
+		{
+			"Candidato": "Baldoino Braga",
+			"Número": 54190,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Professor Ted Willams",
+			"Número": 54122,
+			"Votos": 85
+		},
+		{
+			"Candidato": "Professor Gilvan",
+			"Número": 54345,
+			"Votos": 83
+		},
+		{
+			"Candidato": "Fernando dos Mercados",
+			"Número": 54999,
+			"Votos": 82
+		},
+		{
+			"Candidato": "Célia Alves",
+			"Número": 54543,
+			"Votos": 77
+		},
+		{
+			"Candidato": "Gibi do Coco",
+			"Número": 54144,
+			"Votos": 75
+		},
+		{
+			"Candidato": "Gildo dos Rodoviários",
+			"Número": 54555,
+			"Votos": 71
+		},
+		{
+			"Candidato": "Arlene",
+			"Número": 54154,
+			"Votos": 66
+		},
+		{
+			"Candidato": "Jaqueline Carvalho",
+			"Número": 54432,
+			"Votos": 65
+		},
+		{
+			"Candidato": "Irmão Alexandre",
+			"Número": 54158,
+			"Votos": 59
+		},
+		{
+			"Candidato": "Mago do Taxi",
+			"Número": 54256,
+			"Votos": 55
+		},
+		{
+			"Candidato": "Beto Miranda",
+			"Número": 54055,
+			"Votos": 49
+		},
+		{
+			"Candidato": "Vera",
+			"Número": 54123,
+			"Votos": 48
+		},
+		{
+			"Candidato": "Ralderes (negão da Sede)",
+			"Número": 54984,
+			"Votos": 46
+		},
+		{
+			"Candidato": "Mary",
+			"Número": 54145,
+			"Votos": 40
+		},
+		{
+			"Candidato": "Eliane",
+			"Número": 54124,
+			"Votos": 38
+		},
+		{
+			"Candidato": "Rita de Cássia",
+			"Número": 54450,
+			"Votos": 32
+		},
+		{
+			"Candidato": "Julio Moraes",
+			"Número": 54523,
+			"Votos": 25
+		},
+		{
+			"Candidato": "Elisangela Maria",
+			"Número": 54454,
+			"Votos": 25
+		},
+		{
+			"Candidato": "Cida",
+			"Número": 54040,
+			"Votos": 20
+		},
+		{
+			"Candidato": "Jair Silva",
+			"Número": 54045,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Pastor Jonathan",
+			"Número": 54488,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Pastor Edson Barbosa",
+			"Número": 54346,
+			"Votos": 13
+		},
+		{
+			"Candidato": "Anaiza Gomes",
+			"Número": 54442,
+			"Votos": 13
+		},
+		{
+			"Candidato": "Edson Ribeiro",
+			"Número": 54344,
+			"Votos": 12
+		},
+		{
+			"Candidato": "Andrea",
+			"Número": 54170,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Kelly",
+			"Número": 54260,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Estela Sitio G. Imbiribeira",
+			"Número": 54713,
+			"Votos": 0
+		}
+	],
+	"DEM": [
+		{
+			"Candidato": "Rogério Magalhães",
+			"Número": 25222,
+			"Votos": 2898
+		},
+		{
+			"Candidato": "Gustavo Gesteira",
+			"Número": 25252,
+			"Votos": 2230
+		},
+		{
+			"Candidato": "Andréa Iglesias",
+			"Número": 25192,
+			"Votos": 728
+		},
+		{
+			"Candidato": "Cassius Guerra",
+			"Número": 25678,
+			"Votos": 626
+		},
+		{
+			"Candidato": "Diego Lagedo",
+			"Número": 25225,
+			"Votos": 623
+		},
+		{
+			"Candidato": "Yra de Kassia (kassia da Ótica",
+			"Número": 25111,
+			"Votos": 522
+		},
+		{
+			"Candidato": "Darlan Braz Neto",
+			"Número": 25888,
+			"Votos": 307
+		},
+		{
+			"Candidato": "Agenor Pereira",
+			"Número": 25444,
+			"Votos": 143
+		},
+		{
+			"Candidato": "Alexandre Rêgo",
+			"Número": 25025,
+			"Votos": 139
+		},
+		{
+			"Candidato": "Sanderson Borges",
+			"Número": 25123,
+			"Votos": 110
+		},
+		{
+			"Candidato": "Xandão",
+			"Número": 25125,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Katia Nogueira",
+			"Número": 25105,
+			"Votos": 90
+		},
+		{
+			"Candidato": "Cláudio Queiroz",
+			"Número": 25825,
+			"Votos": 80
+		},
+		{
+			"Candidato": "Robson Rabelo",
+			"Número": 25555,
+			"Votos": 72
+		},
+		{
+			"Candidato": "Kátia Sette",
+			"Número": 25777,
+			"Votos": 61
+		},
+		{
+			"Candidato": "Junior Pirro",
+			"Número": 25000,
+			"Votos": 59
+		},
+		{
+			"Candidato": "Rhayssa de Andrade",
+			"Número": 25002,
+			"Votos": 48
+		},
+		{
+			"Candidato": "Reinaldo Rivera",
+			"Número": 25725,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Eraldo do Côco",
+			"Número": 25625,
+			"Votos": 40
+		},
+		{
+			"Candidato": "Carla Lopes",
+			"Número": 25200,
+			"Votos": 28
+		},
+		{
+			"Candidato": "Lindinalva Se Santana",
+			"Número": 25090,
+			"Votos": 1
+		}
+	],
+	"PR": [
+		{
+			"Candidato": "Goretti Queiroz",
+			"Número": 22022,
+			"Votos": 2862
+		},
+		{
+			"Candidato": "Almir Vasconcelos",
+			"Número": 22123,
+			"Votos": 1354
+		},
+		{
+			"Candidato": "Bruno Pantoja",
+			"Número": 22222,
+			"Votos": 991
+		},
+		{
+			"Candidato": "Wagner Rodrigues",
+			"Número": 22622,
+			"Votos": 225
+		},
+		{
+			"Candidato": "Musa Madalayne Cavalcanti",
+			"Número": 22322,
+			"Votos": 4
+		}
+	],
+	"PHS": [
+		{
+			"Candidato": "Professor Mirinho",
+			"Número": 31123,
+			"Votos": 1893
+		},
+		{
+			"Candidato": "Marinho Timbaúba",
+			"Número": 31234,
+			"Votos": 643
+		},
+		{
+			"Candidato": "Célia Santos",
+			"Número": 31100,
+			"Votos": 543
+		},
+		{
+			"Candidato": "Nino Bike",
+			"Número": 31300,
+			"Votos": 543
+		},
+		{
+			"Candidato": "Beto Ferraz",
+			"Número": 31333,
+			"Votos": 430
+		},
+		{
+			"Candidato": "Josué Augusto",
+			"Número": 31222,
+			"Votos": 393
+		},
+		{
+			"Candidato": "Josenildo Tem Futuro",
+			"Número": 31031,
+			"Votos": 339
+		},
+		{
+			"Candidato": "Léo Benevides",
+			"Número": 31555,
+			"Votos": 329
+		},
+		{
+			"Candidato": "Prof. Pedro Monteiro",
+			"Número": 31733,
+			"Votos": 299
+		},
+		{
+			"Candidato": "Samuel Ferreira",
+			"Número": 31245,
+			"Votos": 290
+		},
+		{
+			"Candidato": "Irmão Cicero",
+			"Número": 31866,
+			"Votos": 278
+		},
+		{
+			"Candidato": "Alexandre Bigode",
+			"Número": 31161,
+			"Votos": 259
+		},
+		{
+			"Candidato": "João Almeida",
+			"Número": 31429,
+			"Votos": 243
+		},
+		{
+			"Candidato": "Rivaldo Figueiredo",
+			"Número": 31386,
+			"Votos": 221
+		},
+		{
+			"Candidato": "Mister N",
+			"Número": 31115,
+			"Votos": 194
+		},
+		{
+			"Candidato": "Carlos do Povão",
+			"Número": 31118,
+			"Votos": 174
+		},
+		{
+			"Candidato": "Felipe dos Santos",
+			"Número": 31207,
+			"Votos": 169
+		},
+		{
+			"Candidato": "Wesly Lins",
+			"Número": 31400,
+			"Votos": 140
+		},
+		{
+			"Candidato": "Deto",
+			"Número": 31011,
+			"Votos": 130
+		},
+		{
+			"Candidato": "Erton Serafim Araujo",
+			"Número": 31131,
+			"Votos": 105
+		},
+		{
+			"Candidato": "Leidinha",
+			"Número": 31407,
+			"Votos": 104
+		},
+		{
+			"Candidato": "Pr.francisco Silva",
+			"Número": 31111,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Joab Ferreira",
+			"Número": 31223,
+			"Votos": 97
+		},
+		{
+			"Candidato": "Zé Luiz",
+			"Número": 31177,
+			"Votos": 87
+		},
+		{
+			"Candidato": "Jack Calado",
+			"Número": 31777,
+			"Votos": 72
+		},
+		{
+			"Candidato": "Manoel Gusmão",
+			"Número": 31313,
+			"Votos": 64
+		},
+		{
+			"Candidato": "Caseli",
+			"Número": 31804,
+			"Votos": 56
+		},
+		{
+			"Candidato": "Anísio Arruda",
+			"Número": 31502,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Cantora Sandra Souza",
+			"Número": 31444,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Isaias Thomaz",
+			"Número": 31480,
+			"Votos": 43
+		},
+		{
+			"Candidato": "Aidé Batista",
+			"Número": 31450,
+			"Votos": 35
+		},
+		{
+			"Candidato": "Fatima Castro",
+			"Número": 31331,
+			"Votos": 29
+		},
+		{
+			"Candidato": "Jorginho das Pizzas",
+			"Número": 31944,
+			"Votos": 24
+		},
+		{
+			"Candidato": "Any Pricscila",
+			"Número": 31127,
+			"Votos": 24
+		},
+		{
+			"Candidato": "Alexandre Amaral",
+			"Número": 31066,
+			"Votos": 23
+		},
+		{
+			"Candidato": "Marcone José",
+			"Número": 31365,
+			"Votos": 21
+		},
+		{
+			"Candidato": "Mike Pereira",
+			"Número": 31006,
+			"Votos": 16
+		},
+		{
+			"Candidato": "Ana Rafaela",
+			"Número": 31661,
+			"Votos": 10
+		},
+		{
+			"Candidato": "Mãe Ana",
+			"Número": 31520,
+			"Votos": 9
+		},
+		{
+			"Candidato": "Renata Silva",
+			"Número": 31999,
+			"Votos": 2
+		},
+		{
+			"Candidato": "Glória Maria",
+			"Número": 31112,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Vanessa Silva",
+			"Número": 31321,
+			"Votos": 0
+		}
+	],
+	"PMN": [
+		{
+			"Candidato": "Luizinho da Funerária",
+			"Número": 33650,
+			"Votos": 1454
+		},
+		{
+			"Candidato": "Noelia Brito",
+			"Número": 33190,
+			"Votos": 1177
+		},
+		{
+			"Candidato": "Elinaldo Alcides",
+			"Número": 33155,
+			"Votos": 380
+		},
+		{
+			"Candidato": "Afonso",
+			"Número": 33345,
+			"Votos": 320
+		},
+		{
+			"Candidato": "Enock Ramos",
+			"Número": 33644,
+			"Votos": 275
+		},
+		{
+			"Candidato": "Cristiano Andrade",
+			"Número": 33233,
+			"Votos": 244
+		},
+		{
+			"Candidato": "Marcilio Correria",
+			"Número": 33805,
+			"Votos": 197
+		},
+		{
+			"Candidato": "Wilson Cardoso",
+			"Número": 33148,
+			"Votos": 187
+		},
+		{
+			"Candidato": "Everton Alan",
+			"Número": 33331,
+			"Votos": 165
+		},
+		{
+			"Candidato": "Arlindo Macedo",
+			"Número": 33777,
+			"Votos": 162
+		},
+		{
+			"Candidato": "Diamante Negro",
+			"Número": 33323,
+			"Votos": 161
+		},
+		{
+			"Candidato": "Irmã Sofia",
+			"Número": 33661,
+			"Votos": 152
+		},
+		{
+			"Candidato": "Jose Alves",
+			"Número": 33333,
+			"Votos": 147
+		},
+		{
+			"Candidato": "Marinheiro Popai",
+			"Número": 33166,
+			"Votos": 144
+		},
+		{
+			"Candidato": "Jacó do Povo",
+			"Número": 33120,
+			"Votos": 134
+		},
+		{
+			"Candidato": "Josafa Ribeiro",
+			"Número": 33555,
+			"Votos": 133
+		},
+		{
+			"Candidato": "Pastor Rilton Accioly",
+			"Número": 33444,
+			"Votos": 123
+		},
+		{
+			"Candidato": "Marcos Tomaz",
+			"Número": 33222,
+			"Votos": 116
+		},
+		{
+			"Candidato": "Jeremias Feitosa",
+			"Número": 33300,
+			"Votos": 109
+		},
+		{
+			"Candidato": "Monica Carvalho",
+			"Número": 33193,
+			"Votos": 108
+		},
+		{
+			"Candidato": "Jurandir Albuquerque",
+			"Número": 33111,
+			"Votos": 106
+		},
+		{
+			"Candidato": "Ana Lucena",
+			"Número": 33033,
+			"Votos": 105
+		},
+		{
+			"Candidato": "Evilazio Pastor Netinho",
+			"Número": 33133,
+			"Votos": 104
+		},
+		{
+			"Candidato": "Ivanildo Pedro",
+			"Número": 33123,
+			"Votos": 103
+		},
+		{
+			"Candidato": "Jessica Luiza",
+			"Número": 33888,
+			"Votos": 99
+		},
+		{
+			"Candidato": "Lindoso",
+			"Número": 33000,
+			"Votos": 79
+		},
+		{
+			"Candidato": "Manoel Bastos Enfermeiro",
+			"Número": 33678,
+			"Votos": 69
+		},
+		{
+			"Candidato": "Raul Schumacher",
+			"Número": 33056,
+			"Votos": 69
+		},
+		{
+			"Candidato": "Andre Luiz",
+			"Número": 33456,
+			"Votos": 57
+		},
+		{
+			"Candidato": "Marthinha",
+			"Número": 33733,
+			"Votos": 54
+		},
+		{
+			"Candidato": "Ada Beatriz",
+			"Número": 33633,
+			"Votos": 37
+		},
+		{
+			"Candidato": "Juscelino dos Rodoviários",
+			"Número": 33260,
+			"Votos": 35
+		},
+		{
+			"Candidato": "Prof. Cicero Inácio",
+			"Número": 33030,
+			"Votos": 27
+		},
+		{
+			"Candidato": "Paulo Selva",
+			"Número": 33666,
+			"Votos": 19
+		},
+		{
+			"Candidato": "Priscila Ferreira",
+			"Número": 33433,
+			"Votos": 4
+		},
+		{
+			"Candidato": "Monique Alves",
+			"Número": 33001,
+			"Votos": 3
+		},
+		{
+			"Candidato": "Leda",
+			"Número": 33999,
+			"Votos": 1
+		},
+		{
+			"Candidato": "Raquel Lourenço",
+			"Número": 33231,
+			"Votos": 0
+		}
+	],
+	"PCB": [
+		{
+			"Candidato": "Prof Aluizio Moreira",
+			"Número": 21111,
+			"Votos": 190
+		}
+	],
+	"PSTU": [
+		{
+			"Candidato": "Jair Pedro",
+			"Número": 16616,
+			"Votos": 174
+		},
+		{
+			"Candidato": "Professor Helio Cabral",
+			"Número": 16161,
+			"Votos": 128
+		},
+		{
+			"Candidato": "Lourdes Florentino",
+			"Número": 16162,
+			"Votos": 92
+		}
+	],
+	"PCO": [
+		{
+			"Candidato": "George Mendes",
+			"Número": 29100,
+			"Votos": 81
+		},
+		{
+			"Candidato": "Luiz Augusto",
+			"Número": 29123,
+			"Votos": 78
+		},
+		{
+			"Candidato": "Elly Reis",
+			"Número": 29290,
+			"Votos": 31
+		},
+		{
+			"Candidato": "Aninha Soares",
+			"Número": 29351,
+			"Votos": 10
+		},
+		{
+			"Candidato": "Ana Paula Lima",
+			"Número": 29629,
+			"Votos": 4
+		}
+	]
+}
