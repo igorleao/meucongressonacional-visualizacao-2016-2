@@ -1,102 +1,121 @@
 <!DOCTYPE html>
+<html>
+<head>
 <meta charset="utf-8">
 <style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
 .bar {
   fill: steelblue;
 }
 
-.axis path {
+.x.axis path {
   display: none;
 }
 
 </style>
-<svg width="960" height="500"></svg>
-<script src="//d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-var x = d3.scaleBand()
-    .rangeRound([0, width])
-    .padding(0.1)
-    .align(0.1);
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
 
-var y = d3.scaleLinear()
+var y = d3.scale.linear()
     .rangeRound([height, 0]);
 
-var z = d3.scaleOrdinal()
+var color = d3.scale.ordinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-var stack = d3.stack();
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
 
-d3.csv("data.csv", type, function(error, data) {
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("gasto_mes_sexo_filtered.json", function(error, data) {
   if (error) throw error;
 
-  data.sort(function(a, b) { return b.total - a.total; });
+  //data.sort(function(a, b) { return b.mesAno - a.mesAno; });
 
-  x.domain(data.map(function(d) { return d.State; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
-  z.domain(data.columns.slice(1));
+  x.domain(data.map(function(d) { return d.mesAno; }));
+  y.domain([0, d3.max(data, function(d) { return d["F"] + d["M"]; })]).nice();
 
-  g.selectAll(".serie")
-    .data(stack.keys(data.columns.slice(1))(data))
-    .enter().append("g")
-      .attr("class", "serie")
-      .attr("fill", function(d) { return z(d.key); })
-    .selectAll("rect")
-    .data(function(d) { return d; })
-    .enter().append("rect")
-      .attr("x", function(d) { return x(d.data.State); })
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth());
-
-  g.append("g")
-      .attr("class", "axis axis--x")
+  svg.append("g")
+      .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(xAxis);
 
-  g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "s"))
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
     .append("text")
-      .attr("x", 2)
-      .attr("y", y(y.ticks(10).pop()))
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "start")
-      .attr("fill", "#000")
-      .text("Population");
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Gasto");
 
-  var legend = g.selectAll(".legend")
-    .data(data.columns.slice(1).reverse())
+  var state = svg.selectAll(".mesAno")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      
+
+  svg.selectAll(".bars")
+      .data(data)
+      .enter()
+      .append("rect")
+      .classed("bars", true)
+      .attr("x", x(function(d, i) { return i }))
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d["M"]); })
+      .attr("height", function(d) { return y(d["F"]) - y(d["M"]); })
+      .style("fill", function(d) { return color("F"); });
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain().slice().reverse())
     .enter().append("g")
       .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
-      .style("font", "10px sans-serif");
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
       .attr("x", width - 18)
       .attr("width", 18)
       .attr("height", 18)
-      .attr("fill", z);
+      .style("fill", color);
 
   legend.append("text")
       .attr("x", width - 24)
       .attr("y", 9)
       .attr("dy", ".35em")
-      .attr("text-anchor", "end")
+      .style("text-anchor", "end")
       .text(function(d) { return d; });
 });
-
-function type(d, i, columns) {
-  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  d.total = t;
-  return d;
-}
-
 </script>
+</body>
+</html>
