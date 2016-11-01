@@ -9,7 +9,7 @@ if __name__ == "__main__":
     res_df = df[['sexo', 'mesAno', 'gastoValor']].groupby([df['mesAno'], df['sexo']]).sum()
 
     #res.to_csv('gastos_mes_sexo.csv', sep=',', encoding='utf-8')
-
+    print(res_df.reset_index().to_json(orient='records'))
     json_object = json.loads(res_df.reset_index().to_json(orient='records'))
     res = []
     data_to_index = {}
