@@ -1,121 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<style>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .bar {
+        fill: steelblue;
+      }
+      .axis path {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="960" height="500"></svg>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script>
 
-body {
-  font: 10px sans-serif;
-}
+    var svg = d3.select("svg"),
+        margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
+    var x = d3.scaleBand()
+        .rangeRound([0, width])
+        .padding(0.1)
+        .align(0.1);
 
-.bar {
-  fill: steelblue;
-}
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
 
-.x.axis path {
-  display: none;
-}
+    var z = d3.scaleOrdinal()
+        .range(["#FFBCD9", "#87CEFA"]);
 
-</style>
-</head>
-<body>
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script>
+    d3.json("gasto_mes_sexo_filtered.json", function(error, data) {
+      if (error) throw error;
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+      var stack = d3.stack()
+        .keys(["F", "M"])
+        .order(d3.stackOrderNone)
+        .offset(d3.stackOffsetNone);
 
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+      //data.sort(function(a, b) { return (b["F"] + b["M"]) - (a["F"] + a["M"]); });
+      console.log(data);
+      x.domain(data.map(function(d) { return d.mesAno; }));
+      y.domain([0, d3.max(data, function(d) { return d["F"] + d["M"]; })]).nice();
+      z.domain(["F", "M"]);
 
-var y = d3.scale.linear()
-    .rangeRound([height, 0]);
+      //console.log(stack.keys(data.columns.slice(1))(data));
+      //console.log(data.columns.slice(1));
 
-var color = d3.scale.ordinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+      console.log("novo");
+      console.log(stack(data));
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
+      g.selectAll(".serie")
+        .data(stack(data))
+        .enter().append("g")
+          .attr("class", "serie")
+          .attr("fill", function(d) { return z(d.key); })
+        .selectAll("rect")
+        .data(function(d) { return d; })
+        .enter().append("rect")
+          .attr("x", function(d) { return x(d.data.mesAno); })
+          .attr("y", function(d) { return y(d[1]); })
+          .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+          .attr("width", x.bandwidth());
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .tickFormat(d3.format(".2s"));
+      g.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x));
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      g.append("g")
+          .attr("class", "axis axis--y")
+          .call(d3.axisLeft(y).ticks(10, "s"))
+        .append("text")
+          .attr("x", 2)
+          .attr("y", y(y.ticks(10).pop()))
+          .attr("dy", "0.35em")
+          .attr("text-anchor", "start")
+          .attr("fill", "#000")
+          .text("Despesas");
 
-d3.json("gasto_mes_sexo_filtered.json", function(error, data) {
-  if (error) throw error;
+      var legend = g.selectAll(".legend")
+        .data(["M", "F"])
+        .enter().append("g")
+          .attr("class", "legend")
+          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+          .style("font", "10px sans-serif");
 
-  //data.sort(function(a, b) { return b.mesAno - a.mesAno; });
+      legend.append("rect")
+          .attr("x", width - 18)
+          .attr("width", 18)
+          .attr("height", 18)
+          .attr("fill", z);
 
-  x.domain(data.map(function(d) { return d.mesAno; }));
-  y.domain([0, d3.max(data, function(d) { return d["F"] + d["M"]; })]).nice();
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Gasto");
-
-  var state = svg.selectAll(".mesAno")
-      .data(data)
-    .enter().append("g")
-      .attr("class", "g")
-      
-
-  svg.selectAll(".bars")
-      .data(data)
-      .enter()
-      .append("rect")
-      .classed("bars", true)
-      .attr("x", x(function(d, i) { return i }))
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d["M"]); })
-      .attr("height", function(d) { return y(d["F"]) - y(d["M"]); })
-      .style("fill", function(d) { return color("F"); });
-
-  var legend = svg.selectAll(".legend")
-      .data(color.domain().slice().reverse())
-    .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-  legend.append("rect")
-      .attr("x", width - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-      .style("fill", color);
-
-  legend.append("text")
-      .attr("x", width - 24)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .style("text-anchor", "end")
-      .text(function(d) { return d; });
-});
-</script>
-</body>
+      legend.append("text")
+          .attr("x", width - 24)
+          .attr("y", 9)
+          .attr("dy", ".35em")
+          .attr("text-anchor", "end")
+          .text(function(d) { return d; });
+    });
+    </script>
+  </body>
 </html>
