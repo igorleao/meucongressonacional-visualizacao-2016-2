@@ -1,12 +1,23 @@
-import {csv} from 'd3'
+import { parse } from 'papaparse'
 import * as crossfilter from 'crossfilter'
 
 class Gastos {
   constructor() {
+      self.ready = false;
       self.PATH = "../data/politicodw.csv";
-      d3.csv(PATH, function(error, data) {
-        self.DATA = crossfilter(data);
-      });
+      self.cf = crossfilter.default()
+
+      let data = parse(self.PATH, {
+          delimiter: ";",
+          header: true,
+          download: true,
+          complete: this.csvCallBack
+        }
+      );
+  }
+  csvCallBack(results, file) {
+    self.ready = true;
+    self.cf.add(results.data);
   }
   filter() { }
   notify() { }
