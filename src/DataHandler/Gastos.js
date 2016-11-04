@@ -4,7 +4,7 @@ import * as crossfilter from 'crossfilter'
 class Gastos {
   constructor() {
       self.ready = false;
-      self.PATH = "../data/politicodw.csv";
+      self.PATH = "../../data/politicodw.csv";
       self.cf = crossfilter.default()
 
       let data = parse(self.PATH, {
@@ -15,11 +15,14 @@ class Gastos {
         }
       );
   }
+
   csvCallBack(results, file) {
     self.ready = true;
     self.cf.add(results.data);
   }
+
   filter() { }
+
   notify() { }
 }
 
