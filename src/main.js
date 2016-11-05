@@ -1,8 +1,13 @@
-import Gastos from './DataHandler/Gastos.js'
-import { StackedBarsComponent } from "./StackedBars/StackedBarsComponent.js"
+import Gastos from './DataHandler/Gastos'
+import StackedBarsComponent from './StackedBars/StackedBarsComponent'
+import MapComponent from './Map/MapComponent'
 
 {
     Gastos.loadData().then(function(data) {
-        let stakedBars = new StackedBarsComponent("#stackedbars-container");
+        let map = new MapComponent('#map-container');
+        map.render();
+
+        let stackedBars = new StackedBarsComponent('#stackedbars-container');
+        stackedBars.render();
     })
 }

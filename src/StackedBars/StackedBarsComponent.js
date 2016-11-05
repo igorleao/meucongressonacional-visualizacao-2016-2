@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import Gastos from '../DataHandler/Gastos'
 
-export class StackedBarsComponent {
+export default class StackedBarsComponent {
     constructor(container) {
         self.active = { gender: true, category: false };
         self.dimension = { height: 400, width: 600 };
@@ -16,7 +16,6 @@ export class StackedBarsComponent {
         self.container = container;
 
         this.__init();
-        this.render()
     }
 
     __init() {
