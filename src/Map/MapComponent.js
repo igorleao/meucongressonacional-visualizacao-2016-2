@@ -153,9 +153,17 @@ export default class MapComponent {
     setupMapRegion(region) {
         let el = d3.select(this);
 
-        el.on('click', _ => { console.log(el.attr('data-regionCode')) });
-        el.on('mouseover', _ => { el.classed('on-mouse-over', true) });
-        el.on('mouseout', _ => { el.classed('on-mouse-over', false) });
+        el.on('click', _ => {
+            console.log(el.attr('data-regionCode'));
+        });
+
+        el.on('mouseover', _ => {
+            el.classed('map-region-hover', true);
+        });
+
+        el.on('mouseout', _ => {
+            el.classed('map-region-hover', false);
+        });
     }
 }
 
