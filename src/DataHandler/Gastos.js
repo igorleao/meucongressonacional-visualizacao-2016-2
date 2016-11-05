@@ -1,29 +1,20 @@
 import { parse } from 'papaparse'
-import * as crossfilter from 'crossfilter'
 
-class Gastos {
-  constructor() {
+export class Gastos {
+  constructor(callback) {
       self.ready = false;
       self.PATH = "../../data/politicodw.csv";
-      self.cf = crossfilter.default()
 
+      console.log("NAO TRAVOU!");
+      console.log("LENDO JSON");
       let data = parse(self.PATH, {
           delimiter: ";",
           header: true,
           download: true,
-          complete: this.csvCallBack
+          complete: callback,
+          skipEmptyLines: true,
+          dynamicTyping: true
         }
       );
   }
-
-  csvCallBack(results, file) {
-    self.ready = true;
-    self.cf.add(results.data);
-  }
-
-  filter() { }
-
-  notify() { }
 }
-
-export let gastos = new Gastos();
