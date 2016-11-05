@@ -73,7 +73,7 @@ rect.parent {
 
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="./node_modules/papaparse/papaparse.min.js"></script>
+<script src=""></script>
 
 <script>
 
@@ -90,8 +90,8 @@ var defaults = {
     rootname: "TOP",
     format: ",d",
     title: "",
-    width: 960,
-    height: 500
+    width: 1200,
+    height: 800
 };
 
 function main(o, data) {
@@ -322,11 +322,31 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("countries.json", function(err, res) {
+    d3.dsv(';')("politicodw.csv", function(err, res) {
         if (!err) {
-            console.log(res);
+
+            var dataset = {};
+
+            res.forEach(function(element) {
+              var key = element.gastoTipo + ';' + element.partido + ';' + element.nomeParlamentar;
+
+              if(dataset[key] != undefined) {
+                dataset[key] = dataset[key] + parseFloat(element.gastoValor);
+              } else {
+                dataset[key] = parseFloat(element.gastoValor);
+              }
+
+            });
+
+            res = [];
+
+            for(var key in dataset) {
+              var values = key.split(';');
+              res.push({key: values[0], region: values[1], subregion: values[2], value: dataset[key]})
+            }
+
             var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-            main({title: "World Population"}, {key: "World", values: data});
+            main({title: "Gastos dos Partidos"}, {key: "Congresso", values: data});
         }
     });
 }
