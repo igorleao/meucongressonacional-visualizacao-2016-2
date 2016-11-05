@@ -1,20 +1,28 @@
-import { parse } from 'papaparse'
+import { parse } from 'papaparse';
+import * as crossfilter from 'crossfilter';
 
-export class Gastos {
-  constructor(callback) {
-      self.ready = false;
-      self.PATH = "../../data/politicodw.csv";
+const PATH = "../../data/politicodw.csv";
+const CROSSFILTER = crossfilter.default();
 
-      console.log("NAO TRAVOU!");
-      console.log("LENDO JSON");
-      let data = parse(self.PATH, {
-          delimiter: ";",
-          header: true,
-          download: true,
-          complete: callback,
-          skipEmptyLines: true,
-          dynamicTyping: true
-        }
-      );
-  }
+export default class Gastos {
+    static loadData() {
+        return new Promise(function(fulfill, reject) {
+            let options = {
+                delimiter: ";",
+                header: true,
+                download: true,
+                complete: fulfill,
+                skipEmptyLines: true,
+                dynamicTyping: true
+            }
+            parse(PATH, options);
+        }).then(function(results) {
+            CROSSFILTER.add(results.data);
+            return results.data;
+        });
+    }
+
+    static crossfilter() {
+        return CROSSFILTER;
+    }
 }

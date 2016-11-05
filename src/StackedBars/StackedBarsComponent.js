@@ -1,7 +1,8 @@
 import * as d3 from "d3";
+import Gastos from '../DataHandler/Gastos'
 
 export class StackedBarsComponent {
-    constructor(container, cf) {
+    constructor(container) {
         self.active = { gender: true, category: false };
         self.dimension = { height: 400, width: 600 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -13,7 +14,6 @@ export class StackedBarsComponent {
         self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]); //TODO: mudar para cores!!! -> Modularizar!!! -> preso no caso de genero!
 
         self.container = container;
-        self.cf = cf;
 
         this.__init();
         this.render()
@@ -112,7 +112,7 @@ export class StackedBarsComponent {
     }
 
     __renderGender() {
-        let mesAno = cf.dimension((d) => d.mesAno);
+        let mesAno = Gastos.crossfilter().dimension((d) => d.mesAno);
         let spendingsByMonthYear = mesAno.group().reduce(
             function(p, v) {
                 if (v.sexo.toUpperCase() === "F") {
