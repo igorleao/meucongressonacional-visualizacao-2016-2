@@ -1,29 +1,24 @@
 import { parse } from 'papaparse'
 import * as crossfilter from 'crossfilter'
 
-class Gastos {
-  constructor() {
-      self.ready = false;
-      self.PATH = "../../data/politicodw.csv";
-      self.cf = crossfilter.default()
+const PATH = "../../data/politicodw.csv";
 
-      let data = parse(self.PATH, {
-          delimiter: ";",
-          header: true,
-          download: true,
-          complete: this.csvCallBack
-        }
-      );
+export class Gastos {
+  static load() {
+    return new Promise(function(fulfill, reject) {
+      let options = {
+        delimiter: ";",
+        header: true,
+        download: true,
+        complete: fulfill,
+        skipEmptyLines: true,
+        dynamicTyping: true
+      };
+
+      parse(PATH, options);
+    }).then(function(results) {
+      return results.data;
+    });
   }
-
-  csvCallBack(results, file) {
-    self.ready = true;
-    self.cf.add(results.data);
-  }
-
-  filter() { }
-
-  notify() { }
 }
 
-export let gastos = new Gastos();
