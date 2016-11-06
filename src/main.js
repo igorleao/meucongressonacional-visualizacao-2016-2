@@ -1,5 +1,5 @@
 import Gastos from './DataHandler/Gastos'
-import StackedBarsComponent from './StackedBars/StackedBarsComponent'
+import StackedBarsComponent, * as StackedBars from './StackedBars/StackedBarsComponent'
 import MapComponent from './Map/MapComponent'
 import Event, * as Events from './Events/Events'
 
@@ -12,7 +12,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
         map.render();
 
         let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
-        stackedBars.render();
+        stackedBars.render(StackedBars.StackedBarsField.GENDER);
 
         Event.listen(Events.MAP_REGION_CLICK,
                 map,

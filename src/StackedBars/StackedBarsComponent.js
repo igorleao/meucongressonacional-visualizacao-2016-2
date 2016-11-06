@@ -1,9 +1,13 @@
-import * as d3 from "d3";
+import * as d3 from "d3"
 import Gastos from '../DataHandler/Gastos'
+
+export const StackedBarsField = {
+    GENDER: 1,
+    CATEGORY: 2
+};
 
 export default class StackedBarsComponent {
     constructor(container) {
-        self.active = { gender: true, category: false };
         self.dimension = { height: 400, width: 600 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
@@ -14,18 +18,22 @@ export default class StackedBarsComponent {
         self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]); //TODO: mudar para cores!!! -> Modularizar!!! -> preso no caso de genero!
 
         self.container = container;
-
-        this.__init();
     }
 
-    __init() {
-        self.svg = d3.select(self.container)
-        .append("svg")
-        .attr("id", "stacked-svg")
-        .attr("height", self.dimension.height)
-        .attr("width", self.dimension.width);
+    render(field) {
+        d3.select(`${self.container} > svg`).remove();
 
-        self.g = self.svg.append("g").attr("transform", `translate(${self.margin.left} , ${self.margin.top} )`);
+        let svg = d3.select(self.container)
+            .append("svg")
+            .attr("height", self.dimension.height)
+            .attr("width", self.dimension.width);
+
+        self.SVG = svg.append("g")
+            .attr("transform", `translate(${self.margin.left}, ${self.margin.top})`);
+
+        if (field === StackedBarsField.GENDER) {
+            this.renderGender();
+        }
     }
 
     __genericDraw(element, father, selector, drawFunction, data) {
@@ -40,18 +48,18 @@ export default class StackedBarsComponent {
     __appendBars(data) {
         function _barsGroup(sel) {
             sel.attr("class", "serie")
-            .attr("fill", (d) => self.z(d.key))
+                .attr("fill", (d) => self.z(d.key))
         }
 
         function _barsItself(sel) {
             sel.attr("x", (d) => self.x(d.data.mesAno))
-            .attr("y", (d) => self.y(d[1]))
-            .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
-            .attr("width", self.x.bandwidth());
+                .attr("y", (d) => self.y(d[1]))
+                .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
+                .attr("width", self.x.bandwidth());
         }
 
-        let barsGroup = this.__genericDraw("g", self.g, ".serie", _barsGroup, data);
-        let bars = this.__genericDraw("rect", barsGroup, "rect", _barsItself, function(d) { return d });
+        let barsGroup = this.__genericDraw("g", self.SVG, ".serie", _barsGroup, data);
+        let bars = this.__genericDraw("rect", barsGroup, "rect", _barsItself, d => d);
     }
 
     __appendAxis() {
@@ -76,8 +84,8 @@ export default class StackedBarsComponent {
             .text("Despesas");
         }
 
-        let axisX = this.__genericDraw("g", self.g, ".axis--x", _drawX, [""]);
-        let groupY = this.__genericDraw("g", self.g, ".axis--y", _groupY, [""]);
+        let axisX = this.__genericDraw("g", self.SVG, ".axis--x", _drawX, [""]);
+        let groupY = this.__genericDraw("g", self.SVG, ".axis--y", _groupY, [""]);
         let drawY = this.__genericDraw("text", groupY, ".y-content", _drawY, [""]);
     }
 
@@ -105,31 +113,18 @@ export default class StackedBarsComponent {
             .text((d) => d);
         }
 
-        let groupLegend = this.__genericDraw("g", self.g, "legend-group", _legendGroup, data);
+        let groupLegend = this.__genericDraw("g", self.SVG, "legend-group", _legendGroup, data);
         let legendG1 = this.__genericDraw("rect", groupLegend, "legend-rect", _drawLegendRect, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
         let legendG2 = this.__genericDraw("text", groupLegend, "legend-text", _drawLegendText, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
     }
 
-    __renderGender() {
-        let mesAno = Gastos.crossfilter().dimension((d) => d.mesAno);
-        let spendingsByMonthYear = mesAno.group().reduce(
-            function(p, v) {
-                if (v.sexo.toUpperCase() === "F") {
-                    p.f += v.gastoValor;
-                } else if (v.sexo.toUpperCase() === "M") {
-                    p.m += v.gastoValor;
-                }
-                return p;
-        },
-            function(p, v) {
-                return p;
-        },
-            function(p, v) {
-                return {
-                    f: 0,
-                    m: 0
-                }
-        });
+    renderGender() {
+        let mesAno = Gastos.crossfilter()
+            .dimension((d) => d.mesAno);
+        let spendingsByMonthYear = mesAno.group()
+            .reduce((p, v) => { p[v.sexo] += v.gastoValor; return p; },
+                    (p, v) => p,
+                    () => { return { 'F': 0, 'M': 0 }; });
 
         /* BEGIN: tratamento dos dados para o formato do stacked-bars */
         let currentYear = new Date().getFullYear();
@@ -168,10 +163,6 @@ export default class StackedBarsComponent {
         this.__appendBars(stack(flattenData));
         this.__appendAxis();
         this.__appendLegend(["Mulheres", "Homens"]);
-    }
-
-    render() {
-        if (self.active.gender) this.__renderGender();
     }
 
     filterByRegion(regionCode) {

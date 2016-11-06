@@ -1,4 +1,4 @@
-import * as d3 from "d3";
+import * as d3 from "d3"
 import Gastos from '../DataHandler/Gastos'
 import Util from '../Util/Util'
 import Event, * as Events from '../Events/Events'
@@ -69,18 +69,24 @@ let THIS = null;
 
 export default class MapComponent {
     constructor(container) {
-        self.container = container;
         self.WIDTH = 600;
         self.HEIGHT = 600;
         self.SCALE = 800;
+
+        this.container = container;
         THIS = this;
     }
 
     render() {
-        self.SVG = d3.select(self.container).append('svg')
+        d3.select(`${THIS.container} > svg`).remove();
+
+        let svg = d3.select(THIS.container)
+            .append('svg')
+            .attr('id', 'map')
             .attr('width', self.WIDTH)
-            .attr('height', self.HEIGHT)
-            .append('g');
+            .attr('height', self.HEIGHT);
+
+        self.SVG = svg.append('g');
 
         this.drawMap();
     }
@@ -106,7 +112,7 @@ export default class MapComponent {
 
             projection.translate(offset);
 
-            SVG.selectAll('path')
+            d3.select(`${THIS.container} svg g`).selectAll('path')
                 .data(data.features)
                 .enter()
                 .append('path')
