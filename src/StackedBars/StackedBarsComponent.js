@@ -9,6 +9,7 @@ export const StackedBarsField = {
 export default class StackedBarsComponent {
     constructor(container) {
         var self = this;
+        self.container = container;
         self.dimension = { height: 400, width: 600 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
@@ -18,9 +19,10 @@ export default class StackedBarsComponent {
         self.y = d3.scaleLinear().rangeRound([self.height, 0]);
         self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]); //TODO: mudar para cores!!! -> Modularizar!!! -> preso no caso de genero!
 
-        self.container = container;
-
         self.render = (field) =>  {
+            field = field || self.field;
+            self.field = field;
+
             d3.select(`${self.container} > svg`).remove();
 
             let svg = d3.select(self.container)
@@ -159,10 +161,11 @@ export default class StackedBarsComponent {
         }
 
         self.filterByRegion = (regionCode) => {
-            Gastos.crossfilter()
-                .dimension(d => d.estado)
-                .filterExact(regionCode);
-            console.log(regionCode);
+            self.regionDimension = self.regionDimension || Gastos.crossfilter()
+                .dimension(d => d.estado);
+
+            self.regionDimension.filter(regionCode)
+            self.render();
         }
     }
 }

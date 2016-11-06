@@ -18,7 +18,7 @@ export default class Gastos {
             parse(PATH, options);
         }).then(function(results) {
             CROSSFILTER.add(results.data);
-            return results.data;
+            return;
         });
     }
 

@@ -7,7 +7,7 @@ const MAP_CONTAINER = '#map-container';
 const STACKED_CONTAINER = '#stackedbars-container';
 
 {
-    Gastos.loadData().then(function(data) {
+    Gastos.loadData().then(function() {
         let map = new MapComponent(MAP_CONTAINER);
         map.render();
 
