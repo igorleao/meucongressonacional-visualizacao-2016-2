@@ -65,112 +65,110 @@ const CODE_TO_REGION = {
     '17': 'TO'
 }
 
-let THIS = null;
-
 export default class MapComponent {
     constructor(container) {
+        var self = this;
         self.WIDTH = 600;
         self.HEIGHT = 600;
         self.SCALE = 800;
+        self.container = container;
 
-        this.container = container;
-        THIS = this;
-    }
+        self.render = () => {
+            d3.select(`${self.container} > svg`).remove();
 
-    render() {
-        d3.select(`${THIS.container} > svg`).remove();
+            let svg = d3.select(self.container)
+                .append('svg')
+                .attr('id', 'map')
+                .attr('width', self.WIDTH)
+                .attr('height', self.HEIGHT);
 
-        let svg = d3.select(THIS.container)
-            .append('svg')
-            .attr('id', 'map')
-            .attr('width', self.WIDTH)
-            .attr('height', self.HEIGHT);
+            self.SVG = svg.append('g');
 
-        self.SVG = svg.append('g');
+            self.drawMap();
+        }
 
-        this.drawMap();
-    }
+        self.drawMap = () => {
+            d3.json(GEOJSON_PATH, (data) => {
+                var centroid = d3.geoCentroid(data);
 
-    drawMap() {
-        d3.json(GEOJSON_PATH, function(data) {
-            var centroid = d3.geoCentroid(data);
+                var projection = d3.geoMercator()
+                    .scale([self.SCALE])
+                    .translate([self.WIDTH / 2, self.HEIGHT / 2])
+                    .center(centroid);
 
-            var projection = d3.geoMercator()
-                .scale([self.SCALE])
-                .translate([self.WIDTH / 2, self.HEIGHT / 2])
-                .center(centroid);
+                var path = d3.geoPath()
+                    .projection(projection);
 
-            var path = d3.geoPath()
-                .projection(projection);
+                var bounds = path.bounds(data);
 
-            var bounds = path.bounds(data);
-
-            var offset = [
+                var offset = [
                     self.WIDTH - (bounds[0][0] + bounds[1][0]) / 2,
                     self.HEIGHT - (bounds[0][1] + bounds[1][1]) / 2
                 ];
 
-            projection.translate(offset);
+                projection.translate(offset);
 
-            d3.select(`${THIS.container} svg g`).selectAll('path')
-                .data(data.features)
-                .enter()
-                .append('path')
-                .attr('fill', '#FFF7F9')
-                .attr('d', path)
-                .attr('data-regionCode', d => d.properties.ADMINCODE)
-                .call(THIS.paintRegions)
-                .each(THIS.setupMapRegion);
-        });
-    }
-
-    paintRegions(selection) {
-        new Promise(function(fulfill, reject) {
-            let expensesByRegion = Gastos.crossfilter()
-                .dimension(d => d.estado)
-                .group()
-                .reduce((sum, d) => sum + d.gastoValor,
-                        (sum, d) => sum,
-                        () => 0)
-                .all();
-
-            expensesByRegion.sort((a, b) => a.value - b.value);
-            fulfill(expensesByRegion);
-        }).then(function(expensesByRegion) {
-            let start = expensesByRegion[0].value;
-            let end = expensesByRegion[expensesByRegion.length - 1].value;
-
-            let colorScale = d3.scaleLinear()
-                .range(["#FFF7F9", "#946922"])
-                .domain([start, end]);
-
-            expensesByRegion = Util.fromArray(expensesByRegion,
-                    e => e.key,
-                    e => e.value);
-
-            selection.attr('fill', function(d) {
-                let region = CODE_TO_REGION[d.properties.ADMINCODE];
-                let expense = expensesByRegion[region];
-                return colorScale(expense);
+                self.SVG.selectAll('path')
+                    .data(data.features)
+                    .enter()
+                    .append('path')
+                    .attr('fill', '#FFF7F9')
+                    .attr('d', path)
+                    .attr('data-regionCode', d => d.properties.ADMINCODE)
+                    .call(self.paintRegions)
+                    .call(self.setupMapRegion);
             });
-        });
-    }
+        }
 
-    setupMapRegion(region) {
-        let el = d3.select(this);
+        self.paintRegions = (selection) => {
+            new Promise(function(fulfill, reject) {
+                let expensesByRegion = Gastos.crossfilter()
+                    .dimension(d => d.estado)
+                    .group()
+                    .reduce((sum, d) => sum + d.gastoValor,
+                            (sum, d) => sum,
+                            () => 0)
+                    .all();
 
-        el.on('click', _ => {
-            let code = CODE_TO_REGION[el.attr('data-regionCode')];
-            Event.trigger(Events.MAP_REGION_CLICK, THIS, code);
-        });
+                expensesByRegion.sort((a, b) => a.value - b.value);
+                fulfill(expensesByRegion);
+            }).then(function(expensesByRegion) {
+                let start = expensesByRegion[0].value;
+                let end = expensesByRegion[expensesByRegion.length - 1].value;
 
-        el.on('mouseover', _ => {
-            el.classed('map-region-hover', true);
-        });
+                let colorScale = d3.scaleLinear()
+                    .range(["#FFF7F9", "#946922"])
+                    .domain([start, end]);
 
-        el.on('mouseout', _ => {
-            el.classed('map-region-hover', false);
-        });
+                expensesByRegion = Util.fromArray(expensesByRegion,
+                        e => e.key,
+                        e => e.value);
+
+                selection.attr('fill', function(d) {
+                    let region = CODE_TO_REGION[d.properties.ADMINCODE];
+                    let expense = expensesByRegion[region];
+                    return colorScale(expense);
+                });
+            });
+        }
+
+        self.setupMapRegion = (regions) => {
+            regions.each(function(region) {
+                let code = region.properties.ADMINCODE;
+                let el = d3.select(this);
+
+                el.on('click', _ => {
+                    Event.trigger(Events.MAP_REGION_CLICK, self, CODE_TO_REGION[code]);
+                });
+
+                el.on('mouseover', _ => {
+                    el.classed('map-region-hover', true);
+                });
+
+                el.on('mouseout', _ => {
+                    el.classed('map-region-hover', false);
+                });
+            })
+        }
     }
 }
-
