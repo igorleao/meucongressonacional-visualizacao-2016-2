@@ -160,7 +160,7 @@ export default class MapComponent {
         let el = d3.select(this);
 
         el.on('click', _ => {
-            let code = el.attr('data-regionCode');
+            let code = CODE_TO_REGION[el.attr('data-regionCode')];
             Event.trigger(Events.MAP_REGION_CLICK, THIS, code);
         });
 
