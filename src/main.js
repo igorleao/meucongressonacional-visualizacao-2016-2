@@ -14,7 +14,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
         let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
         stackedBars.render(StackedBars.StackedBarsField.GENDER);
 
-        Event.listen(Events.MAP_REGION_CLICK,
+        Event.listenTo(Events.MAP_REGION_CLICK,
                 map,
                 stackedBars.filterByRegion);
     })
