@@ -1,9 +1,8 @@
-import * as d3 from "d3"
+import * as d3 from 'd3'
 import Gastos from '../DataHandler/Gastos'
+import BrazilGeoJSON from '../DataHandler/BrazilGeoJSON'
 import Util from '../Util/Util'
 import Event, * as Events from '../Events/Events'
-
-const GEOJSON_PATH = '../../data/brazil.geojson';
 
 const REGION_TO_CODE = {
     'AC': 12,
@@ -88,36 +87,35 @@ export default class MapComponent {
         }
 
         self.drawMap = () => {
-            d3.json(GEOJSON_PATH, (data) => {
-                var centroid = d3.geoCentroid(data);
+            let data = BrazilGeoJSON.getGeoJSON();
+            var centroid = d3.geoCentroid(data);
 
-                var projection = d3.geoMercator()
-                    .scale([self.SCALE])
-                    .translate([self.WIDTH / 2, self.HEIGHT / 2])
-                    .center(centroid);
+            var projection = d3.geoMercator()
+                .scale([self.SCALE])
+                .translate([self.WIDTH / 2, self.HEIGHT / 2])
+                .center(centroid);
 
-                var path = d3.geoPath()
-                    .projection(projection);
+            var path = d3.geoPath()
+                .projection(projection);
 
-                var bounds = path.bounds(data);
+            var bounds = path.bounds(data);
 
-                var offset = [
-                    self.WIDTH - (bounds[0][0] + bounds[1][0]) / 2,
-                    self.HEIGHT - (bounds[0][1] + bounds[1][1]) / 2
-                ];
+            var offset = [
+                self.WIDTH - (bounds[0][0] + bounds[1][0]) / 2,
+                self.HEIGHT - (bounds[0][1] + bounds[1][1]) / 2
+            ];
 
-                projection.translate(offset);
+            projection.translate(offset);
 
-                self.SVG.selectAll('path')
-                    .data(data.features)
-                    .enter()
-                    .append('path')
-                    .attr('fill', '#FFF7F9')
-                    .attr('d', path)
-                    .attr('data-regionCode', d => d.properties.ADMINCODE)
-                    .call(self.paintRegions)
-                    .call(self.setupMapRegion);
-            });
+            self.SVG.selectAll('path')
+                .data(data.features)
+                .enter()
+                .append('path')
+                .attr('fill', '#FFF7F9')
+                .attr('d', path)
+                .attr('data-regionCode', d => d.properties.ADMINCODE)
+                .call(self.paintRegions)
+                .call(self.setupMapRegion);
         }
 
         self.paintRegions = (selection) => {
