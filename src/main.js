@@ -1,7 +1,7 @@
 import Gastos from './DataHandler/Gastos'
 import StackedBarsComponent from './StackedBars/StackedBarsComponent'
 import MapComponent from './Map/MapComponent'
-import Events from './Events/Events'
+import Event, * as Events from './Events/Events'
 
 const MAP_CONTAINER = '#map-container';
 const STACKED_CONTAINER = '#stackedbars-container';
@@ -14,7 +14,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
         let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
         stackedBars.render();
 
-        Events.listenToEvent(Events.MAP_REGION_CLICK,
+        Event.listen(Events.MAP_REGION_CLICK,
                 map,
                 stackedBars.filterByRegion);
     })
