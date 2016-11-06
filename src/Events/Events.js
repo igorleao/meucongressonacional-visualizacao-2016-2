@@ -4,32 +4,22 @@ export const MAP_REGION_CLICK = 'map_region_click';
 let LISTENERS = {};
 
 export default class Events {
-    static triggerMapRegionClick(element, data) {
-        console.log(element);
-        console.log(LISTENERS[MAP_REGION_CLICK][element]);
+    static triggerEvent(event, element, data) {
+        if (LISTENERS[event] === undefined) return;
+        if (LISTENERS[event][element] === undefined) return;
 
-        if (LISTENERS[MAP_REGION_CLICK] === undefined) return;
-        if (LISTENERS[MAP_REGION_CLICK][element] === undefined) return;
-
-
-        LISTENERS[MAP_REGION_CLICK][element].forEach(function(cb) {
-            cb(data);
-        });
+        LISTENERS[event][element].forEach(cb => cb(data));
     }
 
-    static listenToMapRegionClick(element, callback) {
-        console.log(element);
-
-        if (LISTENERS[MAP_REGION_CLICK] === undefined) {
-            LISTENERS[MAP_REGION_CLICK] = {};
+    static listenToEvent(event, element, callback) {
+        if (LISTENERS[event] === undefined) {
+            LISTENERS[event] = {};
         }
 
-        if (LISTENERS[MAP_REGION_CLICK][element] === undefined) {
-            LISTENERS[MAP_REGION_CLICK][element] = [];
+        if (LISTENERS[event][element] === undefined) {
+            LISTENERS[event][element] = [];
         }
 
-        LISTENERS[MAP_REGION_CLICK][element].push(callback);
-
-        console.log(LISTENERS[MAP_REGION_CLICK][element]);
+        LISTENERS[event][element].push(callback);
     }
 }

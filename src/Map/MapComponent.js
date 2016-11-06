@@ -155,7 +155,7 @@ export default class MapComponent {
 
         el.on('click', _ => {
             let code = el.attr('data-regionCode');
-            Events.triggerMapRegionClick(THIS, code);
+            Events.triggerEvent(Events.MAP_REGION_CLICK, THIS, code);
         });
 
         el.on('mouseover', _ => {
