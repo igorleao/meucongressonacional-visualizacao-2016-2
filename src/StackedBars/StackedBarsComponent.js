@@ -173,4 +173,8 @@ export default class StackedBarsComponent {
     render() {
         if (self.active.gender) this.__renderGender();
     }
+
+    filterByRegion(regionCode) {
+        console.log(regionCode);
+    }
 }

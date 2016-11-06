@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import Gastos from '../DataHandler/Gastos'
 import Util from '../Util/Util'
+import Events from '../Events/Events'
 
 const GEOJSON_PATH = '../../data/brazil.geojson';
 
@@ -64,12 +65,15 @@ const CODE_TO_REGION = {
     '17': 'TO'
 }
 
+let THIS = null;
+
 export default class MapComponent {
     constructor(container) {
         self.container = container;
         self.WIDTH = 600;
         self.HEIGHT = 600;
         self.SCALE = 800;
+        THIS = this;
     }
 
     render() {
@@ -82,8 +86,6 @@ export default class MapComponent {
     }
 
     drawMap() {
-        let _this = this;
-
         d3.json(GEOJSON_PATH, function(data) {
             var centroid = d3.geoCentroid(data);
 
@@ -111,14 +113,12 @@ export default class MapComponent {
                 .attr('fill', '#FFF7F9')
                 .attr('d', path)
                 .attr('data-regionCode', d => d.properties.ADMINCODE)
-                .call(_this.paintRegions)
-                .each(_this.setupMapRegion);
+                .call(THIS.paintRegions)
+                .each(THIS.setupMapRegion);
         });
     }
 
     paintRegions(selection) {
-        let _this = this;
-
         new Promise(function(fulfill, reject) {
             let expensesByRegion = Gastos.crossfilter()
                 .dimension(d => d.estado)
@@ -154,7 +154,8 @@ export default class MapComponent {
         let el = d3.select(this);
 
         el.on('click', _ => {
-            console.log(el.attr('data-regionCode'));
+            let code = el.attr('data-regionCode');
+            Events.triggerMapRegionClick(THIS, code);
         });
 
         el.on('mouseover', _ => {
