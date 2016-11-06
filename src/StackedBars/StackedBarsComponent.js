@@ -8,6 +8,7 @@ export const StackedBarsField = {
 
 export default class StackedBarsComponent {
     constructor(container) {
+        var self = this;
         self.dimension = { height: 400, width: 600 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
@@ -18,154 +19,151 @@ export default class StackedBarsComponent {
         self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]); //TODO: mudar para cores!!! -> Modularizar!!! -> preso no caso de genero!
 
         self.container = container;
-    }
 
-    render(field) {
-        d3.select(`${self.container} > svg`).remove();
+        self.render = (field) =>  {
+            d3.select(`${self.container} > svg`).remove();
 
-        let svg = d3.select(self.container)
-            .append("svg")
-            .attr("height", self.dimension.height)
-            .attr("width", self.dimension.width);
+            let svg = d3.select(self.container)
+                .append("svg")
+                .attr("height", self.dimension.height)
+                .attr("width", self.dimension.width);
 
-        self.SVG = svg.append("g")
-            .attr("transform", `translate(${self.margin.left}, ${self.margin.top})`);
+            self.SVG = svg.append("g")
+                .attr("transform", `translate(${self.margin.left}, ${self.margin.top})`);
 
-        if (field === StackedBarsField.GENDER) {
-            this.renderGender();
-        }
-    }
-
-    __genericDraw(element, father, selector, drawFunction, data) {
-        let selection = (data != null) ? father.selectAll(selector).data(data) : father;
-        let insertion = selection.enter();
-        insertion.append(element).call(drawFunction);
-        selection.exit().remove();
-        selection.call(drawFunction);
-        return father.selectAll(selector);
-    }
-
-    __appendBars(data) {
-        function _barsGroup(sel) {
-            sel.attr("class", "serie")
-                .attr("fill", (d) => self.z(d.key))
+            if (field === StackedBarsField.GENDER) {
+                self.renderGender();
+            }
         }
 
-        function _barsItself(sel) {
-            sel.attr("x", (d) => self.x(d.data.mesAno))
-                .attr("y", (d) => self.y(d[1]))
-                .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
-                .attr("width", self.x.bandwidth());
+        self.genericDraw = (element, father, selector, drawFunction, data) => {
+            let selection = (data != null) ? father.selectAll(selector).data(data) : father;
+            let insertion = selection.enter();
+            insertion.append(element).call(drawFunction);
+            selection.exit().remove();
+            selection.call(drawFunction);
+            return father.selectAll(selector);
         }
 
-        let barsGroup = this.__genericDraw("g", self.SVG, ".serie", _barsGroup, data);
-        let bars = this.__genericDraw("rect", barsGroup, "rect", _barsItself, d => d);
-    }
+        self.appendBars = (data) => {
+            let _barsGroup = (sel) => {
+                sel.attr("class", "serie")
+                    .attr("fill", (d) => self.z(d.key))
+            }
 
-    __appendAxis() {
-        function _drawX(sel) {
-            sel.attr("class", "axis--x")
-            .attr("transform", "translate(0," + self.height + ")")
-            .call(d3.axisBottom(self.x));
+            let _barsItself = (sel) => {
+                sel.attr("x", (d) => self.x(d.data.mesAno))
+                    .attr("y", (d) => self.y(d[1]))
+                    .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
+                    .attr("width", self.x.bandwidth());
+            }
+
+            let barsGroup = self.genericDraw("g", self.SVG, ".serie", _barsGroup, data);
+            let bars = self.genericDraw("rect", barsGroup, "rect", _barsItself, d => d);
         }
 
-        function _groupY(sel) {
-            sel.attr("class", "axis--y")
-            .call(d3.axisLeft(self.y).ticks(10, "s"))
+        self.appendAxis = () => {
+            let _drawX = (sel) => {
+                sel.attr("class", "axis--x")
+                    .attr("transform", "translate(0," + self.height + ")")
+                    .call(d3.axisBottom(self.x));
+            }
+
+            let _groupY = (sel) => {
+                sel.attr("class", "axis--y")
+                    .call(d3.axisLeft(self.y).ticks(10, "s"))
+            }
+
+            let _drawY = (sel) => {
+                sel.attr("x", 2)
+                    .attr("class", "y-content")
+                    .attr("y", self.y(self.y.ticks(10).pop()))
+                    .attr("dy", "0.35em")
+                    .attr("text-anchor", "start")
+                    .attr("fill", "#000")
+                    .text("Despesas");
+            }
+
+            let axisX = self.genericDraw("g", self.SVG, ".axis--x", _drawX, [""]);
+            let groupY = self.genericDraw("g", self.SVG, ".axis--y", _groupY, [""]);
+            let drawY = self.genericDraw("text", groupY, ".y-content", _drawY, [""]);
         }
 
-        function _drawY(sel) {
-            sel.attr("x", 2)
-            .attr("class", "y-content")
-            .attr("y", self.y(self.y.ticks(10).pop()))
-            .attr("dy", "0.35em")
-            .attr("text-anchor", "start")
-            .attr("fill", "#000")
-            .text("Despesas");
+        self.appendLegend = (data) => {
+            let _legendGroup = (sel) => {
+                sel.attr("class", "legend-group")
+                    .attr("transform", function(d, i) { return `translate(0, ${i * 20} )`; })
+                    .style("font", "10px sans-serif");
+            }
+
+            let _drawLegendRect = (sel) => {
+                sel.attr("x", self.width - 18)
+                    .attr("class", "legend-rect")
+                    .attr("width", 18)
+                    .attr("height", 18)
+                    .attr("fill", self.z);
+            }
+
+            let _drawLegendText = (sel) => {
+                sel.attr("x", self.width - 24)
+                    .attr("class", "legend-text")
+                    .attr("y", 9)
+                    .attr("dy", ".35em")
+                    .attr("text-anchor", "end")
+                    .text((d) => d);
+            }
+
+            let groupLegend = self.genericDraw("g", self.SVG, "legend-group", _legendGroup, data);
+            let legendG1 = self.genericDraw("rect", groupLegend, "legend-rect", _drawLegendRect, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
+            let legendG2 = self.genericDraw("text", groupLegend, "legend-text", _drawLegendText, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
         }
 
-        let axisX = this.__genericDraw("g", self.SVG, ".axis--x", _drawX, [""]);
-        let groupY = this.__genericDraw("g", self.SVG, ".axis--y", _groupY, [""]);
-        let drawY = this.__genericDraw("text", groupY, ".y-content", _drawY, [""]);
-    }
+        self.renderGender = () => {
+            let mesAno = Gastos.crossfilter()
+                .dimension((d) => d.mesAno);
+            let spendingsByMonthYear = mesAno.group()
+                .reduce((p, v) => { p[v.sexo] += v.gastoValor; return p; },
+                        (p, v) => p,
+                        () => { return { 'F': 0, 'M': 0 }; });
 
-    __appendLegend(data) {
-        function _legendGroup(sel) {
-            sel.attr("class", "legend-group")
-            .attr("transform", function(d, i) { return `translate(0, ${i * 20} )`; })
-            .style("font", "10px sans-serif");
-        }
+            /* BEGIN: tratamento dos dados para o formato do stacked-bars */
+            let currentYear = new Date().getFullYear();
+            let keys = d3.keys(spendingsByMonthYear.all()[0].value);
+            let flattenData = [];
 
-        function _drawLegendRect(sel) {
-            sel.attr("x", self.width - 18)
-            .attr("class", "legend-rect")
-            .attr("width", 18)
-            .attr("height", 18)
-            .attr("fill", self.z);
-        }
-
-        function _drawLegendText(sel) {
-            sel.attr("x", self.width - 24)
-            .attr("class", "legend-text")
-            .attr("y", 9)
-            .attr("dy", ".35em")
-            .attr("text-anchor", "end")
-            .text((d) => d);
-        }
-
-        let groupLegend = this.__genericDraw("g", self.SVG, "legend-group", _legendGroup, data);
-        let legendG1 = this.__genericDraw("rect", groupLegend, "legend-rect", _drawLegendRect, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
-        let legendG2 = this.__genericDraw("text", groupLegend, "legend-text", _drawLegendText, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
-    }
-
-    renderGender() {
-        let mesAno = Gastos.crossfilter()
-            .dimension((d) => d.mesAno);
-        let spendingsByMonthYear = mesAno.group()
-            .reduce((p, v) => { p[v.sexo] += v.gastoValor; return p; },
-                    (p, v) => p,
-                    () => { return { 'F': 0, 'M': 0 }; });
-
-        /* BEGIN: tratamento dos dados para o formato do stacked-bars */
-        let currentYear = new Date().getFullYear();
-        let keys = d3.keys(spendingsByMonthYear.all()[0].value);
-        let flattenData = [];
-
-        for (let v of spendingsByMonthYear.all()) {
-            if (parseInt(v.key.substring(0, 4)) <= currentYear) {
-                let obj = {};
-                obj.mesAno = v.key;
-                for (let k of keys) {
-                    obj[k] = v.value[k];
+            for (let v of spendingsByMonthYear.all()) {
+                if (parseInt(v.key.substring(0, 4)) <= currentYear) {
+                    let obj = {};
+                    obj.mesAno = v.key;
+                    for (let k of keys) {
+                        obj[k] = v.value[k];
+                    }
+                    flattenData.push(obj)
                 }
-                flattenData.push(obj)
             }
+            /* END: tratamento dos dados para o formato do stacked-bars */
+
+            // TODO: modularizar, talvez transformar em funções aqui dentro da classe mesmo, os métodos abaixo:
+            let stack = d3.stack()
+                .keys(keys)
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetNone);
+
+            self.x.domain(flattenData.map(d => d.mesAno));
+            self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            self.z.domain(keys);
+
+            self.appendBars(stack(flattenData));
+            self.appendAxis();
+            self.appendLegend(["Mulheres", "Homens"]);
         }
-        /* END: tratamento dos dados para o formato do stacked-bars */
 
-        // TODO: modularizar, talvez transformar em funções aqui dentro da classe mesmo, os métodos abaixo:
-        let stack = d3.stack()
-          .keys(keys)
-          .order(d3.stackOrderNone)
-          .offset(d3.stackOffsetNone);
-
-        x.domain(flattenData.map(function(d) { return d.mesAno; }));
-        y.domain([0, d3.max(flattenData, function(d) {
-            let sum = 0;
-            for (let k of keys) {
-                sum += d[k];
-            }
-            return sum;
-        })]).nice();
-        z.domain(keys);
-
-
-        this.__appendBars(stack(flattenData));
-        this.__appendAxis();
-        this.__appendLegend(["Mulheres", "Homens"]);
-    }
-
-    filterByRegion(regionCode) {
-        console.log(regionCode);
+        self.filterByRegion = (regionCode) => {
+            Gastos.crossfilter()
+                .dimension(d => d.estado)
+                .filterExact(regionCode);
+            console.log(regionCode);
+        }
     }
 }
+
