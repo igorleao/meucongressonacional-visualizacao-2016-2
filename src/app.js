@@ -2,6 +2,7 @@ import Gastos from './DataHandler/Gastos'
 import BrazilGeoJSON from './DataHandler/BrazilGeoJSON'
 import StackedBarsComponent, * as StackedBars from './StackedBars/StackedBarsComponent'
 import MapComponent from './Map/MapComponent'
+import TreemapComponent from './Treemap/TreemapComponent'
 import Event, * as Events from './Events/Events'
 
 const MAP_CONTAINER = '#map-container';
@@ -13,6 +14,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
 
     let map = new MapComponent(MAP_CONTAINER);
     let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
+    let treeMap = new TreemapComponent();
 
     Event.listenTo(Events.MAP_REGION_CLICK,
             map,
