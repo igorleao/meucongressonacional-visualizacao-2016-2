@@ -31,7 +31,9 @@ SystemJS.config({
       "crossfilter": "npm:crossfilter@1.3.12",
       "papaparse": "npm:papaparse@4.1.2",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.17"
+      "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
+      "jquery": "npm:jquery@3.1.1",
+      "jquery.scrollto": "npm:jquery.scrollto@2.1.2"
     },
     "packages": {
       "npm:d3@4.3.0": {
@@ -402,6 +404,11 @@ SystemJS.config({
       "npm:debug@2.3.0": {
         "map": {
           "ms": "npm:ms@0.7.2"
+        }
+      },
+      "npm:jquery.scrollto@2.1.2": {
+        "map": {
+          "jquery": "npm:jquery@3.1.1"
         }
       }
     }
