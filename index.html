@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Meu Congresso Nacional</title>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Congresso Brasileiro</title>
     <style>
         .bar {
           fill: steelblue;
@@ -17,14 +20,29 @@
             stroke-width: 1.5px;
         }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="map-container">
     </div>
     <div id="treemap-container">
+        <div id="chart"></div>
     </div>
     <div id="stackedbars-container">
     </div>
-    <script src="bundle.js"></script>
-  </body>
+	<!-- loading-app:start -->
+	<script src="jspm_packages/system.js"></script>
+	<script src="jspm.config.js"></script>
+	<script type="text/javascript">
+    SystemJS.import('systemjs-hot-reloader').then(function(HotReloader) {
+      // if you're running server on custom port please remember to update below
+      new HotReloader.default('http://localhost:8888');
+    });
+    // load main module of your app with SystemJS
+    SystemJS.trace = true;
+    SystemJS.import('src/app');
+  </script>
+	<!-- loading-app:end -->
+</body>
+
 </html>
