@@ -19,6 +19,7 @@
       "constants": "npm:jspm-nodelibs-constants@^0.2.0",
       "crossfilter": "npm:crossfilter@^1.3.12",
       "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "css": "github:systemjs/plugin-css@^0.1.32",
       "d3": "npm:d3@4.3.0",
       "d3v3": "npm:d3@3.5.17",
       "events": "npm:jspm-nodelibs-events@^0.2.0",
@@ -35,6 +36,7 @@
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
       "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
+      "twbs/bootstrap": "github:twbs/bootstrap@4.0.0-alpha",
       "url": "npm:jspm-nodelibs-url@^0.2.0",
       "util": "npm:jspm-nodelibs-util@^0.2.0",
       "vm": "npm:jspm-nodelibs-vm@^0.2.0"
@@ -42,6 +44,27 @@
     "overrides": {
       "github:socketio/socket.io-client@1.5.1": {
         "main": "socket.io.js"
+      },
+      "github:twbs/bootstrap@4.0.0-alpha": {
+        "files": null,
+        "ignore": [
+          "dist/js/npm"
+        ],
+        "directories": {
+          "lib": "dist"
+        },
+        "dependencies": {
+          "jquery": "github:components/jquery"
+        },
+        "meta": {
+          "js/bootstrap.js": {
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "format": "global"
+          }
+        }
       },
       "npm:d3@3.5.17": {
         "meta": {
@@ -108,4 +131,4 @@
     "url": "https://github.com/igorleao/meucongressonacional-visualizacao-2016-2/issues"
   },
   "homepage": "https://github.com/igorleao/meucongressonacional-visualizacao-2016-2#readme"
-}
+}

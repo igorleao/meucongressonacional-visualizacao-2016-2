@@ -1,3 +1,7 @@
+import $ from 'jquery'
+import bootstrap from 'twbs/bootstrap'
+import 'twbs/bootstrap/css/bootstrap.css!'
+
 import Gastos from './DataHandler/Gastos'
 import BrazilGeoJSON from './DataHandler/BrazilGeoJSON'
 import StackedBarsComponent, * as StackedBars from './StackedBars/StackedBarsComponent'

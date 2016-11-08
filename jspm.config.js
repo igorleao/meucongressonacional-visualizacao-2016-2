@@ -33,7 +33,9 @@ SystemJS.config({
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
       "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
       "jquery": "npm:jquery@3.1.1",
-      "jquery.scrollto": "npm:jquery.scrollto@2.1.2"
+      "jquery.scrollto": "npm:jquery.scrollto@2.1.2",
+      "twbs/bootstrap": "github:twbs/bootstrap@4.0.0-alpha",
+      "css": "github:systemjs/plugin-css@0.1.32"
     },
     "packages": {
       "npm:d3@4.3.0": {
@@ -409,6 +411,11 @@ SystemJS.config({
       "npm:jquery.scrollto@2.1.2": {
         "map": {
           "jquery": "npm:jquery@3.1.1"
+        }
+      },
+      "github:twbs/bootstrap@4.0.0-alpha": {
+        "map": {
+          "jquery": "github:components/jquery@3.1.1"
         }
       }
     }

@@ -6,10 +6,29 @@ body {
     height: 100%;
 }
 
+#menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #424242;
+    height: 40px;
+    justify-content: space-around;
+}
+
 #main-container {
     display: flex;
     flex-direction: row;
     height: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-label {
+    color: white;
+    padding-right: 5px;
 }
 
 .column-container {

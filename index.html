@@ -6,10 +6,37 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Congresso Brasileiro</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div id="menu">
+        <div class="row">
+            <span class="form-label">Partido: </span>
+            <select id="select-partido" class="form-control" style="width: 200px">
+              <option selected>Todos</option>
+              <option value="1">PT</option>
+              <option value="2">PV</option>
+              <option value="3">PSDB</option>
+            </select>
+        </div>
+        <div class="row">
+            <span class="form-label">Tipo do StackedBars: </span>
+            <select id="select-tipo" class="form-control" style="width: 200px">
+              <option value="1">Genero</option>
+              <option value="2">Tipo do gasto</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <span class="form-label">Normalizado: </span>
+            <select id="select-normalizado" class="form-control" style="width: 200px">
+              <option value="1">Não</option>
+              <option value="2">Sim</option>
+            </select>
+        </div>
+    </div>
     <div id="main-container">
         <div class="column-container item">
             <div id="treemap-container" class="item">
