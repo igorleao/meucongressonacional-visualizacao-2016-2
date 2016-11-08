@@ -35,6 +35,8 @@ export default class StackedBarsComponent {
 
             if (field === StackedBarsField.GENDER) {
                 self.renderGender();
+            } else if(field === StackedBarsField.CATEGORY) {
+                self.renderCategory();
             }
         }
 
@@ -121,6 +123,8 @@ export default class StackedBarsComponent {
         }
 
         self.renderGender = () => {
+            self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]);
+
             let mesAno = Gastos.crossfilter()
                 .dimension((d) => d.mesAno);
             let spendingsByMonthYear = mesAno.group()
@@ -160,6 +164,67 @@ export default class StackedBarsComponent {
             self.appendLegend(["Mulheres", "Homens"]);
         }
 
+        self.renderCategory = () => {
+            let common = ["COMBUSTÍVEIS E LUBRIFICANTES.", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
+
+            self.z = d3.scaleOrdinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+            let mesAno = Gastos.crossfilter()
+                .dimension((d) => d.mesAno);
+
+            let spendingsByMonthYear = mesAno.group()
+                .reduce((p, v) => {
+                            let tipo = v.gastoTipo;
+                            if (common.includes(tipo)) {
+                                p[v.gastoTipo] += v.gastoValor;
+                            }
+                            return p;
+                        }
+                        ,
+                        (p, v) => p,
+                        () => {
+                            let obj = {}
+                            for (let d of common) {
+                                obj[d] = 0
+                            }
+                            return obj;
+                        });
+            console.log(d3.keys(spendingsByMonthYear.all()[0].value));
+            //console.log(spendingsByMonthYear.top(10));
+            /* BEGIN: tratamento dos dados para o formato do stacked-bars */
+            let currentYear = new Date().getFullYear();
+            let keys = common;
+            let flattenData = [];
+
+            for (let v of spendingsByMonthYear.all()) {
+                if (parseInt(v.key.substring(0, 4)) <= currentYear) {
+                    let obj = {};
+                    obj.mesAno = v.key;
+                    for (let k of keys) {
+                        obj[k] = v.value[k];
+                    }
+                    flattenData.push(obj)
+                }
+            }
+
+            //console.log(flattenData);
+            /* END: tratamento dos dados para o formato do stacked-bars */
+
+            // TODO: modularizar, talvez transformar em funções aqui dentro da classe mesmo, os métodos abaixo:
+            let stack = d3.stack()
+                .keys(keys)
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetNone);
+
+            self.x.domain(flattenData.map(d => d.mesAno));
+            self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            self.z.domain(keys);
+
+            self.appendBars(stack(flattenData));
+            self.appendAxis();
+            self.appendLegend(common);
+        }
+
         self.filterByRegion = (regionCode) => {
             self.regionDimension = self.regionDimension || Gastos.crossfilter()
                 .dimension(d => d.estado);
@@ -169,4 +234,3 @@ export default class StackedBarsComponent {
         }
     }
 }
-
