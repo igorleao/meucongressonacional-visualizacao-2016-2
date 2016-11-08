@@ -16,8 +16,8 @@ export default class TreemapComponent {
             rootname: "TOP",
             format: ",d",
             title: "",
-            width: 1200,
-            height: 800
+            width: 800,
+            height: 870
         };
 
         function main(o, data) {
@@ -271,7 +271,7 @@ export default class TreemapComponent {
                     }
 
                     var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-                    main({title: "Gastos dos Partidos"}, {key: "Congresso", values: data});
+                    main({title: ""}, {key: "Congresso", values: data});
                 }
             });
         }

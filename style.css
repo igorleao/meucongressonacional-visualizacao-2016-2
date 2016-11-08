@@ -1,3 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    flex-grow: 1;
+}
+
+.bar {
+  fill: steelblue;
+}
+.axis path {
+  display: none;
+}
+
+/* map */
+.map-region-hover {
+    stroke: red;
+    stroke-width: 1.5px;
+}
+
 #chart {
   background: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,11 +53,6 @@ text {
 
 .grandparent text {
   font-weight: bold;
-}
-
-rect {
-  fill: none;
-  stroke: #fff;
 }
 
 rect.parent,

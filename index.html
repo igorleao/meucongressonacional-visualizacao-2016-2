@@ -6,29 +6,22 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Congresso Brasileiro</title>
-    <style>
-        .bar {
-          fill: steelblue;
-        }
-        .axis path {
-          display: none;
-        }
-
-        /* map */
-        .map-region-hover {
-            stroke: red;
-            stroke-width: 1.5px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <div id="map-container">
-    </div>
-    <div id="treemap-container">
-        <div id="chart"></div>
-    </div>
-    <div id="stackedbars-container">
+    <div id="main-container">
+        <div class="column-container item">
+            <div id="treemap-container" class="item">
+                <div id="chart" class="item"></div>
+            </div>
+        </div>
+        <div class="column-container item">
+            <div id="map-container" class="item">
+            </div>
+            <div id="stackedbars-container" class="item">
+            </div>
+        </div>
     </div>
 	<!-- loading-app:start -->
 	<script src="jspm_packages/system.js"></script>

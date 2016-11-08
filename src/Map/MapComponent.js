@@ -67,9 +67,9 @@ const CODE_TO_REGION = {
 export default class MapComponent {
     constructor(container) {
         var self = this;
-        self.WIDTH = 600;
-        self.HEIGHT = 600;
-        self.SCALE = 800;
+        self.WIDTH = 400;
+        self.HEIGHT = 400;
+        self.SCALE = 580;
         self.container = container;
 
         self.render = () => {
@@ -101,7 +101,7 @@ export default class MapComponent {
             var bounds = path.bounds(data);
 
             var offset = [
-                self.WIDTH - (bounds[0][0] + bounds[1][0]) / 2,
+                self.WIDTH + 30 - (bounds[0][0] + bounds[1][0]) / 2,
                 self.HEIGHT - (bounds[0][1] + bounds[1][1]) / 2
             ];
 
