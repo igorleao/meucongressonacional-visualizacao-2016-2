@@ -10,7 +10,7 @@ export default class StackedBarsComponent {
     constructor(container) {
         var self = this;
         self.container = container;
-        self.dimension = { height: 400, width: 600 };
+        self.dimension = { height: 400, width: 900 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
         self.height = self.dimension.height - self.margin.top - self.margin.bottom,
