@@ -1,15 +1,17 @@
 import * as d3 from 'd3v3';
 import $ from 'jquery';
+import Gastos from '../DataHandler/Gastos'
 
 export default class TreemapComponent {
     constructor() {
-        console.log("carregandooo o treemap");
-        window.addEventListener('message', function(e) {
+
+        // TODO: DESCOBRIR PRA QUER SERVE
+        /*window.addEventListener('message', function(e) {
             var opts = e.data.opts,
                 data = e.data.data;
 
             return main(opts, data);
-        });
+        });*/
 
         var defaults = {
             margin: {top: 24, right: 0, bottom: 0, left: 0},
@@ -19,6 +21,17 @@ export default class TreemapComponent {
             width: 800,
             height: 870
         };
+
+        let tipoPartidoNomeDim = Gastos.crossfilter().dimension((d) => d.gastoTipo + ";" + d.partido + ";" + d.nomeParlamentar);
+        let dataset = tipoPartidoNomeDim.group().top(Infinity);
+        let res = [];
+        for(let d of dataset) {
+          let values = d.key.split(';');
+          res.push({key: values[0], region: values[1], subregion: values[2], value: d.value})
+        }
+
+        var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
+        main({title: ""}, {key: "Congresso", values: data});
 
         function main(o, data) {
           var root,
@@ -83,7 +96,6 @@ export default class TreemapComponent {
           initialize(root);
           accumulate(root);
           layout(root);
-          console.log(root);
           display(root);
 
           if (window.parent !== window) {
@@ -245,35 +257,6 @@ export default class TreemapComponent {
                 ? name(d.parent) + " / " + d.key + " (" + formatNumber(d.value) + ")"
                 : d.key + " (" + formatNumber(d.value) + ")";
           }
-        }
-
-        if (window.location.hash === "") {
-            d3.dsv(';')("../../data/politicodw.csv", function(err, res) { if (!err) {
-
-                    var dataset = {};
-
-                    res.forEach(function(element) {
-                      var key = element.gastoTipo + ';' + element.partido + ';' + element.nomeParlamentar;
-
-                      if(dataset[key] != undefined) {
-                        dataset[key] = dataset[key] + parseFloat(element.gastoValor);
-                      } else {
-                        dataset[key] = parseFloat(element.gastoValor);
-                      }
-
-                    });
-
-                    res = [];
-
-                    for(var key in dataset) {
-                      var values = key.split(';');
-                      res.push({key: values[0], region: values[1], subregion: values[2], value: dataset[key]})
-                    }
-
-                    var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-                    main({title: ""}, {key: "Congresso", values: data});
-                }
-            });
         }
     }
 }
