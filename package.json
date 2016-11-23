@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "visualização de gastos parlamentares",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "progressbar.js": "^1.0.1"
+  },
   "devDependencies": {
     "jspm": "^0.17.0-beta.31",
     "jspm-hmr": "^0.5.0"
@@ -31,6 +33,7 @@
       "papaparse": "npm:papaparse@^4.1.2",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "progressbar.js": "npm:progressbar.js@^1.0.1",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",

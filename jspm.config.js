@@ -33,7 +33,8 @@ SystemJS.config({
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
       "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.17",
       "jquery": "npm:jquery@3.1.1",
-      "jquery.scrollto": "npm:jquery.scrollto@2.1.2"
+      "jquery.scrollto": "npm:jquery.scrollto@2.1.2",
+      "progressbar.js": "npm:progressbar.js@1.0.1"
     },
     "packages": {
       "npm:d3@4.3.0": {
@@ -409,6 +410,11 @@ SystemJS.config({
       "npm:jquery.scrollto@2.1.2": {
         "map": {
           "jquery": "npm:jquery@3.1.1"
+        }
+      },
+      "npm:progressbar.js@1.0.1": {
+        "map": {
+          "shifty": "npm:shifty@1.5.3"
         }
       }
     }
