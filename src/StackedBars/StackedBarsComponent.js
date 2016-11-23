@@ -134,7 +134,7 @@ export default class StackedBarsComponent {
 
             /* BEGIN: tratamento dos dados para o formato do stacked-bars */
             let currentYear = new Date().getFullYear();
-            let keys = d3.keys(spendingsByMonthYear.all()[0].value);
+            let keys = d3.keys(spendingsByMonthYear.top(1)[0].value);
             let flattenData = [];
 
             for (let v of spendingsByMonthYear.all()) {
@@ -189,8 +189,6 @@ export default class StackedBarsComponent {
                             }
                             return obj;
                         });
-            console.log(d3.keys(spendingsByMonthYear.all()[0].value));
-            //console.log(spendingsByMonthYear.top(10));
             /* BEGIN: tratamento dos dados para o formato do stacked-bars */
             let currentYear = new Date().getFullYear();
             let keys = common;
@@ -207,7 +205,6 @@ export default class StackedBarsComponent {
                 }
             }
 
-            //console.log(flattenData);
             /* END: tratamento dos dados para o formato do stacked-bars */
 
             // TODO: modularizar, talvez transformar em funções aqui dentro da classe mesmo, os métodos abaixo:

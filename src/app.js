@@ -14,7 +14,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
 
     let map = new MapComponent(MAP_CONTAINER);
     let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
-    let treeMap = new TreemapComponent();
+
 
     Event.listenTo(Events.MAP_REGION_CLICK,
             map,
@@ -22,6 +22,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
 
     expensesPromise.then(function() {
         stackedBars.render(StackedBars.StackedBarsField.GENDER);
+        let treeMap = new TreemapComponent();
     });
 
     Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {
