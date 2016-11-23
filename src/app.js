@@ -21,7 +21,7 @@ const STACKED_CONTAINER = '#stackedbars-container';
             stackedBars.filterByRegion);
 
     expensesPromise.then(function() {
-        stackedBars.render(StackedBars.StackedBarsField.GENDER);
+        stackedBars.render(StackedBars.StackedBarsField.CATEGORY);
         let treeMap = new TreemapComponent();
     });
 
