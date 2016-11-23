@@ -17,10 +17,13 @@ export default class StackedBarsComponent {
 
         self.x = d3.scaleBand().rangeRound([0, self.width]).padding(0.1).align(0.1);
         self.y = d3.scaleLinear().rangeRound([self.height, 0]);
-        self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]); //TODO: mudar para cores!!! -> Modularizar!!! -> preso no caso de genero!
+        self.z = d3.scaleOrdinal();
 
-        self.render = (field) =>  {
+        self.render = (field, options) =>  {
+            options = options || self.options || { normalized: true, mean: true }
             field = field || self.field;
+
+            self.options = options;
             self.field = field;
 
             d3.select(`${self.container} > svg`).remove();
@@ -33,11 +36,9 @@ export default class StackedBarsComponent {
             self.SVG = svg.append("g")
                 .attr("transform", `translate(${self.margin.left}, ${self.margin.top})`);
 
-            if (field === StackedBarsField.GENDER) {
-                self.renderGender();
-            } else if(field === StackedBarsField.CATEGORY) {
-                self.renderCategory();
-            }
+
+            field === StackedBarsField.GENDER && self.renderGender(options);
+            field === StackedBarsField.CATEGORY && self.renderCategory(options);
         }
 
         self.genericDraw = (element, father, selector, drawFunction, data) => {
@@ -118,11 +119,9 @@ export default class StackedBarsComponent {
             }
 
             let groupLegend = self.genericDraw("g", self.SVG, "legend-group", _legendGroup, data);
-            let legendG1 = self.genericDraw("rect", groupLegend, "legend-rect", _drawLegendRect, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
-            let legendG2 = self.genericDraw("text", groupLegend, "legend-text", _drawLegendText, [""]); //TODO: NÃO FUNCIONANDO CORRETAMENTE!!!
         }
 
-        self.renderGender = () => {
+        self.renderGender = (options) => {
             self.z = d3.scaleOrdinal().range(["#FFBCD9", "#87CEFA"]);
 
             let mesAno = Gastos.crossfilter()
@@ -132,31 +131,41 @@ export default class StackedBarsComponent {
                         (p, v) => p,
                         () => { return { 'F': 0, 'M': 0 }; });
 
-            /* BEGIN: tratamento dos dados para o formato do stacked-bars */
+            let countByMonth = mesAno.group()
+                .reduce((p, v) => { p[v.sexo] += 1; return p; },
+                        (p, v) => p,
+                        () => { return { 'F': 0, 'M': 0 }; });
+
             let currentYear = new Date().getFullYear();
             let keys = d3.keys(spendingsByMonthYear.top(1)[0].value);
             let flattenData = [];
 
+            let i = 0;
+            let allcounts = countByMonth.all();
             for (let v of spendingsByMonthYear.all()) {
                 if (parseInt(v.key.substring(0, 4)) <= currentYear) {
                     let obj = {};
                     obj.mesAno = v.key;
                     for (let k of keys) {
                         obj[k] = v.value[k];
+                        options.mean && (obj[k] /= allcounts[i].value[k]); //TODO: checar se a ordem eh a mesma!!!!
                     }
                     flattenData.push(obj)
                 }
+                i += 1;
             }
-            /* END: tratamento dos dados para o formato do stacked-bars */
 
-            // TODO: modularizar, talvez transformar em funções aqui dentro da classe mesmo, os métodos abaixo:
             let stack = d3.stack()
                 .keys(keys)
                 .order(d3.stackOrderNone)
-                .offset(d3.stackOffsetNone);
+                .offset(d3.stackOffsetExpand);
 
             self.x.domain(flattenData.map(d => d.mesAno));
-            self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+
+            if (!options.normalized) {
+                stack.offset(d3.stackOffsetNone);
+                self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            }
             self.z.domain(keys);
 
             self.appendBars(stack(flattenData));
@@ -164,7 +173,7 @@ export default class StackedBarsComponent {
             self.appendLegend(["Mulheres", "Homens"]);
         }
 
-        self.renderCategory = () => {
+        self.renderCategory = (options) => {
             let common = ["COMBUSTÍVEIS E LUBRIFICANTES.", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
 
             self.z = d3.scaleOrdinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
@@ -189,20 +198,41 @@ export default class StackedBarsComponent {
                             }
                             return obj;
                         });
-            /* BEGIN: tratamento dos dados para o formato do stacked-bars */
+
+            let countSpending = mesAno.group()
+                .reduce((p, v) => {
+                            let tipo = v.gastoTipo;
+                            if (common.includes(tipo)) {
+                                p[v.gastoTipo] += 1;
+                            }
+                            return p;
+                        }
+                        ,
+                        (p, v) => p,
+                        () => {
+                            let obj = {}
+                            for (let d of common) {
+                                obj[d] = 0
+                            }
+                            return obj;
+                        });
+
+            let allcounts = countSpending.all();
             let currentYear = new Date().getFullYear();
             let keys = common;
             let flattenData = [];
-
+            let i = 0;
             for (let v of spendingsByMonthYear.all()) {
                 if (parseInt(v.key.substring(0, 4)) <= currentYear) {
                     let obj = {};
                     obj.mesAno = v.key;
                     for (let k of keys) {
                         obj[k] = v.value[k];
+                        options.mean && (obj[k] /= allcounts[i].value[k]); //TODO: checar se a ordem eh a mesma!!!!
                     }
                     flattenData.push(obj)
                 }
+                i += 1;
             }
 
             /* END: tratamento dos dados para o formato do stacked-bars */
@@ -211,10 +241,13 @@ export default class StackedBarsComponent {
             let stack = d3.stack()
                 .keys(keys)
                 .order(d3.stackOrderNone)
-                .offset(d3.stackOffsetNone);
+                .offset(d3.stackOffsetExpand);
 
             self.x.domain(flattenData.map(d => d.mesAno));
-            self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            if (!options.normalized) {
+                stack.offset(d3.stackOffsetNone);
+                self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            }
             self.z.domain(keys);
 
             self.appendBars(stack(flattenData));
