@@ -290,6 +290,20 @@ export default class StackedBarsComponent {
 
             self.regionDimension.filter(regionCode)
             self.render();
+            self.updateRibbons(regionCode);
+        }
+
+        self.updateRibbons = (regionCode) => {
+            let numberRecords = self.regionDimension.top(Infinity).length;
+            $('#qnt-gastos h1').text(`${numberRecords} gastos`);
+
+            let totalSpending = self.regionDimension.group().reduceSum(function(d) { return parseFloat(d.gastoValor); });
+            let listTotalSpendings =  totalSpending.all();
+            for (let s of listTotalSpendings) {
+                if (s.key === regionCode) {
+                    $('#total-gastos h1').text(`R$: ${s.value}`);
+                }
+            };
         }
     }
 }
