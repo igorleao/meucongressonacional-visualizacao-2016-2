@@ -113,3 +113,26 @@ rect.parent {
 .children:hover rect.child {
   fill: #bbb;
 }
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #424242;
+    height: 40px;
+    justify-content: space-around;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-label {
+    color: white;
+    padding-right: 5px;
+}
+
+#map-container {
+    height: 400px;
+}

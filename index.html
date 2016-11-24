@@ -27,6 +27,29 @@
 			<h1>100 empresas</h1>
 		</div>
 	</div>
+	<div id="menu">
+	    <div class="row">
+	        <span class="form-label">Tipo do StackedBars: </span>
+	        <select id="select-tipo" class="form-control" style="width: 200px">
+	          <option value="1">Genero</option>
+	          <option value="2">Tipo do gasto</option>
+	        </select>
+	    </div>
+		<div class="row">
+	        <span class="form-label">Métrica do StackedBars: </span>
+	        <select id="select-skb-metrica" class="form-control" style="width: 200px">
+	          <option value="1">Gasto médio</option>
+	          <option value="2">Gasto absoluto</option>
+	        </select>
+	    </div>
+		<div class="row">
+	        <span class="form-label">Exibição do StackedBars: </span>
+	        <select id="select-skb-exhi" class="form-control" style="width: 200px">
+			  <option value="1">Absoluto</option>
+	          <option value="2">Percentual</option>
+	        </select>
+	    </div>
+	</div>
     <div id="main-container">
         <div class="column-container item">
             <div id="treemap-container" class="item">
@@ -34,7 +57,7 @@
             </div>
         </div>
         <div class="column-container item">
-            <div id="map-container" class="item">
+            <div id="map-container">
             </div>
             <div id="stackedbars-container" class="item">
             </div>

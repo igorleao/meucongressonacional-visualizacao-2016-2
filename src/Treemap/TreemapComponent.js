@@ -5,7 +5,7 @@ import Gastos from '../DataHandler/Gastos'
 export default class TreemapComponent {
     constructor() {
 
-        
+
         // TODO: DESCOBRIR PRA QUER SERVE
         /*window.addEventListener('message', function(e) {
             var opts = e.data.opts,
@@ -20,7 +20,7 @@ export default class TreemapComponent {
             format: ",d",
             title: "",
             width: 800,
-            height: 870
+            height: 800
         };
 
         let tipoPartidoNomeDim = Gastos.crossfilter().dimension((d) => d.gastoTipo + ";" + d.partido + ";" + d.nomeParlamentar + ";" + d.estado);
@@ -266,7 +266,7 @@ export default class TreemapComponent {
         this.filterByRegion = (regionCode) => {
 
             let newRes = [];
-            
+
             for(let d of dataset) {
               let newValues = d.key.split(';');
               if(newValues[3] == regionCode) {

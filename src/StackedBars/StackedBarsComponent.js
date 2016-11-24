@@ -10,7 +10,7 @@ export default class StackedBarsComponent {
     constructor(container) {
         var self = this;
         self.container = container;
-        self.dimension = { height: 400, width: 900 };
+        self.dimension = { height: 300, width: 600 };
         self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
         self.height = self.dimension.height - self.margin.top - self.margin.bottom,
@@ -19,12 +19,23 @@ export default class StackedBarsComponent {
         self.y = d3.scaleLinear().rangeRound([self.height, 0]);
         self.z = d3.scaleOrdinal();
 
-        self.render = (field, options) =>  {
-            options = options || self.options || { normalized: true, mean: true }
-            field = field || self.field;
+        $("#select-tipo").change(function(){
+            self.render()
+        });
 
-            self.options = options;
-            self.field = field;
+        $("#select-skb-metrica").change(function(){
+            self.render()
+        });
+
+        $("#select-skb-exhi").change(function(){
+            self.render()
+        });
+
+        self.render = () =>  {
+            let options = { mean: ($("#select-skb-metrica").val() == 1) ? true : false,
+                            normalized: ($("#select-skb-exhi").val() == 1) ? false : true }
+
+            let field = ($("#select-tipo").val() == 1) ? StackedBarsField.GENDER : StackedBarsField.CATEGORY;
 
             d3.select(`${self.container} > svg`).remove();
 
@@ -95,30 +106,44 @@ export default class StackedBarsComponent {
         }
 
         self.appendLegend = (data) => {
-            let _legendGroup = (sel) => {
-                sel.attr("class", "legend-group")
-                    .attr("transform", function(d, i) { return `translate(0, ${i * 20} )`; })
-                    .style("font", "10px sans-serif");
-            }
+            let legendSel = self.SVG.selectAll(".legend-group")
+              .data(data.reverse())
 
-            let _drawLegendRect = (sel) => {
-                sel.attr("x", self.width - 18)
-                    .attr("class", "legend-rect")
-                    .attr("width", 18)
-                    .attr("height", 18)
-                    .attr("fill", self.z);
-            }
+            let legend = legendSel.enter().append("g")
+                .attr("class", "legend-group")
+                .attr("transform", function(d, i) { return `translate(0, ${i * 20} )`; })
+                .style("font", "10px sans-serif");
+            legend.append("rect")
+                .attr("x", self.width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .attr("fill", self.z);
+            legend.append("text")
+                .attr("x", self.width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .attr("text-anchor", "end")
+                .text(function(d) { return d; });
 
-            let _drawLegendText = (sel) => {
-                sel.attr("x", self.width - 24)
-                    .attr("class", "legend-text")
-                    .attr("y", 9)
-                    .attr("dy", ".35em")
-                    .attr("text-anchor", "end")
-                    .text((d) => d);
-            }
+            legend = legendSel.select("g")
+                .attr("class", "legend-group")
+                .attr("transform", function(d, i) { return `translate(0, ${i * 20} )`; })
+                .style("font", "10px sans-serif");
 
-            let groupLegend = self.genericDraw("g", self.SVG, "legend-group", _legendGroup, data);
+            legend.select("rect")
+                .attr("x", self.width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .attr("fill", self.z);
+            legend.select("text")
+                .attr("x", self.width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .attr("text-anchor", "end")
+                .text(function(d) { return d; });
+
+            legendSel.select("g").exit().remove();
+            legendSel.exit().remove();
         }
 
         self.renderGender = (options) => {
@@ -165,6 +190,8 @@ export default class StackedBarsComponent {
             if (!options.normalized) {
                 stack.offset(d3.stackOffsetNone);
                 self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            } else {
+                self.y.domain([0, 1]);
             }
             self.z.domain(keys);
 

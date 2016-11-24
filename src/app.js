@@ -30,7 +30,7 @@ const TREEMAP_CONTAINER = '#treemap-container'
             stackedBars.filterByRegion);
 
     expensesPromise.then(function() {
-        stackedBars.render(StackedBars.StackedBarsField.CATEGORY);
+        stackedBars.render();
         let treeMap = new TreemapComponent();
         Event.listenTo(Events.MAP_REGION_CLICK,
             map,
