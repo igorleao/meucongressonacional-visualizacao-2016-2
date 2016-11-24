@@ -5,6 +5,7 @@ import Gastos from '../DataHandler/Gastos'
 export default class TreemapComponent {
     constructor() {
 
+        
         // TODO: DESCOBRIR PRA QUER SERVE
         /*window.addEventListener('message', function(e) {
             var opts = e.data.opts,
@@ -27,15 +28,16 @@ export default class TreemapComponent {
         let res = [];
         for(let d of dataset) {
           let values = d.key.split(';');
-          if(values[3] == "SP") {
-            res.push({key: values[0], region: values[1], subregion: values[2], value: d.value})
-          }
+          res.push({key: values[0], region: values[1], subregion: values[2], value: d.value})
         }
 
         var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-        main({title: ""}, {key: "Congresso - SP", values: data});
+        main({title: ""}, {key: "Congresso", values: data});
 
         function main(o, data) {
+
+          $('#chart').empty();
+
           var root,
               opts = $.extend(true, {}, defaults, o),
               formatNumber = d3.format(opts.format),
@@ -259,6 +261,21 @@ export default class TreemapComponent {
                 ? name(d.parent) + " / " + d.key + " (" + formatNumber(d.value) + ")"
                 : d.key + " (" + formatNumber(d.value) + ")";
           }
+        }
+
+        this.filterByRegion = (regionCode) => {
+
+            let newRes = [];
+            
+            for(let d of dataset) {
+              let newValues = d.key.split(';');
+              if(newValues[3] == regionCode) {
+                newRes.push({key: newValues[0], region: newValues[1], subregion: newValues[2], value: d.value})
+              }
+            }
+
+            var newData = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(newRes);
+            main({title: ""}, {key: "Congresso - " + regionCode, values: newData});
         }
     }
 }

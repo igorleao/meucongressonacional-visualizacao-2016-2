@@ -25,7 +25,6 @@ const TREEMAP_CONTAINER = '#treemap-container'
     let map = new MapComponent(MAP_CONTAINER);
     let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
 
-
     Event.listenTo(Events.MAP_REGION_CLICK,
             map,
             stackedBars.filterByRegion);
@@ -33,6 +32,9 @@ const TREEMAP_CONTAINER = '#treemap-container'
     expensesPromise.then(function() {
         stackedBars.render(StackedBars.StackedBarsField.CATEGORY);
         let treeMap = new TreemapComponent();
+        Event.listenTo(Events.MAP_REGION_CLICK,
+            map,
+            treeMap.filterByRegion);
     });
 
     Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {
