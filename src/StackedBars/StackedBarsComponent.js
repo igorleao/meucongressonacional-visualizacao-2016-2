@@ -274,6 +274,8 @@ export default class StackedBarsComponent {
             if (!options.normalized) {
                 stack.offset(d3.stackOffsetNone);
                 self.y.domain([0, d3.max(flattenData, d => d3.sum(keys, k => d[k]))]).nice();
+            } else {
+                self.y.domain([0, 1]);
             }
             self.z.domain(keys);
 
