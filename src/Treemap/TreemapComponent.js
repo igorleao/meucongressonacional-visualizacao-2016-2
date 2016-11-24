@@ -296,5 +296,26 @@ export default class TreemapComponent {
           var newData = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(newRes);
           main({title: ""}, {key: "Congresso - " + regionCode, values: newData});
         }
+
+        this.resetFilter = () => {
+            $('#chart').empty();
+
+            let res = [];
+            for (let d of dataset) {
+                let values = d.key.split(';');
+                res.push({ key: values[0],
+                    region: values[1],
+                    subregion: values[2],
+                    value: d.value
+                });
+            }
+
+            var data = d3.nest()
+                .key(d => d.region)
+                .key(d => d.subregion)
+                .entries(res);
+
+            main({title: ""}, {key: "Congresso", values: data});
+        }
     }
 }

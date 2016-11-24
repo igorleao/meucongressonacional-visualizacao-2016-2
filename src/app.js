@@ -29,12 +29,21 @@ const TREEMAP_CONTAINER = '#treemap-container'
             map,
             stackedBars.filterByRegion);
 
+    Event.listenTo(Events.MAP_REGION_RESET,
+            map,
+            stackedBars.resetFilter);
+
     expensesPromise.then(function() {
         stackedBars.render();
         let treeMap = new TreemapComponent();
+
         Event.listenTo(Events.MAP_REGION_CLICK,
-            map,
-            treeMap.filterByRegion);
+                map,
+                treeMap.filterByRegion);
+
+        Event.listenTo(Events.MAP_REGION_RESET,
+                map,
+                treeMap.resetFilter);
     });
 
     Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {

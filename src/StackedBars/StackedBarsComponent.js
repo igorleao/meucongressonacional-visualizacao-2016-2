@@ -305,5 +305,13 @@ export default class StackedBarsComponent {
                 }
             };
         }
+
+        self.resetFilter = () => {
+            self.regionDimension = self.regionDimension || Gastos.crossfilter()
+                .dimension(d => d.estado);
+
+            self.regionDimension.filter()
+            self.render();
+        }
     }
 }

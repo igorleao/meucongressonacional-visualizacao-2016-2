@@ -1,5 +1,6 @@
 
 export const MAP_REGION_CLICK = 'map_region_click';
+export const MAP_REGION_RESET = 'map_region_reset';
 
 let LISTENERS = {};
 

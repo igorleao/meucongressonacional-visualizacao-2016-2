@@ -123,16 +123,38 @@ export default class MapComponent {
                 let expensesByRegion = Gastos.crossfilter()
                     .dimension(d => d.estado)
                     .group()
-                    .reduce((sum, d) => sum + parseFloat(d.gastoValor),
-                            (sum, d) => sum,
-                            () => 0)
+                    .reduceSum(d => parseFloat(d.gastoValor))
+                    .all();
+
+                let counters = {};
+
+                let politiciansByRegion = Gastos.crossfilter()
+                    .dimension(d => d.estado)
+                    .group()
+                    .reduce((p, d) => {
+                        if (!(d.politicoId in counters)) {
+                            counters[d.politicoId] = true;
+                            return p + 1;
+                        }
+
+                        return p;
+                    }, (p, d) => p,
+                    (d) => 0 )
                     .all();
 
                 expensesByRegion.sort((a, b) => a.value - b.value);
-                fulfill(expensesByRegion);
-            }).then(function(expensesByRegion) {
-                let start = expensesByRegion[0].value;
-                let end = expensesByRegion[expensesByRegion.length - 1].value;
+                politiciansByRegion.sort((a, b) => a.value - b.value);
+
+                fulfill({
+                    expensesByRegion: expensesByRegion,
+                    politiciansByRegion: politiciansByRegion
+                });
+            }).then(function(data) {
+                let expensesByRegion = data.expensesByRegion;
+                let politiciansByRegion = data.politiciansByRegion;
+
+                let start = expensesByRegion[0].value / politiciansByRegion[politiciansByRegion.length - 1].value;
+                let end = expensesByRegion[expensesByRegion.length - 1].value / politiciansByRegion[0].value;
 
                 let colorScale = d3.scaleLinear()
                     .range(["#FFF7F9", "#946922"])
@@ -142,10 +164,15 @@ export default class MapComponent {
                         e => e.key,
                         e => e.value);
 
+                politiciansByRegion = Util.fromArray(politiciansByRegion,
+                        e => e.key,
+                        e => e.value);
+
                 selection.attr('fill', function(d) {
                     let region = CODE_TO_REGION[d.properties.ADMINCODE];
+                    let politicians = politiciansByRegion[region];
                     let expense = expensesByRegion[region];
-                    return colorScale(expense);
+                    return colorScale(expense / politicians);
                 });
             });
         }
@@ -156,7 +183,20 @@ export default class MapComponent {
                 let el = d3.select(this);
 
                 el.on('click', _ => {
-                    Event.trigger(Events.MAP_REGION_CLICK, self, CODE_TO_REGION[code]);
+                    const selected = el.classed('map-region-selected');
+                    if (!selected) {
+                        const codeToSend = CODE_TO_REGION[code];
+                        Event.trigger(Events.MAP_REGION_CLICK,
+                                self,
+                                codeToSend);
+                    } else {
+                        Event.trigger(Events.MAP_REGION_RESET,
+                                self);
+                    }
+
+                    self.SVG.select('path.map-region-selected')
+                        .classed('map-region-selected', false);
+                    el.classed('map-region-selected', !selected);
                 });
 
                 el.on('mouseover', _ => {
