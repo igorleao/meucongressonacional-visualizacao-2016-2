@@ -123,7 +123,7 @@ export default class MapComponent {
                 let expensesByRegion = Gastos.crossfilter()
                     .dimension(d => d.estado)
                     .group()
-                    .reduce((sum, d) => sum + d.gastoValor,
+                    .reduce((sum, d) => sum + parseFloat(d.gastoValor),
                             (sum, d) => sum,
                             () => 0)
                     .all();

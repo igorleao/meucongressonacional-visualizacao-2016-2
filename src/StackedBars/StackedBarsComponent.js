@@ -152,7 +152,7 @@ export default class StackedBarsComponent {
             let mesAno = Gastos.crossfilter()
                 .dimension((d) => d.mesAno);
             let spendingsByMonthYear = mesAno.group()
-                .reduce((p, v) => { p[v.sexo] += v.gastoValor; return p; },
+                .reduce((p, v) => { p[v.sexo] += parseFloat(v.gastoValor); return p; },
                         (p, v) => p,
                         () => { return { 'F': 0, 'M': 0 }; });
 
@@ -212,7 +212,7 @@ export default class StackedBarsComponent {
                 .reduce((p, v) => {
                             let tipo = v.gastoTipo;
                             if (common.includes(tipo)) {
-                                p[v.gastoTipo] += v.gastoValor;
+                                p[v.gastoTipo] += parseFloat(v.gastoValor);
                             }
                             return p;
                         }

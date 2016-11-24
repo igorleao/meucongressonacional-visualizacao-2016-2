@@ -1,7 +1,7 @@
 import { parse } from 'papaparse';
 import * as crossfilter from 'crossfilter';
 
-const PATH = "../../data/politicodw.csv";
+const PATH = "../../data/politicodw_2015_recente.csv";
 const CROSSFILTER = crossfilter.default();
 
 export default class Gastos {
