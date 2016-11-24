@@ -14,6 +14,7 @@ export default class TreemapComponent {
             return main(opts, data);
         });*/
 
+
         var defaults = {
             margin: {top: 24, right: 0, bottom: 0, left: 0},
             rootname: "TOP",
@@ -23,8 +24,12 @@ export default class TreemapComponent {
             height: 800
         };
 
+
         let tipoPartidoNomeDim = Gastos.crossfilter().dimension((d) => d.gastoTipo + ";" + d.partido + ";" + d.nomeParlamentar + ";" + d.estado);
         let dataset = tipoPartidoNomeDim.group().top(Infinity);
+
+        $('#chart').empty();
+
         let res = [];
         for(let d of dataset) {
           let values = d.key.split(';');
@@ -35,8 +40,6 @@ export default class TreemapComponent {
         main({title: ""}, {key: "Congresso", values: data});
 
         function main(o, data) {
-
-          $('#chart').empty();
 
           var root,
               opts = $.extend(true, {}, defaults, o),
@@ -263,19 +266,35 @@ export default class TreemapComponent {
           }
         }
 
+        this.normalize = function() {
+
+          let normRes = [];
+
+          for(let d of dataset) {
+            let normValues = d.key.split(';');
+            normRes.push({key: normValues[0], region: normValues[1], subregion: normValues[2], value: d.value})
+          }
+
+          var normData = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(newRes);
+          main({title: ""}, {key: "Congresso Normalizado" + regionCode, values: normData});
+
+        }
+
+        // this.normalize();
+
         this.filterByRegion = (regionCode) => {
+          $('#chart').empty();
+          let newRes = [];
 
-            let newRes = [];
-
-            for(let d of dataset) {
-              let newValues = d.key.split(';');
-              if(newValues[3] == regionCode) {
-                newRes.push({key: newValues[0], region: newValues[1], subregion: newValues[2], value: d.value})
-              }
+          for(let d of dataset) {
+            let newValues = d.key.split(';');
+            if(newValues[3] == regionCode) {
+              newRes.push({key: newValues[0], region: newValues[1], subregion: newValues[2], value: d.value})
             }
+          }
 
-            var newData = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(newRes);
-            main({title: ""}, {key: "Congresso - " + regionCode, values: newData});
+          var newData = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(newRes);
+          main({title: ""}, {key: "Congresso - " + regionCode, values: newData});
         }
     }
 }
