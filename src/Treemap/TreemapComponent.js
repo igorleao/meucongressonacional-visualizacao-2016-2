@@ -22,16 +22,18 @@ export default class TreemapComponent {
             height: 870
         };
 
-        let tipoPartidoNomeDim = Gastos.crossfilter().dimension((d) => d.gastoTipo + ";" + d.partido + ";" + d.nomeParlamentar);
+        let tipoPartidoNomeDim = Gastos.crossfilter().dimension((d) => d.gastoTipo + ";" + d.partido + ";" + d.nomeParlamentar + ";" + d.estado);
         let dataset = tipoPartidoNomeDim.group().top(Infinity);
         let res = [];
         for(let d of dataset) {
           let values = d.key.split(';');
-          res.push({key: values[0], region: values[1], subregion: values[2], value: d.value})
+          if(values[3] == "SP") {
+            res.push({key: values[0], region: values[1], subregion: values[2], value: d.value})
+          }
         }
 
         var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-        main({title: ""}, {key: "Congresso", values: data});
+        main({title: ""}, {key: "Congresso - SP", values: data});
 
         function main(o, data) {
           var root,
