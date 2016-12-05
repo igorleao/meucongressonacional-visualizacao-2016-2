@@ -201,7 +201,7 @@ export default class StackedBarsComponent {
         }
 
         self.renderCategory = (options) => {
-            let common = ["COMBUSTÍVEIS E LUBRIFICANTES.", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
+            let common = ["COMBUSTÍVEIS E LUBRIFICANTES", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
 
             self.z = d3.scaleOrdinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
@@ -225,6 +225,9 @@ export default class StackedBarsComponent {
                             }
                             return obj;
                         });
+
+            console.log("DISPESAS POR MES")
+            console.log(spendingsByMonthYear.all())
 
             let countSpending = mesAno.group()
                 .reduce((p, v) => {
