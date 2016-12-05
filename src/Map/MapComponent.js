@@ -67,8 +67,8 @@ const CODE_TO_REGION = {
 export default class MapComponent {
     constructor(container) {
         var self = this;
-        self.WIDTH = 400;
-        self.HEIGHT = 400;
+        self.WIDTH = ($(document).width()) / 2;
+        self.HEIGHT = ($(document).height() - 130) / 2;
         self.SCALE = 580;
         self.container = container;
 

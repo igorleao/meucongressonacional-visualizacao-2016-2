@@ -14,14 +14,15 @@ export default class TreemapComponent {
             return main(opts, data);
         });*/
 
+        let widthTemp = parseInt(($(document).width() - 130) / 2);
 
         var defaults = {
             margin: {top: 24, right: 0, bottom: 0, left: 0},
             rootname: "TOP",
             format: ",d",
             title: "",
-            width: 800,
-            height: 800
+            width: widthTemp,
+            height: $(document).height() - 110
         };
 
 
@@ -48,7 +49,7 @@ export default class TreemapComponent {
               margin = opts.margin,
               theight = 36 + 16;
 
-          $('#chart').width(opts.width).height(opts.height);
+          //$('#chart').width(opts.width).height(opts.height);
           var width = opts.width - margin.left - margin.right,
               height = opts.height - margin.top - margin.bottom - theight,
               transitioning;
