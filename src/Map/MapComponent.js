@@ -120,7 +120,7 @@ export default class MapComponent {
 
         self.paintRegions = (selection) => {
             new Promise(function(fulfill, reject) {
-                let expensesByRegion = Gastos.crossfilter()
+                const expensesByRegionVector = Gastos.crossfilter()
                     .dimension(d => d.estado)
                     .group()
                     .reduceSum(d => parseFloat(d.gastoValor))
@@ -128,7 +128,7 @@ export default class MapComponent {
 
                 let counters = {};
 
-                let politiciansByRegion = Gastos.crossfilter()
+                const politiciansByRegionVector = Gastos.crossfilter()
                     .dimension(d => d.estado)
                     .group()
                     .reduce((p, d) => {
@@ -138,40 +138,37 @@ export default class MapComponent {
                         }
 
                         return p;
-                    }, (p, d) => p,
-                    (d) => 0 )
+                    }, (p, d) => p, d => 0)
                     .all();
 
-                expensesByRegion.sort((a, b) => a.value - b.value);
-                politiciansByRegion.sort((a, b) => a.value - b.value);
+                let politiciansByRegion = Util.fromArray(politiciansByRegionVector,
+                        e => e.key,
+                        e => e.value);
 
-                fulfill({
-                    expensesByRegion: expensesByRegion,
-                    politiciansByRegion: politiciansByRegion
+                expensesByRegionVector.sort((a, b) => {
+                    const A = a.value / politiciansByRegion[a.key];
+                    const B = b.value / politiciansByRegion[b.key];
+                    return A - B;
                 });
-            }).then(function(data) {
-                let expensesByRegion = data.expensesByRegion;
-                let politiciansByRegion = data.politiciansByRegion;
 
-                let start = expensesByRegion[0].value / politiciansByRegion[politiciansByRegion.length - 1].value;
-                let end = expensesByRegion[expensesByRegion.length - 1].value / politiciansByRegion[0].value;
+                const leastSpendingState = expensesByRegionVector[0].key;
+                const mostSpendingSate = expensesByRegionVector[expensesByRegionVector.length - 1].key;
+
+                const expensesByRegion = Util.fromArray(expensesByRegionVector,
+                        e => e.key,
+                        e => e.value);
+
+                const start = expensesByRegion[leastSpendingState] / politiciansByRegion[leastSpendingState];
+                const end = expensesByRegion[mostSpendingSate] / politiciansByRegion[mostSpendingSate];
 
                 let colorScale = d3.scaleLinear()
-                    .range(["#FFF7F9", "#946922"])
+                    .range(['#fff7bc', '#662506'])
                     .domain([start, end]);
 
-                expensesByRegion = Util.fromArray(expensesByRegion,
-                        e => e.key,
-                        e => e.value);
-
-                politiciansByRegion = Util.fromArray(politiciansByRegion,
-                        e => e.key,
-                        e => e.value);
-
                 selection.attr('fill', function(d) {
-                    let region = CODE_TO_REGION[d.properties.ADMINCODE];
-                    let politicians = politiciansByRegion[region];
-                    let expense = expensesByRegion[region];
+                    const region = CODE_TO_REGION[d.properties.ADMINCODE];
+                    const politicians = politiciansByRegion[region];
+                    const expense = expensesByRegion[region];
                     return colorScale(expense / politicians);
                 });
             });
