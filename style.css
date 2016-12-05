@@ -3,11 +3,18 @@ margin: 0;
 padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
 
 #main-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    height: 100%;
 }
 
 .ribbon {
