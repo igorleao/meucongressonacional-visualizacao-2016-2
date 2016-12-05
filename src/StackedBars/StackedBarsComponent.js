@@ -11,7 +11,7 @@ export default class StackedBarsComponent {
         var self = this;
         self.container = container;
         self.dimension = { height: 400, width: 600 };
-        self.margin = { top: 120, right: 20, bottom: 30, left: 40 };
+        self.margin = { top: 120, right: 20, bottom: 30, left: 50 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
         self.height = self.dimension.height - self.margin.top - self.margin.bottom,
 
@@ -91,13 +91,14 @@ export default class StackedBarsComponent {
             }
 
             let _drawY = (sel) => {
-                sel.attr("x", 2)
+                sel.attr("transform", "rotate(-90)")
+                    .attr("x", -150)
                     .attr("class", "y-content")
-                    .attr("y", self.y(self.y.ticks(10).pop()))
+                    .attr("y", -35)
                     .attr("dy", "0.35em")
                     .attr("text-anchor", "start")
                     .attr("fill", "#000")
-                    .text("Despesas");
+                    .text("Despesas em R$");
             }
 
             let axisX = self.genericDraw("g", self.SVG, ".axis--x", _drawX, [""]);
@@ -106,6 +107,11 @@ export default class StackedBarsComponent {
         }
 
         self.appendLegend = (data) => {
+            let legendMap = function(attr) {
+              if (attr.toLowerCase() == "f") return "Feminino";
+              else if (attr.toLowerCase() == "m") return "Meminino";
+              else return attr;
+            }
             //let legendSel = d3.select(self.container).select("svg").selectAll(".legend-group")
             let legendSel = self.SVG.selectAll(".legend-group")
               .data(data.reverse())
@@ -125,7 +131,7 @@ export default class StackedBarsComponent {
                 .attr("y", -20 * data.length + 9)
                 .attr("dy", ".35em")
                 .attr("text-anchor", "end")
-                .text(function(d) { return d; });
+                .text(function(d) { return legendMap(d); });
 
             legend = legendSel.select("g")
                 .attr("class", "legend-group")
@@ -134,15 +140,16 @@ export default class StackedBarsComponent {
 
             legend.select("rect")
                 .attr("x", self.width - 18)
+                .attr("y", -20 * data.length)
                 .attr("width", 18)
                 .attr("height", 18)
                 .attr("fill", self.z);
             legend.select("text")
                 .attr("x", self.width - 24)
-                .attr("y", 9)
+                .attr("y", -20 * data.length + 9)
                 .attr("dy", ".35em")
                 .attr("text-anchor", "end")
-                .text(function(d) { return d; });
+                .text(function(d) { return legendMap(d); });
 
             legendSel.select("g").exit().remove();
             legendSel.exit().remove();
