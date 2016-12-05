@@ -109,7 +109,7 @@ export default class StackedBarsComponent {
         self.appendLegend = (data) => {
             let legendMap = function(attr) {
               if (attr.toLowerCase() == "f") return "Feminino";
-              else if (attr.toLowerCase() == "m") return "Meminino";
+              else if (attr.toLowerCase() == "m") return "Masculino";
               else return attr;
             }
             //let legendSel = d3.select(self.container).select("svg").selectAll(".legend-group")
