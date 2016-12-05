@@ -7,8 +7,9 @@ export const StackedBarsField = {
 };
 
 export default class StackedBarsComponent {
-    constructor(container) {
+    constructor(container, colorCategory) {
         var self = this;
+        self.colorCategory = colorCategory;
         self.container = container;
         self.dimension = { height: 400, width: 600 };
         self.margin = { top: 120, right: 20, bottom: 30, left: 50 };
@@ -17,7 +18,7 @@ export default class StackedBarsComponent {
 
         self.x = d3.scaleBand().rangeRound([0, self.width]).padding(0.1).align(0.1);
         self.y = d3.scaleLinear().rangeRound([self.height, 0]);
-        self.z = d3.scaleOrdinal();
+        self.zGender = d3.scaleOrdinal();
 
         $("#select-tipo").change(function(){
             self.render()
@@ -219,7 +220,7 @@ export default class StackedBarsComponent {
         self.renderCategory = (options) => {
             let common = ["COMBUSTÍVEIS E LUBRIFICANTES", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
 
-            self.z = d3.scaleOrdinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+            self.z = self.colorCategory;
 
             let mesAno = Gastos.crossfilter()
                 .dimension((d) => d.mesAno);
@@ -293,7 +294,7 @@ export default class StackedBarsComponent {
             } else {
                 self.y.domain([0, 1]);
             }
-            self.z.domain(keys);
+            
 
             self.appendBars(stack(flattenData));
             self.appendAxis();

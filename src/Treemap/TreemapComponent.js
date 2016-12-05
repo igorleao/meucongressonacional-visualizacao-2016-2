@@ -3,8 +3,9 @@ import $ from 'jquery';
 import Gastos from '../DataHandler/Gastos'
 
 export default class TreemapComponent {
-    constructor(container) {
+    constructor(container, colorCategory) {
         var self = this;
+        self.colorCategory = colorCategory;
         self.WIDTH = 800;
         self.HEIGHT = 800;
         self.MARGIN = { top: 24, right: 0, bottom: 0, left: 0 },
@@ -62,12 +63,10 @@ export default class TreemapComponent {
 
             var color = function(d, titleName) {
 
-                console.log(d);
-
                 if(titleName.indexOf("/") >= 0) {
                     if(titleName.indexOf("/") != titleName.lastIndexOf("/")) {
                         // TA NO ULTIMO NIVEL
-                        return colorD3(d.key);
+                        return self.colorCategory(d.key);
                     } else {
                         // TA NO NIVEL INTERMEDIARIO
                         // olha se eh parlamentar
