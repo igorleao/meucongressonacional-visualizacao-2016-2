@@ -10,8 +10,8 @@ export default class StackedBarsComponent {
     constructor(container) {
         var self = this;
         self.container = container;
-        self.dimension = { height: 300, width: 600 };
-        self.margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        self.dimension = { height: 400, width: 600 };
+        self.margin = { top: 120, right: 20, bottom: 30, left: 40 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
         self.height = self.dimension.height - self.margin.top - self.margin.bottom,
 
@@ -106,6 +106,7 @@ export default class StackedBarsComponent {
         }
 
         self.appendLegend = (data) => {
+            //let legendSel = d3.select(self.container).select("svg").selectAll(".legend-group")
             let legendSel = self.SVG.selectAll(".legend-group")
               .data(data.reverse())
 
@@ -115,12 +116,13 @@ export default class StackedBarsComponent {
                 .style("font", "10px sans-serif");
             legend.append("rect")
                 .attr("x", self.width - 18)
+                .attr("y", -20 * data.length)
                 .attr("width", 18)
                 .attr("height", 18)
                 .attr("fill", self.z);
             legend.append("text")
                 .attr("x", self.width - 24)
-                .attr("y", 9)
+                .attr("y", -20 * data.length + 9)
                 .attr("dy", ".35em")
                 .attr("text-anchor", "end")
                 .text(function(d) { return d; });
@@ -144,6 +146,13 @@ export default class StackedBarsComponent {
 
             legendSel.select("g").exit().remove();
             legendSel.exit().remove();
+
+            /*for (let key of data) {
+                d3.select("#legenda-div")
+                  .append("p")
+                  .attr("class", "ac-unit")
+                  .html(`<span style=\"color: white; padding: 3px; background-color: ${self.z(key)}\">${key}</span><span style=\"color: white; padding: 3px; background-color: #424242\">${key}</span>`);
+            } */
         }
 
         self.renderGender = (options) => {
@@ -197,11 +206,11 @@ export default class StackedBarsComponent {
 
             self.appendBars(stack(flattenData));
             self.appendAxis();
-            self.appendLegend(["Mulheres", "Homens"]);
+            self.appendLegend(["F", "M"]);
         }
 
         self.renderCategory = (options) => {
-            let common = ["COMBUSTÍVEIS E LUBRIFICANTES.", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
+            let common = ["COMBUSTÍVEIS E LUBRIFICANTES", "EMISSÃO BILHETE AÉREO", "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR", "SERVIÇOS POSTAIS", "TELEFONIA"];
 
             self.z = d3.scaleOrdinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
