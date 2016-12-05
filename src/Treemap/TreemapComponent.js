@@ -58,7 +58,45 @@ export default class TreemapComponent {
                 height = self.HEIGHT - self.MARGIN.top - self.MARGIN.bottom - theight,
                 transitioning;
 
-            var color = d3.scale.category20c();
+            var colorD3 = d3.scale.category20c();
+
+            var color = function(d, titleName) {
+
+                console.log(d);
+
+                if(titleName.indexOf("/") >= 0) {
+                    if(titleName.indexOf("/") != titleName.lastIndexOf("/")) {
+                        // TA NO ULTIMO NIVEL
+                        return colorD3(d.key);
+                    } else {
+                        // TA NO NIVEL INTERMEDIARIO
+                        // olha se eh parlamentar
+                        if(d.parent.parent.key == "Congresso") {
+                            return colorD3(d.parent.key);
+                        } else {
+                            // olha se eh tipo de gasto
+                            if(d.parent.parent.parent.key == "Congresso") {
+                                return colorD3(d.parent.key);
+                            } else {
+                                return "rgb(255, 255, 255)";
+                            }
+                        }
+                    }
+                } else {
+                    // TA NO PRIMEIRO NIVEL
+                    // olha se eh partido
+                    if(d.parent.key == "Congresso") {
+                        return colorD3(d.key);
+                    } else {
+                        // olha se eh parlamentar
+                        if(d.parent.parent.key == "Congresso") {
+                            return colorD3(d.parent.key);
+                        } else {
+                            return "rgb(255, 255, 255)";
+                        }
+                    }
+                }
+            };
 
             var x = d3.scale.linear()
                 .domain([0, width])
@@ -147,10 +185,13 @@ export default class TreemapComponent {
             }
 
             function display(d) {
+
+                var titleName = name(d);
+
                 grandparent.datum(d.parent)
                     .on('click', transition)
                     .select('text')
-                    .text(name(d));
+                    .text(titleName);
 
                 var g1 = svg.insert('g', '.grandparent')
                     .datum(d)
@@ -199,7 +240,7 @@ export default class TreemapComponent {
                 t.call(text);
 
                 g.selectAll('rect')
-                    .style('fill', d => color(d.key));
+                    .style('fill', d => color(d, titleName));
 
                 function transition(d) {
                     if (transitioning || !d) return;
