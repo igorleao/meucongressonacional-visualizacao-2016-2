@@ -177,6 +177,13 @@ export default class MapComponent {
             });
         }
 
+        self.filterRegionByCode = (regionCode) => {
+            self.regionDimension = self.regionDimension || Gastos.crossfilter()     
+                .dimension(d => d.estado);
+
+            self.regionDimension.filter(regionCode);
+        }
+
         self.setupMapRegion = (regions) => {
             regions.each(function(region) {
                 let code = region.properties.ADMINCODE;
@@ -184,15 +191,10 @@ export default class MapComponent {
 
                 el.on('click', _ => {
                     const selected = el.classed('map-region-selected');
-                    if (!selected) {
-                        const codeToSend = CODE_TO_REGION[code];
-                        Event.trigger(Events.MAP_REGION_CLICK,
-                                self,
-                                codeToSend);
-                    } else {
-                        Event.trigger(Events.MAP_REGION_RESET,
-                                self);
-                    }
+                    const codeToSend = !selected ? CODE_TO_REGION[code] : null;
+
+                    self.filterRegionByCode(codeToSend);
+                    Event.trigger(Events.REGION_SELECTED, self, codeToSend);
 
                     self.SVG.select('path.map-region-selected')
                         .classed('map-region-selected', false);

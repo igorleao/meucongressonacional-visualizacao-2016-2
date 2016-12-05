@@ -24,26 +24,17 @@ const TREEMAP_CONTAINER = '#treemap-container'
 
     let map = new MapComponent(MAP_CONTAINER);
     let stackedBars = new StackedBarsComponent(STACKED_CONTAINER);
+    let treeMap = new TreemapComponent(TREEMAP_CONTAINER);
 
-    Event.listenTo(Events.MAP_REGION_CLICK,
-            map,
-            stackedBars.filterByRegion);
-
-    Event.listenTo(Events.MAP_REGION_RESET,
-            map,
-            stackedBars.resetFilter);
+    [stackedBars.filterByRegion, treeMap.filterByRegion].forEach(filterFunction => {
+        Event.listenTo(Events.REGION_SELECTED,
+                map,
+                filterFunction);
+    });
 
     expensesPromise.then(function() {
         stackedBars.render();
-        let treeMap = new TreemapComponent();
-
-        Event.listenTo(Events.MAP_REGION_CLICK,
-                map,
-                treeMap.filterByRegion);
-
-        Event.listenTo(Events.MAP_REGION_RESET,
-                map,
-                treeMap.resetFilter);
+        treeMap.render();
     });
 
     Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {

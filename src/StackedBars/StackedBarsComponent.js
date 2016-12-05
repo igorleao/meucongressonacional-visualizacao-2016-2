@@ -285,33 +285,28 @@ export default class StackedBarsComponent {
         }
 
         self.filterByRegion = (regionCode) => {
-            self.regionDimension = self.regionDimension || Gastos.crossfilter()
-                .dimension(d => d.estado);
-
-            self.regionDimension.filter(regionCode)
             self.render();
             self.updateRibbons(regionCode);
         }
 
         self.updateRibbons = (regionCode) => {
+            self.regionDimension = self.regionDimension || Gastos.crossfilter().dimension(d => d.estado);
+
             let numberRecords = self.regionDimension.top(Infinity).length;
             $('#qnt-gastos h1').text(`${numberRecords} gastos`);
 
-            let totalSpending = self.regionDimension.group().reduceSum(function(d) { return parseFloat(d.gastoValor); });
-            let listTotalSpendings =  totalSpending.all();
-            for (let s of listTotalSpendings) {
-                if (s.key === regionCode) {
-                    $('#total-gastos h1').text(`R$: ${s.value}`);
+            let totalSpending = self.regionDimension.group().reduceSum(d => parseFloat(d.gastoValor));
+            let listTotalSpendings = totalSpending.all();
+
+            if (regionCode !== null) {
+                for (let s of listTotalSpendings) {
+                    if (s.key === regionCode) {
+                        $('#total-gastos h1').text(`R$: ${s.value}`);
+                    }
                 }
-            };
-        }
-
-        self.resetFilter = () => {
-            self.regionDimension = self.regionDimension || Gastos.crossfilter()
-                .dimension(d => d.estado);
-
-            self.regionDimension.filter()
-            self.render();
+            } else {
+                $('#total-gastos h1').text(`R$: ${totalSpending.reduceSum()}`);
+            }
         }
     }
 }

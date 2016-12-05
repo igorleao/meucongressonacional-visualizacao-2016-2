@@ -296,5 +296,9 @@ export default class TreemapComponent {
                 values: normData
             });
         }
+
+        self.filterByRegion = (regionCode) => {
+            self.render();
+        }
     }
 }
