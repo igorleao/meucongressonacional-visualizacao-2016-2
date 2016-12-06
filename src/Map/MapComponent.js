@@ -177,7 +177,11 @@ export default class MapComponent {
                 .append('text')
                 .attr('x', INITIAL_X + SIZE + MARGIN)
                 .attr('y', d => INITIAL_Y + (Math.floor(d / 6)) * (MARGIN + SIZE) + 17)
-                .text(d => `R$ ${meanExpenseByRegion(d).toFixed(2)}`);
+                .text(d => self.formatCurrency(meanExpenseByRegion(d).toFixed(2)));
+        }
+
+        self.formatCurrency = (value) => {
+            return Number(value).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' })
         }
 
         self.paintRegions = (selection) => {
