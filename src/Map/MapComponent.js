@@ -177,7 +177,7 @@ export default class MapComponent {
                 .append('text')
                 .attr('x', INITIAL_X + SIZE + MARGIN)
                 .attr('y', d => INITIAL_Y + (Math.floor(d / 6)) * (MARGIN + SIZE) + 17)
-                .text(d => `R$ ${self.orderedExpensesOfRegions[d].value}`);
+                .text(d => `R$ ${meanExpenseByRegion(d).toFixed(2)}`);
         }
 
         self.paintRegions = (selection) => {
