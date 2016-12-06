@@ -175,3 +175,7 @@ rect.parent {
   top: 100%;
   left: 0;
 }
+
+#treemap-container, #map-container, #stackedbars-container {
+    width: 100%;
+}

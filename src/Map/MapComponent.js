@@ -73,18 +73,27 @@ export default class MapComponent {
         self.WIDTH = 400;
         self.HEIGHT = 400;
         self.SCALE = 580;
+        self.MARGIN = { top: 20, right: 20, bottom: 20, left: 20 }
+
         self.container = container;
+
+        self.updateDimensions = () => {
+            const innerWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            self.WIDTH = innerWidth / 2;
+        }
 
         self.render = () => {
             d3.select(`${self.container} > svg`).remove();
 
-            let svg = d3.select(self.container)
+            self.updateDimensions();
+
+            self.SVG = d3.select(self.container)
                 .append('svg')
                 .attr('id', 'map')
                 .attr('width', self.WIDTH)
-                .attr('height', self.HEIGHT);
-
-            self.SVG = svg.append('g');
+                .attr('height', self.HEIGHT)
+                .append('g')
+                .attr('transform', 'translate(' + self.MARGIN.left + ', ' + self.MARGIN.top + ')');
 
             self.drawMap();
             self.drawLegend();
@@ -104,9 +113,12 @@ export default class MapComponent {
 
             var bounds = path.bounds(data);
 
+            var width = self.WIDTH - self.MARGIN.left - self.MARGIN.right,
+                height = self.HEIGHT - self.MARGIN.top - self.MARGIN.bottom;
+
             var offset = [
-                self.WIDTH + 30 - (bounds[0][0] + bounds[1][0]) / 2,
-                self.HEIGHT - (bounds[0][1] + bounds[1][1]) / 2
+                width + 60 - (bounds[0][0] + bounds[1][0]) / 2,
+                height + 30 - (bounds[0][1] + bounds[1][1]) / 2
             ];
 
             projection.translate(offset);
@@ -137,6 +149,7 @@ export default class MapComponent {
         }
 
         self.drawLegend = () => {
+            const INITIAL_X = 60;
             const INITIAL_Y = 230;
             const MARGIN = 10;
             const SIZE = 20;
@@ -153,7 +166,7 @@ export default class MapComponent {
                 .attr('stroke', 'gray')
                 .attr('stroke-width', '0.02em')
                 .attr('fill', d => self.colorScale(meanExpenseByRegion(d)))
-                .attr('x', 0)
+                .attr('x', INITIAL_X)
                 .attr('y', d => INITIAL_Y + (Math.floor(d / 6)) * (MARGIN + SIZE))
                 .attr('height', SIZE)
                 .attr('width', SIZE);
@@ -162,7 +175,7 @@ export default class MapComponent {
                 .data([0, 6, 12, 18, 26])
                 .enter()
                 .append('text')
-                .attr('x', SIZE + MARGIN)
+                .attr('x', INITIAL_X + SIZE + MARGIN)
                 .attr('y', d => INITIAL_Y + (Math.floor(d / 6)) * (MARGIN + SIZE) + 17)
                 .text(d => `R$ ${self.orderedExpensesOfRegions[d].value}`);
         }

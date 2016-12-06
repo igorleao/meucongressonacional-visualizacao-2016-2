@@ -13,7 +13,7 @@ export default class StackedBarsComponent {
         self.colorCategory = colorCategory;
         self.container = container;
         self.dimension = { height: 400, width: 600 };
-        self.margin = { top: 120, right: 20, bottom: 30, left: 50 };
+        self.margin = { top: 120, right: 20, bottom: 30, left: 90 };
         self.width = self.dimension.width - self.margin.left - self.margin.right,
         self.height = self.dimension.height - self.margin.top - self.margin.bottom,
 
@@ -33,6 +33,11 @@ export default class StackedBarsComponent {
             self.render()
         });
 
+        self.updateDimensions = () => {
+            const innerWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            self.dimension.width = innerWidth / 2;
+        }
+
         self.render = () =>  {
             let options = { mean: ($("#select-skb-metrica").val() == 1) ? true : false,
                             normalized: ($("#select-skb-exhi").val() == 1) ? false : true }
@@ -41,6 +46,8 @@ export default class StackedBarsComponent {
             let field = ($("#select-tipo").val() == 1) ? StackedBarsField.GENDER : StackedBarsField.CATEGORY;
 
             d3.select(`${self.container} > svg`).remove();
+
+            self.updateDimensions();
 
             let svg = d3.select(self.container)
                 .append("svg")

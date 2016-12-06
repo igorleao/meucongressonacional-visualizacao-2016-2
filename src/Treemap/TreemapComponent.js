@@ -7,14 +7,19 @@ export default class TreemapComponent {
         var self = this;
         self.colorCategory = colorCategory;
         self.WIDTH = 800;
-        self.HEIGHT = 800;
-        self.MARGIN = { top: 24, right: 0, bottom: 0, left: 0 },
+        self.HEIGHT = 856;
+        self.MARGIN = { top: 24, right: 10, bottom: 10, left: 10 },
         self.container = container;
         self.defaults = {
             rootname: 'TOP',
             format: ',d',
             title: ''
         };
+
+        self.updateDimensions = () => {
+            const innerWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            self.WIDTH = innerWidth / 2;
+        }
 
         self.defaultData = () => {
             let tipoPartidoNomeDim = Gastos.crossfilter()
@@ -44,6 +49,8 @@ export default class TreemapComponent {
         self.render = (o, data) => {
             d3.select(`${self.container} > svg`).remove();
 
+            self.updateDimensions();
+
             if (data === undefined) {
                 ({ o, data } = self.defaultData());
             }
@@ -62,7 +69,6 @@ export default class TreemapComponent {
             var colorD3 = d3.scale.category20c();
 
             var color = function(d, titleName) {
-
                 if(titleName.indexOf("/") >= 0) {
                     if(titleName.indexOf("/") != titleName.lastIndexOf("/")) {
                         // TA NO ULTIMO NIVEL
@@ -115,8 +121,6 @@ export default class TreemapComponent {
                 .append('svg')
                 .attr('width', self.WIDTH)
                 .attr('height', height + self.MARGIN.bottom + self.MARGIN.top)
-                .style('margin-left', -self.MARGIN.left + 'px')
-                .style('margin.right', -self.MARGIN.right + 'px')
                 .append('g')
                 .attr('transform', 'translate(' + self.MARGIN.left + ', ' + self.MARGIN.top + ')')
                 .style('shape-rendering', 'crispEdges');
@@ -341,4 +345,3 @@ export default class TreemapComponent {
             self.render();
         }
     }
-}
