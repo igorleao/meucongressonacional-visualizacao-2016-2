@@ -9,6 +9,7 @@ html {
 
 body {
     height: 100%;
+    font-family: sans;
 }
 
 #main-container {
@@ -23,15 +24,14 @@ body {
     justify-content: center;
     flex-basis: auto;
     text-align: center;
-    height: 80px;
-    background-color: blue;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    height: 60px;
+    padding-top: 10px;
+    background-color: #424242;
 }
 
 .ribbon h1 {
     color: #FFFFFF;
+    font-size: 1.5em;
 }
 
 .ribbons {
@@ -124,6 +124,7 @@ rect.parent {
     flex-direction: row;
     background-color: #424242;
     height: 40px;
+    padding-bottom: 10px;
     justify-content: space-around;
 }
 
