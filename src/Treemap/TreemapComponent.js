@@ -345,3 +345,4 @@ export default class TreemapComponent {
             self.render();
         }
     }
+}
