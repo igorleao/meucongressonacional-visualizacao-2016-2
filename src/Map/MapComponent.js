@@ -134,9 +134,13 @@ export default class MapComponent {
               .offset([-10, 0])
               .html(function(d) {
                   const region = CODE_TO_REGION[d.properties.ADMINCODE];
-                  const politicians = self.politiciansByRegion[region];
                   const expense = self.expensesByRegion[region];
-                  const meanValue = expense / politicians;
+                  let meanValue = expense;
+                  if (normalizedValues) {
+                      const politicians = self.politiciansByRegion[region];
+                      meanValue = expense / politicians;
+                  }
+
                   return "<strong style='color:#EFD469'>"+ region +"</strong><br /><span>" + Number(meanValue).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' }) + "</span></div>";
             });
             self.SVG.call(mapTip);
