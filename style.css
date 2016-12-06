@@ -8,11 +8,13 @@ html {
 }
 
 body {
+    background: black;
     height: 100%;
     font-family: sans;
 }
 
 #main-container {
+    background: black;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -41,6 +43,7 @@ body {
 }
 
 .column-container {
+    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,6 +180,24 @@ rect.parent {
   left: 0;
 }
 
-#treemap-container, #map-container, #stackedbars-container {
+#treemap-container {
+    width: 100%;
+    background: white;
+    padding-top: 7px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+#map-container {
+    background: white;
+    margin-left: 7px;
+    margin-top: 7px;
+    width: 100%;
+}
+
+#stackedbars-container {
+    background: white;
+    margin-left: 7px;
+    margin-top: 4px;
     width: 100%;
 }
