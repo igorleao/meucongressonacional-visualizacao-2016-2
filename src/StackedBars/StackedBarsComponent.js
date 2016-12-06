@@ -49,17 +49,17 @@ export default class StackedBarsComponent {
 
             self.updateDimensions();
 
-            let svg = d3.select(self.container)
+            self.SVG = d3.select(self.container)
                 .append("svg")
                 .attr("height", self.dimension.height)
-                .attr("width", self.dimension.width);
-
-            self.SVG = svg.append("g")
-                .attr("transform", `translate(${self.margin.left}, ${self.margin.top})`);
-
+                .attr("width", self.dimension.width)
+                .append("g");
 
             field === StackedBarsField.GENDER && self.renderGender(options);
             field === StackedBarsField.CATEGORY && self.renderCategory(options);
+
+            const newLeftMargin = (self.dimension.width - self.SVG.node().getBBox().width) / 2;
+            self.SVG.attr("transform", `translate(${newLeftMargin}, ${self.margin.top})`);
         }
 
         self.genericDraw = (element, father, selector, drawFunction, data) => {
