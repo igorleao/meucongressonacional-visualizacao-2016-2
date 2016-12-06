@@ -3,6 +3,7 @@ import Gastos from '../DataHandler/Gastos'
 import BrazilGeoJSON from '../DataHandler/BrazilGeoJSON'
 import Util from '../Util/Util'
 import Event, * as Events from '../Events/Events'
+import tip from "d3-tip"
 
 const NUMBER_OF_REGIONS = 27;
 
@@ -110,6 +111,18 @@ export default class MapComponent {
 
             projection.translate(offset);
 
+            let mapTip = tip()
+              .attr('class', 'd3-tip')
+              .offset([-10, 0])
+              .html(function(d) {
+                  const region = CODE_TO_REGION[d.properties.ADMINCODE];
+                  const politicians = self.politiciansByRegion[region];
+                  const expense = self.expensesByRegion[region];
+                  const meanValue = expense / politicians;
+                  return "<strong style='color:#EFD469'>"+ region +"</strong><br /><span>" + Number(meanValue).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' }) + "</span></div>";
+            });
+            self.SVG.call(mapTip);
+
             self.SVG.selectAll('path')
                 .data(data.features)
                 .enter()
@@ -118,7 +131,9 @@ export default class MapComponent {
                 .attr('d', path)
                 .attr('data-regionCode', d => d.properties.ADMINCODE)
                 .call(self.paintRegions)
-                .call(self.setupMapRegion);
+                .call(self.setupMapRegion)
+                .on('mouseover', mapTip.show)
+                .on('mouseout', mapTip.hide);
         }
 
         self.drawLegend = () => {
@@ -209,7 +224,7 @@ export default class MapComponent {
         }
 
         self.filterRegionByCode = (regionCode) => {
-            self.regionDimension = self.regionDimension || Gastos.crossfilter()     
+            self.regionDimension = self.regionDimension || Gastos.crossfilter()
                 .dimension(d => d.estado);
 
             self.regionDimension.filter(regionCode);

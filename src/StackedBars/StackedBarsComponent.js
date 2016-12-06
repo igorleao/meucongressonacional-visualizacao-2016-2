@@ -1,5 +1,6 @@
 import * as d3 from "d3"
 import Gastos from '../DataHandler/Gastos'
+import tip from "d3-tip"
 
 export const StackedBarsField = {
     GENDER: 1,
@@ -36,6 +37,7 @@ export default class StackedBarsComponent {
             let options = { mean: ($("#select-skb-metrica").val() == 1) ? true : false,
                             normalized: ($("#select-skb-exhi").val() == 1) ? false : true }
 
+            self.normalized = options.normalized;
             let field = ($("#select-tipo").val() == 1) ? StackedBarsField.GENDER : StackedBarsField.CATEGORY;
 
             d3.select(`${self.container} > svg`).remove();
@@ -63,6 +65,14 @@ export default class StackedBarsComponent {
         }
 
         self.appendBars = (data) => {
+            let barTip = tip()
+              .attr('class', 'd3-tip')
+              .offset([-10, 0])
+              .html(function(d) {
+                return self.normalized ? "<div style='text-align: center'><span>" + ((d[1] - d[0]) * 100).toFixed(2) + "</span> <strong style='color:#EFD469'> %</strong>" : "<strong style='color:#EFD469'>R$:</strong> <span>" + (d[1] - d[0]).toFixed(2) + "</span></div>";
+            });
+
+
             let _barsGroup = (sel) => {
                 sel.attr("class", "serie")
                     .attr("fill", (d) => self.z(d.key))
@@ -72,9 +82,12 @@ export default class StackedBarsComponent {
                 sel.attr("x", (d) => self.x(d.data.mesAno))
                     .attr("y", (d) => self.y(d[1]))
                     .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
-                    .attr("width", self.x.bandwidth());
+                    .attr("width", self.x.bandwidth())
+                    .on('mouseover', barTip.show)
+                    .on('mouseout', barTip.hide);
             }
 
+            self.SVG.call(barTip)
             let barsGroup = self.genericDraw("g", self.SVG, ".serie", _barsGroup, data);
             let bars = self.genericDraw("rect", barsGroup, "rect", _barsItself, d => d);
         }
@@ -294,7 +307,7 @@ export default class StackedBarsComponent {
             } else {
                 self.y.domain([0, 1]);
             }
-            
+
 
             self.appendBars(stack(flattenData));
             self.appendAxis();
