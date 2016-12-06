@@ -87,11 +87,22 @@ export default class StackedBarsComponent {
 
             let _barsItself = (sel) => {
                 sel.attr("x", (d) => self.x(d.data.mesAno))
-                    .attr("y", (d) => self.y(d[1]))
-                    .attr("height", (d) => self.y(d[0]) - self.y(d[1]))
+                    .attr("y", function(d) {
+                        console.log(d);
+                        return !isNaN(d[1]) ? self.y(d[1]) : 0
+                    })
+                    .attr("height", (d) => subUndefined(d[0], d[1]))
                     .attr("width", self.x.bandwidth())
                     .on('mouseover', barTip.show)
                     .on('mouseout', barTip.hide);
+            }
+
+            let subUndefined = (v0, v1) => {
+                if (!isNaN(v0) && !isNaN(v1)) {
+                    return self.y(v0) - self.y(v1);
+                } else {
+                    return 0;
+                }
             }
 
             self.SVG.call(barTip)
