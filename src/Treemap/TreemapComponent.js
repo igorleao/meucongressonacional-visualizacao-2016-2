@@ -25,7 +25,10 @@ export default class TreemapComponent {
             let tipoPartidoNomeDim = Gastos.crossfilter()
                 .dimension((d) => [d.gastoTipo, d.partido, d.nomeParlamentar, d.estado]
                         .join(';'));
-            let dataset = tipoPartidoNomeDim.group().top(Infinity);
+
+            let dataset = tipoPartidoNomeDim.group()
+            .reduceSum(d => parseFloat(d.gastoValor))
+            .all();
 
             let res = [];
             for (let d of dataset) {
@@ -161,9 +164,15 @@ export default class TreemapComponent {
             // We also take a snapshot of the original children (_children) to avoid
             // the children being overwritten when when layout is computed.
             function accumulate(d) {
+                //console.log("Accumulate");
+                //console.log(d);
                 return (d._children = d.values)
                     ? d.value = d.values.reduce((p, v) => p + accumulate(v), 0)
                     : d.value;
+            }
+
+            function formatCurrency(value) {
+                return Number(value).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' })
             }
 
             // Compute the treemap layout recursively such that each group of siblings
@@ -218,7 +227,7 @@ export default class TreemapComponent {
                     .attr('class', 'child')
                     .call(rect)
                     .append('title')
-                    .text(d => d.key + ' (' + formatNumber(d.value) + ')');
+                    .text(d => d.key + ' (' + formatCurrency(d.value) + ')');
 
                 children.append('text')
                     .attr('class', 'ctext')
@@ -238,7 +247,7 @@ export default class TreemapComponent {
 
                 t.append('tspan')
                     .attr('dy', '1.0em')
-                    .text(d => formatNumber(d.value));
+                    .text(d => formatCurrency(d.value));
 
                 t.call(text);
 
@@ -312,8 +321,8 @@ export default class TreemapComponent {
 
             function name(d) {
                 return d.parent
-                    ? name(d.parent) + ' / ' + d.key + ' (' + formatNumber(d.value) + ')'
-                    : d.key + ' (' + formatNumber(d.value) + ')';
+                    ? name(d.parent) + ' / ' + d.key + ' ' + formatCurrency(d.value) + ''
+                    : d.key + ' ' + formatCurrency(d.value) + '';
             }
         }
 
