@@ -48,6 +48,7 @@ export default class StackedBarsComponent {
             d3.select(`${self.container} > svg`).remove();
 
             self.updateDimensions();
+            self.updateRibbons();
 
             self.SVG = d3.select(self.container)
                 .append("svg")
@@ -335,15 +336,23 @@ export default class StackedBarsComponent {
             let totalSpending = self.regionDimension.group().reduceSum(d => parseFloat(d.gastoValor));
             let listTotalSpendings = totalSpending.all();
 
-            if (regionCode !== null) {
+            if (regionCode !== null && regionCode !== undefined) {
                 for (let s of listTotalSpendings) {
                     if (s.key === regionCode) {
-                        $('#total-gastos h1').text(`R$: ${s.value}`);
+                        $('#total-gastos h1').text(`R$: ${self.formatCurrency(s.value)}`);
                     }
                 }
             } else {
-                $('#total-gastos h1').text(`R$: ${totalSpending.reduceSum()}`);
+                $('#total-gastos h1').text(`R$: ${self.formatCurrency(totalSpending.top(1)[0].value)}`);
             }
+        }
+
+        self.formatCurrency = (value) => {
+            return Number(value).toLocaleString('br', {
+                style: 'currency',
+                currency: 'BRL',
+                currencyDisplay: 'symbol'
+            });
         }
     }
 }
