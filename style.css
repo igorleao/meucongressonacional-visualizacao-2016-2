@@ -8,16 +8,15 @@ html {
 }
 
 body {
-    background: black;
     height: 100%;
     font-family: sans;
 }
 
 #main-container {
-    background: black;
     display: flex;
     flex-direction: row;
     height: 100%;
+    position: relative;
 }
 
 .ribbon {
@@ -43,7 +42,6 @@ body {
 }
 
 .column-container {
-    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,24 +178,21 @@ rect.parent {
   left: 0;
 }
 
-#treemap-container {
-    width: 100%;
-    background: white;
-    padding-top: 7px;
-    margin-top: 7px;
-    margin-left: 7px;
-}
-
-#map-container {
-    background: white;
-    margin-left: 7px;
-    margin-top: 7px;
+#treemap-container, #map-container, #stackedbars-container {
     width: 100%;
 }
 
-#stackedbars-container {
-    background: white;
-    margin-left: 7px;
-    margin-top: 4px;
+#loading {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+}
+
+#loading-circle {
+    width: 100px;
+    height: 100px;
+    margin: 10% auto 0;
 }

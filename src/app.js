@@ -31,12 +31,9 @@ const TREEMAP_CONTAINER = '#treemap-container'
             return colorD3(attribute);
         }
     }
-    let bar1 = new ProgressBar.Circle(MAP_CONTAINER, { duration: 1800 });
-    let bar2 = new ProgressBar.Circle(STACKED_CONTAINER, { duration: 1800 });
-    let bar3 = new ProgressBar.Circle(TREEMAP_CONTAINER, { duration: 1800 });
-    bar1.animate(1.0);
-    bar2.animate(1.0);
-    bar3.animate(1.0);
+
+    let bar = new ProgressBar.Circle('#loading-circle', { duration: 1800, strokeWidth: 3 });
+    bar.animate(1.0);
 
     let expensesPromise = Gastos.loadData();
     let brazilMapPromise = BrazilGeoJSON.loadData();
@@ -51,12 +48,10 @@ const TREEMAP_CONTAINER = '#treemap-container'
                 filterFunction);
     });
 
-    expensesPromise.then(function() {
+    Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {
+        document.querySelector('#loading').remove();
         stackedBars.render();
         treeMap.render();
-    });
-
-    Promise.all([expensesPromise, brazilMapPromise]).then(function(values) {
         map.render();
     });
 }

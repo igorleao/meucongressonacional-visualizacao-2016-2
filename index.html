@@ -15,10 +15,10 @@
 			<h1>780 parlamentares</h1>
 		</div>
 		<div id="qnt-gastos" class="item ribbon">
-			<h1>300 transações</h1>
+			<h1>0 transações</h1>
 		</div>
 		<div id="total-gastos" class="item ribbon">
-			<h1>R$: 100.000,00</h1>
+			<h1>R$: 0,00</h1>
 		</div>
 		<div id="por-homens" class="item ribbon">
 			<h1>365 dias</h1>
@@ -43,7 +43,7 @@
 	        </select>
 	    </div>
 		<div class="row">
-	        <span class="form-label">Exibição do StackedBars: </span>
+	        <span class="form-label">Normalização dos valores: </span>
 	        <select id="select-skb-exhi" class="form-control" style="width: 200px">
 			  <option value="1">Absoluto</option>
 	          <option value="2">Percentual</option>
@@ -51,6 +51,9 @@
 	    </div>
 	</div>
     <div id="main-container">
+        <div id="loading">
+            <div id="loading-circle"></div>
+        </div>
         <div class="column-container item">
             <div id="treemap-container" class="item">
             </div>

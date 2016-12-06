@@ -82,6 +82,10 @@ export default class MapComponent {
             self.WIDTH = innerWidth / 2;
         }
 
+        $("#select-skb-exhi").change(function(){
+            self.render()
+        });
+
         self.render = () => {
             d3.select(`${self.container} > svg`).remove();
 
@@ -95,11 +99,13 @@ export default class MapComponent {
                 .append('g')
                 .attr('transform', 'translate(' + self.MARGIN.left + ', ' + self.MARGIN.top + ')');
 
-            self.drawMap();
-            self.drawLegend();
+            const normalizedValues = $("#select-skb-exhi").val() == 2;
+
+            self.drawMap(normalizedValues);
+            self.drawLegend(normalizedValues);
         }
 
-        self.drawMap = () => {
+        self.drawMap = (normalizedValues) => {
             let data = BrazilGeoJSON.getGeoJSON();
             var centroid = d3.geoCentroid(data);
 
@@ -128,9 +134,13 @@ export default class MapComponent {
               .offset([-10, 0])
               .html(function(d) {
                   const region = CODE_TO_REGION[d.properties.ADMINCODE];
-                  const politicians = self.politiciansByRegion[region];
                   const expense = self.expensesByRegion[region];
-                  const meanValue = expense / politicians;
+                  let meanValue = expense;
+                  if (normalizedValues) {
+                      const politicians = self.politiciansByRegion[region];
+                      meanValue = expense / politicians;
+                  }
+
                   return "<strong style='color:#EFD469'>"+ region +"</strong><br /><span>" + Number(meanValue).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' }) + "</span></div>";
             });
             self.SVG.call(mapTip);
@@ -142,13 +152,13 @@ export default class MapComponent {
                 .attr('fill', '#FFF7F9')
                 .attr('d', path)
                 .attr('data-regionCode', d => d.properties.ADMINCODE)
-                .call(self.paintRegions)
+                .call(selection => self.paintRegions(selection, normalizedValues))
                 .call(self.setupMapRegion)
                 .on('mouseover', mapTip.show)
                 .on('mouseout', mapTip.hide);
         }
 
-        self.drawLegend = () => {
+        self.drawLegend = (normalizedValues) => {
             const INITIAL_X = 60;
             const INITIAL_Y = 230;
             const MARGIN = 10;
@@ -156,7 +166,11 @@ export default class MapComponent {
 
             const meanExpenseByRegion = (index) => {
                 const region = self.orderedExpensesOfRegions[index].key;
-                return self.expensesByRegion[region] / self.politiciansByRegion[region];
+                if (normalizedValues) {
+                    return self.expensesByRegion[region] / self.politiciansByRegion[region];
+                } else {
+                    return self.expensesByRegion[region];
+                }
             }
 
             self.SVG.selectAll('rect')
@@ -184,7 +198,7 @@ export default class MapComponent {
             return Number(value).toLocaleString('br', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' })
         }
 
-        self.paintRegions = (selection) => {
+        self.paintRegions = (selection, normalizedValues) => {
             const expensesByRegionVector = Gastos.crossfilter()
                 .dimension(d => d.estado)
                 .group()
@@ -193,28 +207,34 @@ export default class MapComponent {
 
             let counters = {};
 
-            const politiciansByRegionVector = Gastos.crossfilter()
-                .dimension(d => d.estado)
-                .group()
-                .reduce((p, d) => {
-                    if (!(d.politicoId in counters)) {
-                        counters[d.politicoId] = true;
-                        return p + 1;
-                    }
+            if (normalizedValues) {
+                const politiciansByRegionVector = Gastos.crossfilter()
+                    .dimension(d => d.estado)
+                    .group()
+                    .reduce((p, d) => {
+                        if (!(d.politicoId in counters)) {
+                            counters[d.politicoId] = true;
+                            return p + 1;
+                        }
 
-                    return p;
-                }, (p, d) => p, d => 0)
-                .all();
+                        return p;
+                    }, (p, d) => p, d => 0)
+                    .all();
 
-            self.politiciansByRegion = Util.fromArray(politiciansByRegionVector,
-                    e => e.key,
-                    e => e.value);
+                self.politiciansByRegion = Util.fromArray(politiciansByRegionVector,
+                        e => e.key,
+                        e => e.value);
+            }
 
-            expensesByRegionVector.sort((a, b) => {
-                const A = a.value / self.politiciansByRegion[a.key];
-                const B = b.value / self.politiciansByRegion[b.key];
-                return A - B;
-            });
+            if (normalizedValues) {
+                expensesByRegionVector.sort((a, b) => {
+                    const A = a.value / self.politiciansByRegion[a.key];
+                    const B = b.value / self.politiciansByRegion[b.key];
+                    return A - B;
+                });
+            } else {
+                expensesByRegionVector.sort((a, b) => a.value - b.value);
+            }
 
             self.orderedExpensesOfRegions = expensesByRegionVector;
 
@@ -225,8 +245,17 @@ export default class MapComponent {
                     e => e.key,
                     e => e.value);
 
-            const start = self.expensesByRegion[leastSpendingState] / self.politiciansByRegion[leastSpendingState];
-            const end = self.expensesByRegion[mostSpendingSate] / self.politiciansByRegion[mostSpendingSate];
+            let start, end;
+            if (normalizedValues) {
+                start = self.expensesByRegion[leastSpendingState]
+                    / self.politiciansByRegion[leastSpendingState];
+
+                end = self.expensesByRegion[mostSpendingSate]
+                    / self.politiciansByRegion[mostSpendingSate];
+            } else {
+                start = self.expensesByRegion[leastSpendingState];
+                end = self.expensesByRegion[mostSpendingSate];
+            }
 
             self.colorScale = d3.scaleLinear()
                 .range(['#fff7bc', '#662506'])
@@ -234,9 +263,13 @@ export default class MapComponent {
 
             selection.attr('fill', function(d) {
                 const region = CODE_TO_REGION[d.properties.ADMINCODE];
-                const politicians = self.politiciansByRegion[region];
-                const expense = self.expensesByRegion[region];
-                return self.colorScale(expense / politicians);
+                if (normalizedValues) {
+                    const politicians = self.politiciansByRegion[region];
+                    const expense = self.expensesByRegion[region];
+                    return self.colorScale(expense / politicians);
+                } else {
+                    return self.colorScale(self.expensesByRegion[region]);
+                }
             });
         }
 
